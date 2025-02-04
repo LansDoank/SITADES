@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-/** @type {import('tailwindcss').Config} */
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -64,25 +62,4 @@ export default {
     },
     plugins: [],
     darkMode: "class",
-=======
-import defaultTheme from 'tailwindcss/defaultTheme';
-
-/** @type {import('tailwindcss').Config} */
-export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
-    plugins: [],
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
-};
+}
