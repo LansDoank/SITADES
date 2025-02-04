@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('visits', function (Blueprint $table) {
+        Schema::create('receptionists', function (Blueprint $table) {
             $table->id();
-            $table->date("check_out");
-            $table->string("purpose")->nullable(false);
-            $table->string("impression")->nullable(false);
-            $table->enum("status",['belum hadir','hadir','selesai'])->default("belum hadir");
+            $table->string('username');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('visits');
+        Schema::dropIfExists('receptionists');
     }
 };
