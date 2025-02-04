@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date("check_out");
             $table->string("purpose")->nullable(false);
             $table->string("impression")->nullable(false);
-            $table->enum("status",['belum hadir','hadir','selesai'])->default("belum hadir");
+            $table->enum("status",['tertunda','belum hadir','hadir','selesai'])->default("tertunda");
             $table->timestamps();
         });
     }
