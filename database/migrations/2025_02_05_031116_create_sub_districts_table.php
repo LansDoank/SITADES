@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('sub_districts', function (Blueprint $table) {
             $table->id();
-            $table->string("name")->nullable(false);
-            $table->string("username")->nullable(false);
-            $table->string("password")->nullable(false);
-            $table->timestamps();
+            $table->string('district_code');
+            $table->string('code');
+            $table->string('name');
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('sub_districts');
     }
 };
