@@ -6,11 +6,13 @@ use App\Http\Controllers\ReceptionistController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AdminController::class,'login'])->name('admin.login');
+Route::get('/', [UserController::class,'index'])->name('user.index');
 
 Route::get('/login',[AdminController::class,'login'])->name('admin.login');
 
 Route::post('/login',[LoginController::class,'authentication']);
+
+Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
 
 Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
 

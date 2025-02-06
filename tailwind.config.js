@@ -6,6 +6,9 @@ export default {
     ],
 
     theme: {
+        fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+        },
         extend: {
             colors: {
                 primary: {
@@ -21,6 +24,7 @@ export default {
                     900: "#1e3a8a",
                     950: "#172554",
                 },
+                klipaa: '#65AE3A'
             },
         },
         fontFamily: {
