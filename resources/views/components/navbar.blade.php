@@ -5,8 +5,8 @@
     </div>
     <div>
         <ul class="flex">
-            <li class="md:mx-6 text-klipaa text-lg transition rounded-pill border-b-2 hover:border-b-[#65AE3A] font-medium"><a href="#">Home</a></li>
-            <li class="md:mx-6 text-klipaa text-lg transition rounded-pill border-b-2 hover:border-b-[#65AE3A] font-medium"><a href="#">Contact</a></li>
+            <li class="md:mx-6 nav-link text-gray-500 text-lg transition rounded-pill  font-medium"><a href="#">Home</a></li>
+            <li class="md:mx-6 nav-link text-gray-500 text-lg transition rounded-pill  font-medium"><a href="#">Contact</a></li>
         </ul>
     </div>
 </header>

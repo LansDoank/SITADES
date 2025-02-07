@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div id="hero">
         <div class="container w-full flex h-[700px] md:p-20">
@@ -17,9 +18,9 @@
             </div>
         </div>
     </div>
-    <div id="about" class="md:p-5">
-        <div class="container bg-klipaa rounded flex justify-center flex-col items-center md:p-10">
-            <div class="md:my-5">
+    <div id="about" class="md:p-7">
+        <div class="container bg-klipaa rounded-2xl flex justify-center flex-col items-center md:p-10">
+            <div class="md:my-7">
                 <h1 class="text-white text-3xl font-semibold">APA ITU SITAMU?</h1>
             </div>
             <div class="flex">
@@ -44,7 +45,7 @@
         <div class="md:my-10">
             <h1 class="font-semibold text-klipaa text-3xl">Mengapa memilih Sitamu?</h1>
         </div>
-        <div class="container border p-10 border-klipaa rounded flex justify-center gap-10 rounded-lg">
+        <div class="container border p-10 border-klipaa rounded-2xl flex justify-center gap-10 rounded-lg">
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center">
                 <div class="card-image md:mb-3 ">
                     <img src="/img/eficient.png" alt="">
@@ -52,7 +53,8 @@
                 <div class="card-body">
                     <h2 class="font-medium text-2xl mb-3">Efisiensi Waktu dan
                         Proses</h2>
-                    <p class="text-sm font-normal">Dengan SITAMU, semua proses administrasi yang biasanya memakan waktu dan tenaga, seperti
+                    <p class="text-sm font-normal">Dengan SITAMU, semua proses administrasi yang biasanya memakan waktu
+                        dan tenaga, seperti
                         pengelolaan data tamu yang berkunjung,, bisa dilakukan dengan lebih cepat dan efektif.</p>
                 </div>
             </div>
@@ -63,7 +65,9 @@
                 <div class="card-body">
                     <h2 class="font-medium text-2xl mb-3">Keamanan Data yang
                         Terjamin</h2>
-                    <p class="text-sm font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini menggunakan enkripsi dan pengamanan yang canggih untuk memastikan bahwa semua data yang tersimpan terlindungi dari akses yang tidak sah.</p>
+                    <p class="text-sm font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
+                        menggunakan enkripsi dan pengamanan yang canggih untuk memastikan bahwa semua data yang
+                        tersimpan terlindungi dari akses yang tidak sah.</p>
                 </div>
             </div>
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center">
@@ -72,7 +76,8 @@
                 </div>
                 <div class="card-body">
                     <h2 class="font-medium text-2xl mb-3">Transparansi dan Akuntabilitas</h2>
-                    <p class="text-sm font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi penting tercatat dengan rapi dan transparan.</p>
+                    <p class="text-sm font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
+                        penting tercatat dengan rapi dan transparan.</p>
                 </div>
             </div>
         </div>
@@ -81,44 +86,61 @@
         <div class="text-center md:my-10">
             <h1 class="text-klipaa font-semibold text-3xl">Pratinjau Aplikasi</h1>
         </div>
-        <div class="container relative bg-klipaa p-10 rounded flex flex-col justify-center items-center">
-            <figure class="carousel">
-                <img src="/img/slide1.png" alt="">
-            </figure>
-            <button class="absolute left-48 p-7 font-bold text-xl text-klipaa rounded-full w-10 h-10 flex justify-center items-center bg-white"><</button>
-            <button class="absolute right-48 p-7 font-bold text-xl text-klipaa rounded-full w-10 h-10 flex justify-center items-center bg-white">></button>
-            <div class="flex justify-center md:my-8 gap-5">
-                <div class=" left-[50%] right-[50%] bottom-0 rounded-full w-6 h-6 bg-klipaa border-4 border-white text-transparent">.</div>
-                <div class=" left-[50%] right-[50%] bottom-0 rounded-full w-6 h-6 bg-white border-4 border-white text-transparent">.</div>
-                <div class=" left-[50%] right-[50%] bottom-0 rounded-full w-6 h-6 bg-klipaa border-4 border-white text-transparent">.</div>
+        <div class="container relative bg-klipaa p-10 rounded-2xl flex flex-col justify-center items-center">
+            <div>
+                <!-- Slider main container -->
+                <div class="swiper relative">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img class="w-full rounded-xl h-full object-cover object-center" src="/img/preview.png" alt="">
+                        </div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="guide" class="flex flex-col items-center md:p-5 md:my-10" >
+    <div id="guide" class="flex flex-col items-center md:p-5 md:my-10">
         <div class="md:my-10">
             <h1 class="text-klipaa text-3xl font-semibold">Panduan Penggunaan Sitamu</h1>
         </div>
-        <div class="container flex border justify-center p-10 gap-10 border-klipaa">
-            <div class="card max-w-xs rounded text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
+        <div class="container flex border rounded-2xl justify-center p-10 gap-10 border-klipaa">
+            <div
+                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
                 <figure class="card-header flex justify-center items-center md:my-5">
-                    <img src="/img/one.png" alt="aa">
+                    <img class="w-32" src="/img/one.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Scan barcode
                         untuk menuju ke halaman utama.</p>
                 </div>
             </div>
-            <div class="card max-w-xs rounded text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
+            <div
+                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
                 <figure class="card-header flex justify-center items-center md:my-5">
-                    <img src="/img/two.png" alt="aa">
+                    <img class="w-32" src="/img/two.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Masuk ke halaman tamu untuk ke halaman formulir.</p>
                 </div>
             </div>
-            <div class="card max-w-xs rounded text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
+            <div
+                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center">
                 <figure class="card-header flex justify-center items-center md:my-5">
-                    <img src="/img/three.png" alt="aa">
+                    <img class="w-32" src="/img/three.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Isi formulir data
@@ -154,7 +176,8 @@
                     <li class="my-5">
                         <div class="flex">
                             <img class="w-5 h-5 me-2" src="/img/location.png" alt="">
-                            <p class="text-sm font-medium">Perum Rama Cipta Indah No.Blok A3, Jayawaras, Kec. Tarogong Kidul, Kabupaten Garut, Jawa Barat 44151</p>
+                            <p class="text-sm font-medium">Perum Rama Cipta Indah No.Blok A3, Jayawaras, Kec. Tarogong
+                                Kidul, Kabupaten Garut, Jawa Barat 44151</p>
                         </div>
                     </li>
                 </ul>
@@ -178,4 +201,27 @@
             </div>
         </div>
     </footer>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
 </x-layout>
