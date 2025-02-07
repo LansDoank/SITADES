@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -24,9 +25,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'username' => 'admin',
-            'password' => bcrypt('admin123'),
+            'username' => fake()->name(),
+            'password' => bcrypt('user123'),
             'province_code' => 1,
+            'role_id' => Role::factory(),
         ];
     }
 

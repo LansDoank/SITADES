@@ -6,7 +6,7 @@
     <div>
         <ul class="flex">
             <li class="md:mx-6 nav-link text-gray-500 text-lg transition rounded-pill  font-medium"><a href="#">Home</a></li>
-            <li class="md:mx-6 nav-link text-gray-500 text-lg transition rounded-pill  font-medium"><a href="#">Contact</a></li>
+            <li class="md:mx-6 nav-link text-gray-500 text-lg transition rounded-pill  font-medium"><a href="#footer">Contact</a></li>
         </ul>
     </div>
 </header>

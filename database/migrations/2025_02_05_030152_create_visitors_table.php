@@ -20,7 +20,10 @@ return new class extends Migration
             $table->dateTime('check_out');
             $table->string('telephone');
             $table->string('visitor_photo');
-            $table ->foreignId('visit_type_id')->constrained('visit_types');
+            $table ->foreignId('visit_type_id')->constrained(
+                table: 'visit_types',
+                indexName: 'visitors_visit_types'
+            );
             $table->string('objective');
             $table->string('province_code');
             $table->string('district_code');

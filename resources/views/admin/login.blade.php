@@ -1,18 +1,20 @@
 <x-layout>
+    <x-slot:title>{{$title}}</x-slot:title>
     <div class="w-full bg-gray-200 flex justify-center">
         <section id="receptionist-login"
             class="w-[450px] group flex flex-shrink-0 overflow-hidden  justify-start dark:bg-gray-900 transition-transform duration-500">
             <div id="receptionist-form"
                 class="flex flex-col w-[450px]  transition   items-center justify-center  md:h-screen lg:py-0">
                 <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                    <img class="w-36 mr-2" src="/img/logo.png" alt="logo">
+                    <img class="w-12 mr-2" src="/img/sitamu.png" alt="logo">
+                    <h5 class="text-klipaa font-semibold">Sitamu</h5>
                 </a>
                 <div
                     class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1
                             class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Masuk sebagai admin
+                            Login Form
                         </h1>
                         <form class="space-y-4 md:space-y-6" action="/login" method="POST">
                             @csrf
@@ -31,7 +33,7 @@
                                     required>
                             </div>
                             <button type="submit"
-                                class="w-full text-white bg-[#2C7D9E] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#3E788E]">Sign
+                                class="w-full text-white bg-[#65AE3A] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:brightness-90">Sign
                                 in</button>
                            
                         </form>

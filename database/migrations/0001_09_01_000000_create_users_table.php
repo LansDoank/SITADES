@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
-            $table->foreignId('role_id')->constrained('roles');
+            $table->foreignId('role_id')->constrained(
+                table: 'roles',
+                indexName:'user_role_id',
+            );
             $table->integer('province_code');
             $table->timestamps();
         });
