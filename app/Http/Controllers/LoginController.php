@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('admin.login',['title' => 'Login Form']);
+        return view('admin.login', ['title' => 'Login Form']);
     }
 
     public function authentication(Request $request)
@@ -29,19 +29,20 @@ class LoginController extends Controller
             $receptionist = User::where('username', $request->input('username'))->where('role_id', 2)->get();
             $guest = User::where('username', $request->input('username'))->where('role_id', 3)->get();
 
-            if(count($admin) > 0){
+            if (count($admin) > 0) {
                 return redirect()->route('admin.dashboard');
-            }
-            
-            if(count($receptionist) > 0){
-                return redirect()->route('admin.dashboard');
-            }
-            
-            if(count($guest) > 0){
-                return redirect()->route('user.index');
             }
 
+            if (count($receptionist) > 0) {
+                return redirect()->route('admin.dashboard');
+            }
+
+            if (count($guest) > 0) {
+                return redirect()->route('user.index');
+            }     
+        
         }
+        return redirect()->route('user.login')->with('login', 'Username atau Password Salah!');
     }
 
     public function logout(Request $request)

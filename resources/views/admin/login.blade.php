@@ -16,6 +16,7 @@
                             class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                             Login Form
                         </h1>
+                        <div class="text-red-500 text-md">{{ session('login') }}</div>
                         <form class="space-y-4 md:space-y-6" action="/login" method="POST">
                             @csrf
                             <div>

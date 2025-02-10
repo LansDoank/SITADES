@@ -13,7 +13,7 @@
                     lebih praktis dan modern. Tinggalkan pesan Anda dengan mudah dan pastikan setiap kunjungan tercatat
                     dengan baik</p>
                 <a class="bg-klipaa w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
-                    href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi Formulir</a>
+                    href="/form" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi Formulir</a>
             </div>
             <div class="w-1/2 flex justify-end items-center">
                 <img class="w-[80%]" src="/img/hero.png" alt="" data-aos="fade-up" data-aos-duration="1500"
@@ -128,9 +128,9 @@
         </div>
         <div class="container flex border rounded-2xl justify-center p-10 gap-10 border-klipaa">
             <div
-                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
-                <figure class="card-header flex justify-center items-center md:my-5">
-                    <img class="w-32" src="/img/one.png" alt="aa">
+                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
+                <figure class="card-header flex justify-center items-center md:my-7">
+                    <img class="w-18" src="/img/one.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Scan barcode
@@ -138,18 +138,18 @@
                 </div>
             </div>
             <div
-                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500">
-                <figure class="card-header flex justify-center items-center md:my-5">
-                    <img class="w-32" src="/img/two.png" alt="aa">
+                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500">
+                <figure class="card-header flex justify-center items-center md:my-7">
+                    <img class="w-24" src="/img/two.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Masuk ke halaman tamu untuk ke halaman formulir.</p>
                 </div>
             </div>
             <div
-                class="card max-w-xs h-96 rounded-lg text-white text-center bg-klipaa md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="700" data-aos-duration="1500">
-                <figure class="card-header flex justify-center items-center md:my-5">
-                    <img class="w-32" src="/img/three.png" alt="aa">
+                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="700" data-aos-duration="1500">
+                <figure class="card-header flex justify-center items-center md:my-7">
+                    <img class="w-24" src="/img/three.png" alt="aa">
                 </figure>
                 <div class="card-body">
                     <p class="font-medium text-lg">Isi formulir data

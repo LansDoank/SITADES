@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('admin123'),
             'province_code' => 1,
-            'roles_id' => Role::create(),
+            'role_id' => 1,
         ]);
 
         // User::factory(10)->create();

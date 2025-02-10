@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('district_code');
             $table->string('subdistrict_code');
             $table->string('village_code');
+            $table->timestamps();
         });
     }
 
