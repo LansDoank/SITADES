@@ -106,6 +106,7 @@
                         <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
                             name="sub_district" id="sub_district">
                             <option selected>Pilih Kecamatan Anda</option>
+                            <option value="Samarang">Samarang</option>
                         </select>
                     </div>
                 </li>
@@ -115,6 +116,7 @@
                         <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
                             name="village" id="village">
                             <option selected>Pilih Desa Anda</option>
+                            <option value="Sukarasa">Sukarasa</option>
                         </select>
                     </div>
                 </li>

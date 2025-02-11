@@ -20,7 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" href="/img/logo-crop.png">
+    <link rel="icon" href="/img/sitamu.png">
 
 </head>
 
@@ -30,11 +30,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-[#2C7D9D] sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-klipaa sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <img class="w-28" src="/img/logo-white.png" alt="">
+            <a class="text-white font-semibold flex items-center justify-center" href="index.html">
+                <img class="w-12" src="/img/sitamu.png" alt="">
+                <p class="text-2xl font-semibold m-0">
+                    Sitamu
+                </p>
             </a>
 
             <!-- Divider -->
