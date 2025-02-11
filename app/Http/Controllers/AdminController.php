@@ -16,6 +16,7 @@ class AdminController extends Controller
     }
 
     public function tables() {
-        return view('admin.tables',['users' => Visitor::all()]);
+        return view('admin.tables',
+        ['users' => Visitor::all(),'username' => Auth::user()->username]);
     }
 }

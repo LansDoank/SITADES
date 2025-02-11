@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -71,9 +71,9 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-   
 
-        
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -94,13 +94,13 @@
 
                     <!-- Topbar Search -->
                     <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn bg-[#2C7D9D]" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
+                            <input type="text" class="form-control bg-light border-0 small"
+                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append bg-klipaa rounded-r">
+                                <button class="btn bg-klipaa" type="button">
+                                    <img src="/img/search.png" alt="" class="w-5">
                                 </button>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             </div>
                         </li>
 
-                
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -141,9 +141,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{$username}}</span>
-                                <img class="img-profile rounded-circle"
-                                    src="/img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}</span>
+                                <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -161,7 +160,8 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -197,7 +197,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">46</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <img src="/img/guests.png" class="w-12" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">54</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <img src="/img/guests.png" class="w-12" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -224,21 +224,24 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card border-left-danger border border-s-[#EE6164] shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Guests (MONTHLY)
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                Guests
+                                                (MONTHLY)
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">19</div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                            <img src="/img/guests.png" class="w-12" alt="">
+
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +259,8 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            <img src="/img/guests.png" class="w-12" alt="">
+
                                         </div>
                                     </div>
                                 </div>
@@ -269,15 +273,16 @@
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-12">
+                        <div class="w-full">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -290,25 +295,36 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                <div class="card-body w-full">
+                                    <div class="w-full">
+                                        <canvas id="line-chart" class="w-full"
+                                            style="width: 100% !important;"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Card Body -->
+                                <div class="card-body w-full">
+                                    <div class="w-full">
+                                        <canvas id="overview" class="w-full"
+                                            style="width: 100% !important;"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Pie Chart -->
-                        {{-- <div class="col-xl-4 col-lg-5">
+                        <div class="w-full">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -322,178 +338,117 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
+                                <div class="card-body w-full flex">
+                                    <div class="w-1/2 flex flex-col justify-center p-2">
+                                        <h2 class="text-gray-800 mb-3">Tujuan</h2>
+                                        <ul class="text-decoration-none list-none">
+                                            <li class="flex my-2 text-xl justify-between">
+                                                Studi Banding
+                                                <div class="mx-5 flex">
+                                                    50
+                                                </div>
+                                            </li>
+                                            <li class="flex my-2 text-xl justify-between">
+                                                Pendidikan
+                                                <div class="mx-5 flex">
+                                                    6
+                                                </div>
+                                            </li>
+                                            <li class="flex my-2 text-xl justify-between">
+                                                Wisata
+                                                <div class="mx-5 flex">
+                                                    14
+                                                </div>
+                                            </li>
+                                            <li class="flex my-2 text-xl justify-between">
+                                                Kunjungan
+                                                <div class="mx-5 flex">
+                                                    30
+                                                </div>
+                                            </li>
+                                            <li class="flex my-2 text-xl justify-between">
+                                                Lainnya
+                                                <div class="mx-5 flex">
+                                                    14
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
+                                    <div class="flex justify-center items-center md:px-24 md:py-10 w-1/2">
+                                        <canvas id="pie-chart" class="w-1/2"></canvas>
                                     </div>
+
                                 </div>
                             </div>
-                        </div> --}}
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Server Migration <span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
-                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Sales Tracking <span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Customer Database <span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Payout Details <span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Account Setup <span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
-                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="img/undraw_posting_photo.svg" alt="...">
+                        <div class="w-full">
+                            <div
+                                class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Geoprahical Chart</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Dropdown Header:</div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
                                 </div>
                             </div>
+                            <div class="flex">
+                                <div id="geochart" style="width: 100%;"></div>
+                                {{-- <div class="w-1/4">
+                                    <ul>
+                                        <li class="flex">
+                                            <div>75%</div>
+                                            Jawa Barat
+                                        </li>
+                                    </ul>
+                                </div> --}}
+                            </div>
+                        </div>
 
-                            <!-- Approach -->
+                        <div class="w-full">
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                                        custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                                        Bootstrap framework, especially the utility classes.</p>
+
+
+                                <!-- Card Body -->
+                                <div class="card-body w-full">
+                                    <div class="w-full">
+                                        <canvas id="waktu-chart" class="w-full"
+                                            style="width: 100% !important;"></canvas>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -505,7 +460,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Sitamu 2025</span>
                     </div>
                 </div>
             </footer>
@@ -558,6 +513,251 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const lineData = [{
+
+        }]
+        const lineChart = new Chart(document.getElementById('line-chart'), {
+            type: 'line',
+            data: {
+                labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+                datasets: [{
+                    label: 'Guests by daily',
+                    data: [10, 5, 8, 7, 14, 17, 3]
+                }]
+            },
+        });
+
+        const overviewData = [{
+                day: "Senin",
+                guests: 10
+            },
+            {
+                day: "Selasa",
+                guests: 5
+            },
+            {
+                day: "Rabu",
+                guests: 8
+            },
+            {
+                day: "Kamis",
+                guests: 7
+            },
+            {
+                day: "Jumat",
+                guests: 14
+            },
+            {
+                day: "Sabtu",
+                guests: 17
+            },
+            {
+                day: "Minggu",
+                guests: 3,
+            },
+            {
+                day: "Senin",
+                guests: 10,
+            }
+        ];
+
+        const overview = new Chart(document.getElementById('overview'), {
+            type: 'bar',
+            data: {
+                labels: overviewData.map(data => data.day),
+                datasets: [{
+                    label: 'Guests by daily',
+                    data: overviewData.map(row => row.guests),
+                    backgroundColor: ['rgba(44, 125, 157, 1)'],
+                }]
+            },
+        });
+
+        const pieData = [{
+                label: 'Studi Banding',
+                value: 5
+            },
+            {
+                label: 'Pendidikan',
+                value: 10
+            },
+            {
+                label: 'Wisata',
+                value: 15
+            },
+            {
+                label: 'Kunjungan',
+                value: 20
+            },
+            {
+                label: 'Lainnya',
+                value: 50
+            }
+        ];
+
+        const pieChart = new Chart('pie-chart', {
+            type: 'doughnut',
+            data: {
+                labels: pieData.map(data => data.label),
+                datasets: [{
+                    data: pieData.map(data => data.value),
+                    backgroundColor: [
+                        'rgba(181, 78, 225, 1)',
+                        'rgba(225, 80, 80, 1)',
+                        'rgba(255, 162, 70, 1)',
+                        'rgba(246, 194, 62, 1)',
+                        'rgba(95, 230, 68, 1)',
+                    ]
+                }]
+            }
+        });
+
+        const waktuData = [{
+                time: "00:00",
+                guests: 1
+            },
+            {
+                time: "01:00",
+                guests: 2
+            },
+            {
+                time: "02:00",
+                guests: 8
+            },
+            {
+                time: "03:00",
+                guests: 9
+            },
+            {
+                time: "04:00",
+                guests: 3
+            },
+            {
+                time: "05:00",
+                guests: 2
+            },
+            {
+                time: "06:00",
+                guests: 1
+            },
+            {
+                time: "07:00",
+                guests: 5
+            },
+            {
+                time: "08:00",
+                guests: 3
+            },
+            {
+                time: "09:00",
+                guests: 12
+            },
+            {
+                time: "10:00",
+                guests: 11
+            },
+            {
+                time: "11:00",
+                guests: 8
+            },
+            {
+                time: "12:00",
+                guests: 5
+            },
+            {
+                time: "13:00",
+                guests: 1
+            },
+            {
+                time: "14:00",
+                guests: 1
+            },
+            {
+                time: "15:00",
+                guests: 4
+            },
+            {
+                time: "16:00",
+                guests: 8
+            },
+            {
+                time: "17:00",
+                guests: 3
+            },
+            {
+                time: "18:00",
+                guests: 5
+            },
+            {
+                time: "19:00",
+                guests: 7
+            },
+            {
+                time: "20:00",
+                guests: 9
+            },
+            {
+                time: "21:00",
+                guests: 9
+            },
+            {
+                time: "22:00",
+                guests: 5
+            },
+            {
+                time: "23:00",
+                guests: 5
+            },
+            {
+                time: "24:00",
+                guests: 4
+            },
+        ];
+
+        const waktuChart = new Chart(document.getElementById('waktu-chart'), {
+            type: 'bar',
+            data: {
+                labels: waktuData.map(data => data.time),
+                datasets: [{
+                    label: 'Guests by time',
+                    data: waktuData.map(row => row.guests),
+                    backgroundColor: ['rgba(44, 125, 157, 1)'],
+                }]
+            },
+        });
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            'mapsApiKey': 'YOUR_GOOGLE_MAPS_API_KEY' // Opsional, untuk fitur tambahan
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Province', 'Visitors'],
+                ['ID-AC', 500], // Aceh
+                ['ID-JK', 300], // Jakarta
+                ['ID-JT', 500], // Jawa Tengah
+                ['ID-JI', 400], // Jawa Timur
+                ['ID-BT', 450] // Banten
+            ]);
+
+            var options = {
+                region: 'ID', // Kode negara Indonesia
+                resolution: 'provinces',
+                colorAxis: {
+                    colors: ['#e0f3db', '#0868ac']
+                }
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('geochart'));
+            chart.draw(data, options);
+        }
+    </script>
 
 </body>
 

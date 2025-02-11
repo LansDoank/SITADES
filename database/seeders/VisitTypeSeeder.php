@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\VisitType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class VisitTypeSeeder extends Seeder
@@ -13,20 +12,36 @@ class VisitTypeSeeder extends Seeder
      */
     public function run(): void
     {
+        // VisitType::create([
+        //     'name' => 'Koordinasi'
+        // ]);
+        // VisitType::create([
+        //     'name' => 'Cari Informasi'
+        // ]);
+        // VisitType::create([
+        //     'name' => 'Pembinaan'
+        // ]);
+        // VisitType::create([
+        //     'name' => 'Studi Banding'
+        // ]);
+        // VisitType::create([
+        //     'name' => 'Lainnya'
+        // ]);
         VisitType::create([
-            'name' => 'Koordinasi'
+            'qr_code' => '32.01.01.2001',
+            'name' => 'Desa Cikedokan',
+            'province_code' => '32',
+            'district_code' => '32.01',
+            'subdistrict_code' => '32.01.01',
+            'village_code' => '32.01.01.2001'
         ]);
         VisitType::create([
-            'name' => 'Cari Informasi'
-        ]);
-        VisitType::create([
-            'name' => 'Pembinaan'
-        ]);
-        VisitType::create([
-            'name' => 'Studi Banding'
-        ]);
-        VisitType::create([
-            'name' => 'Lainnya'
+            'qr_code' => '32.01.01.2002',
+            'name' => 'Desa Sukarasa',
+            'province_code' => '32',
+            'district_code' => '32.01',
+            'subdistrict_code' => '32.01.01',
+            'village_code' => '32.01.01.2002'
         ]);
     }
 }

@@ -12,8 +12,15 @@
                     mencatat kunjungan warga dengan
                     lebih praktis dan modern. Tinggalkan pesan Anda dengan mudah dan pastikan setiap kunjungan tercatat
                     dengan baik</p>
-                <a class="bg-klipaa w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
-                    href="/form" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi Formulir</a>
+                <div class="flex gap-5">
+
+                    <a class="bg-klipaa w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
+                        href="/form" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
+                        Formulir</a>
+                    <a class="bg-white w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
+                        href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
+                        Masuk</a>
+                </div>
             </div>
             <div class="w-1/2 flex justify-end items-center">
                 <img class="w-[80%]" src="/img/hero.png" alt="" data-aos="fade-up" data-aos-duration="1500"
@@ -39,7 +46,8 @@
                         berkaitan dengan kegiatan administratif desa
                     </p>
                     <br><br>
-                    <p class="text-white" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU menjadi alat yang sangat efektif untuk meningkatkan efisiensi, transparansi, dan
+                    <p class="text-white" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU
+                        menjadi alat yang sangat efektif untuk meningkatkan efisiensi, transparansi, dan
                         akuntabilitas dalam pengelolaan administrasi desa, serta mendukung kemajuan digitalisasi di
                         tingkat pemerintahan desa.</p>
 
@@ -51,10 +59,12 @@
     </div>
     <div id="why" class="flex flex-col items-center md:p-5">
         <div class="md:my-10">
-            <h1 class="font-semibold text-klipaa text-3xl" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">Mengapa memilih Sitamu?</h1>
+            <h1 class="font-semibold text-klipaa text-3xl" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1500">Mengapa memilih Sitamu?</h1>
         </div>
         <div class="container border p-10 border-klipaa rounded-2xl flex justify-center gap-10 rounded-lg">
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+                data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
                     <img src="/img/eficient.png" alt="">
                 </div>
@@ -66,7 +76,8 @@
                         pengelolaan data tamu yang berkunjung,, bisa dilakukan dengan lebih cepat dan efektif.</p>
                 </div>
             </div>
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+                data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
                 <div class="card-image md:mb-5 ">
                     <img src="/img/security.png" alt="">
                 </div>
@@ -78,7 +89,8 @@
                         tersimpan terlindungi dari akses yang tidak sah.</p>
                 </div>
             </div>
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+                data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
                     <img src="/img/transplatation.png" alt="">
                 </div>
@@ -92,7 +104,8 @@
     </div>
     <div id="preview" class="flex flex-col items-center md:p-5">
         <div class="text-center md:my-10">
-            <h1 class="text-klipaa font-semibold text-3xl" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">Pratinjau Aplikasi</h1>
+            <h1 class="text-klipaa font-semibold text-3xl" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1500">Pratinjau Aplikasi</h1>
         </div>
         <div class="container relative bg-klipaa p-10 rounded-2xl flex flex-col justify-center items-center">
             <div>
@@ -124,11 +137,12 @@
     </div>
     <div id="guide" class="flex flex-col items-center md:p-5 md:my-10">
         <div class="md:my-10">
-            <h1 class="text-klipaa text-3xl font-semibold" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">Panduan Penggunaan Sitamu</h1>
+            <h1 class="text-klipaa text-3xl font-semibold" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1500">Panduan Penggunaan Sitamu</h1>
         </div>
         <div class="container flex border rounded-2xl justify-center p-10 gap-10 border-klipaa">
-            <div
-                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
+            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+                data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
                     <img class="w-18" src="/img/one.png" alt="aa">
                 </figure>
@@ -137,8 +151,8 @@
                         untuk menuju ke halaman utama.</p>
                 </div>
             </div>
-            <div
-                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500">
+            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+                data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
                     <img class="w-24" src="/img/two.png" alt="aa">
                 </figure>
@@ -146,8 +160,8 @@
                     <p class="font-medium text-lg">Masuk ke halaman tamu untuk ke halaman formulir.</p>
                 </div>
             </div>
-            <div
-                class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center" data-aos="flip-up" data-aos-delay="700" data-aos-duration="1500">
+            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+                data-aos="flip-up" data-aos-delay="700" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
                     <img class="w-24" src="/img/three.png" alt="aa">
                 </figure>

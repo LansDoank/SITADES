@@ -97,6 +97,7 @@
                         <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full" name="district"
                             id="district">
                             <option selected>Pilih Kabupaten Anda</option>
+                            <option value="Garut">Garut</option>
                         </select>
                     </div>
                 </li>

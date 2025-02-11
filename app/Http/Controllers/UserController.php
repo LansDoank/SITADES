@@ -40,10 +40,10 @@ class UserController extends Controller
         $newVisitor->visitor_photo = $request->file('visitor_photo')->store('user_photo');
         $newVisitor->visit_type_id = $request->visit_type;
         $newVisitor->objective = $request->objective;
-        $newVisitor->province_code = $request->province;
-        $newVisitor->district_code = $request->district;
-        $newVisitor->subdistrict_code = $request->sub_district;
-        $newVisitor->village_code = $request->village;
+        $newVisitor->province_code = $request->province_code;
+        $newVisitor->district_code = $request->district_code;
+        $newVisitor->subdistrict_code = $request->sub_district_code;
+        $newVisitor->village_code = $request->village_code;
         $newVisitor->save();
 
 

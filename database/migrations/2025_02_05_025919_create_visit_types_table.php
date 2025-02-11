@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('visit_types', function (Blueprint $table) {
             $table->id();
+            $table->string('qr_code')->nullable();
             $table->string('name');
+            $table->string('province_code');
+            $table->string('district_code');
+            $table->string('subdistrict_code');
+            $table->string('village_code');
             $table->timestamps();
         });
     }

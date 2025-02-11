@@ -25,6 +25,7 @@ return new class extends Migration
                 indexName: 'visitors_visit_types'
             );
             $table->string('objective');
+            $table->string('i_n_i');
             $table->string('province_code');
             $table->string('district_code');
             $table->string('subdistrict_code');
