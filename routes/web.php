@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReceptionistController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisitorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class,'index'])->name('user.index');
@@ -20,7 +21,9 @@ Route::get('/admin/tables',[AdminController::class,'tables'])->name('admin.table
 
 Route::get('/form',[UserController::class,'form'])->name('user.form');
 
-Route::post('/form/datas',[UserController::class,'addVisitor']);
+Route::get('/form/{id}',[VisitorController::class,'show'])->name('visitor.show');
+
+Route::post('/form/create',[UserController::class,'addVisitor']);
 
 // Route::get('/login/admin',[AdminController::class,'login'])->name('login.admin');
 

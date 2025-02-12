@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <form action="/form/datas" method="POST" enctype="multipart/form-data"
+    <form action="/form/create" method="POST" enctype="multipart/form-data"
         class="shadow mx-auto my-10 max-w-4xl p-8 border border-gray-200 rounded-lg">
         @csrf
         <div class="form-header">
@@ -11,6 +11,11 @@
             <p class="text-gray-500 font-medium">Silakan isi data buku tamu dengan benar.</p>
         </div>
         <div class="form-body">
+            <input type="hidden" name="province_vode" >
+            <input type="hidden" name="district_vode">
+            <input type="hidden" name="subdistrict_vode">
+            <input type="hidden" name="village_vode">
+            <input type="hidden" name="visit_type" value="">
             <ul class="md:my-5">
                 <li class="flex gap-10 md:my-3">
                     <div class="flex flex-col items-start md:w-1/2">
@@ -47,7 +52,7 @@
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="province" class="mb-2">Provinsi</label>
-                        <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full" name="province"
+                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full" name="province"
                             id="province">
                             <option selected>Pilih Provinsi Anda</option>
                             <option value="Aceh">Aceh</option>
@@ -137,13 +142,17 @@
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
-                        <label for="visit_type" class="mb-2">Tujuan</label>
+                        <label for="objective" class="mb-2">Tujuan</label>
                         <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
-                            name="visit_type" id="visit_type">
-                            <option selected>Pilih Tujuan Anda</option>
-                            @foreach ($visitTypes as $visitType)
-                                <option value="{{$visitType->id}}">{{$visitType->name}}</option>
-                            @endforeach
+                            name="objective" id="objective">
+                            {{-- @foreach ($visitTypes as $visitType)
+                                <option selected value="{{$visitType->id}}">{{$visitType->name}}</option>
+                            @endforeach --}}
+                            <option value="Koordinasi">Koordinasi</option>
+                            <option value="Koordinasi">Cari Informasi</option>
+                            <option value="Koordinasi">Pembinaan</option>
+                            <option value="Koordinasi">Studi Banding</option>
+                            <option value="Koordinasi">Lainnya</option>
                         </select>
                     </div>
                 </li>
@@ -153,9 +162,9 @@
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
-                        <label for="objective" class="mb-2">Keterangan</label>
+                        <label for="i_n_i" class="mb-2">Keterangan</label>
                         <textarea class="form-input rounded text-gray-400 border border-gray-200 px-2 h-10 w-full py-2 min-h-[150px]"
-                            name="objective" id="objective" placeholder="Masukan Keterangan Disini"></textarea>
+                            name="i_n_i" id="i_n_i" placeholder="Masukan Keterangan Disini"></textarea>
                     </div>
                 </li>
                 <li class="md:my-3 ">
