@@ -149,7 +149,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Guests (DAILY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">46</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestDaily}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -167,7 +167,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Guests (WEEKLY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">54</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestWeekly}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">19</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$guestMonthly}}</div>
                                                 </div>
 
                                             </div>
@@ -211,7 +211,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Guests (YEARLY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestYearly}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -470,6 +470,9 @@
     <script src="/js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        const senin = @json($)
+    </script>
+    <script>
         const lineData = [{
 
         }]
@@ -512,10 +515,6 @@
                 day: "Minggu",
                 guests: 3,
             },
-            {
-                day: "Senin",
-                guests: 10,
-            }
         ];
 
         const overview = new Chart(document.getElementById('overview'), {

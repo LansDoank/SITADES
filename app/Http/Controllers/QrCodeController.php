@@ -9,6 +9,7 @@ use App\Models\Village;
 use App\Models\VisitType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use QRcode;
 
 class QrCodeController extends Controller
 {
@@ -22,7 +23,7 @@ class QrCodeController extends Controller
             QRcode::png($url);
         }
 
-        return generateQr("https://sitamu.com/form/$request->village");
+        generateQr("https://sitamu.com/form/$request->village");
 
         // $visitType = new VisitType();
         // $visitType->qr_code = 

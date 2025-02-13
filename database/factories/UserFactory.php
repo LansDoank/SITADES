@@ -28,7 +28,7 @@ class UserFactory extends Factory
         return [
             'photo' => '/img/facebook.png',
             'username' => fake()->name(),
-            'password' => Argon2IdHasher('user123'),
+            'password' => bcrypt('user123'),
             'role_id' => Role::factory(),
             'province_code' => 1,
             'district_code' => 1,

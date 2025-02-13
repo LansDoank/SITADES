@@ -49,20 +49,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append bg-klipaa rounded-r">
-                                <button class="btn bg-klipaa" type="button">
-                                    <img src="/img/search.png" alt="" class="w-5">
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -147,7 +133,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table border table-striped" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th class="col-1">No</th>
@@ -158,16 +144,6 @@
                                             <th class="col-1">Opsi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Foto</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Instansi</th>
-                                            <th>Alamat</th>
-                                            <th>Opsi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <?php $no = 1 ?>
                                         {{-- @foreach ($receptionists as $receptionist)

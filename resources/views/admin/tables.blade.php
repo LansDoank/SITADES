@@ -49,20 +49,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append bg-klipaa rounded-r">
-                                <button class="btn bg-klipaa" type="button">
-                                    <img src="/img/search.png" alt="" class="w-5">
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -137,7 +123,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Visitors Tables</h1>
 
                     <div class="flex mb-3 ">
-                        <a href="/receptionist/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Akun</a>
+                        <a href="/admin/visitor/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Jadwal Bertamu</a>
                     </div>
 
                     <!-- DataTales Example -->
@@ -147,36 +133,29 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table border table-striped" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th class="col-1">No</th>
-                                            <th class="col-2">Foto</th>
-                                            <th class="col-2">Nama Lengkap</th>
-                                            <th class="col-1">Instansi</th>
-                                            <th class="col-5">Alamat</th>
-                                            <th class="col-1">Opsi</th>
+                                            <th class="col-1">Foto</th>
+                                            <th class="col-2">Nama</th>
+                                            <th class="col-2">No. Telp</th>
+                                            <th class="col-2">Check-in</th>
+                                            <th class="col-2">Check-out</th>
+                                            <th class="col-1">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Foto</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Instansi</th>
-                                            <th>Alamat</th>
-                                            <th>Opsi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                        <?php $no = 1 ?>
                                         @foreach ($users as $user)
                                             <tr>
-                                                <td>{{$user->id}}</td>
+                                                <td>{{$no}}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 100px; height: 100px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $user->visitor_photo)}}" alt=""></td>
+                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $user->visitor_photo)}}" alt=""></td>
                                                 <td>{{$user->fullname}}</td>
-                                                <td>{{$user->institution}}</td>
-                                                <td>{{Str::limit($user->address,50)}}</td>
+                                                <td>{{$user->telephone}}</td>
+                                                <td>{{$user->check_in}}</td>
+                                                <td>{{$user->check_out}}</td>
                                                 <td class="flex">
                                                     <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
                                                         <img class="w-5" src="/img/edit.png" alt="">
@@ -186,6 +165,7 @@
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php $no++ ?>
                                         @endforeach
                                     </tbody>
                                 </table>

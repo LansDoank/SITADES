@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/visitor', [AdminController::class, 'visitors'])->name('admin.visitors');
 
+    Route::get('/admin/visitor/add',[VisitorController::class,'add'])->name('visitor.add');
+
     Route::get('/admin/visitor/delete/{id}', [VisitorController::class, 'delete'])->name('visitor.delete');
 
     Route::get('/admin/receptionist', [AdminController::class, 'receptionist'])->name('admin.receptionists');

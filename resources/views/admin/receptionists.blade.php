@@ -49,20 +49,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append bg-klipaa rounded-r">
-                                <button class="btn bg-klipaa" type="button">
-                                    <img src="/img/search.png" alt="" class="w-5">
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -147,7 +133,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table border table-striped" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th class="col-1">No</th>
@@ -158,26 +144,16 @@
                                             <th class="col-1">Opsi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Foto</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Instansi</th>
-                                            <th>Alamat</th>
-                                            <th>Opsi</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <?php $no = 1 ?>
                                         @foreach ($receptionists as $receptionist)
                                             <tr>
                                                 <td>{{$no}}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 100px; height: 100px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $receptionist->photo)}}" alt=""></td>
+                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $receptionist->photo)}}" alt=""></td>
                                                 <td>{{$receptionist->username}}</td>
                                                 <td class="col-1">{{Str::limit($receptionist->password,30   )}}</td>
-                                                <td>{{Str::limit($receptionist->address,50)}}</td>
+                                                <td>{{Str::limit($receptionist->address,20)}}</td>
                                                 <td class="flex">
                                                     <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
                                                         <img class="w-5" src="/img/edit.png" alt="">

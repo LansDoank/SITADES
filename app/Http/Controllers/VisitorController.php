@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\VisitType;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\District;
+use App\Models\Province;
+use App\Models\SubDistrict;
+use App\Models\Village;
+
 
 class VisitorController extends Controller
 {
@@ -65,6 +71,10 @@ class VisitorController extends Controller
 
 
         return redirect()->route('user.index')->with('visitor_success', 'Data berhasil ditambahkan');
+    }
+
+    public function add(){
+        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
     }
 
     public function delete($id)
