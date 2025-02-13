@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('province_code');
             $table->string('district_code');
             $table->string('subdistrict_code');
-            $table->string('village_code');
+            $table->string('village_code')->unique();
             $table->timestamps();
         });
     }

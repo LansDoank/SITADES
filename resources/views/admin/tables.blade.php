@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Sitamu - Tables</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Custom fonts for this template -->
@@ -26,58 +26,13 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="w-full">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-klipaa sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="text-white font-semibold flex items-center justify-center" href="index.html">
-                <img class="w-12" src="/img/sitamu.png" alt="">
-                <p class="text-2xl font-semibold m-0">
-                    Sitamu
-                </p>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/tables">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-
-
-
-
-        </ul>
+        <x-sidebar></x-sidebar>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -179,24 +134,28 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Visitors Tables</h1>
+
+                    <div class="flex mb-3 ">
+                        <a href="/receptionist/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Akun</a>
+                    </div>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visitors Data</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Foto</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Instansi</th>
-                                            <th>Alamat</th>
-                                            <th>Opsi</th>
+                                            <th class="col-1">No</th>
+                                            <th class="col-2">Foto</th>
+                                            <th class="col-2">Nama Lengkap</th>
+                                            <th class="col-1">Instansi</th>
+                                            <th class="col-5">Alamat</th>
+                                            <th class="col-1">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -213,14 +172,18 @@
                                         @foreach ($users as $user)
                                             <tr>
                                                 <td>{{$user->id}}</td>
-                                                <td>
-                                                    <img style="width: 75px; height: 75px; object-fit: cover;"  src="{{asset('storage/' . $user->visitor_photo)}}" alt=""></td>
+                                                <td class="">
+                                                    <img class="mx-auto" style="width: 100px; height: 100px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $user->visitor_photo)}}" alt=""></td>
                                                 <td>{{$user->fullname}}</td>
                                                 <td>{{$user->institution}}</td>
-                                                <td>{{Str::limit($user->address,20)}}</td>
+                                                <td>{{Str::limit($user->address,50)}}</td>
                                                 <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none bg-green-600" href="#">Edit</a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none bg-red-600" href="#">Hapus</a>
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
+                                                        <img class="w-5" src="/img/edit.png" alt="">
+                                                    </a>
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$user->id}}">
+                                                        <img class="w-5" src="/img/trashcan.png" alt="">
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -273,6 +236,11 @@
             </div>
         </div>
     </div>
+
+    {{-- Add Modal --}}
+    
+    {{-- <div class="w-full h-screen bg-gray-100">
+    </div> --}}
 
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>

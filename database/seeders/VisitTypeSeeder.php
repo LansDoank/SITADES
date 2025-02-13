@@ -28,20 +28,28 @@ class VisitTypeSeeder extends Seeder
         //     'name' => 'Lainnya'
         // ]);
         VisitType::create([
-            'qr_code' => '32.01.01.2001',
-            'name' => 'Desa Cikedokan',
-            'province_code' => '32',
-            'district_code' => '32.01',
-            'subdistrict_code' => '32.01.01',
-            'village_code' => '32.01.01.2001'
-        ]);
-        VisitType::create([
-            'qr_code' => '32.01.01.2002',
+            'qr_code' => 'https://sitamu/form/3205072003',
             'name' => 'Desa Sukarasa',
             'province_code' => '32',
-            'district_code' => '32.01',
-            'subdistrict_code' => '32.01.01',
-            'village_code' => '32.01.01.2002'
+            'district_code' => '3205',
+            'subdistrict_code' => '320507',
+            'village_code' => '3205072003'
+        ]);
+        VisitType::create([
+            'qr_code' => 'https://sitamu/form/3205072005',
+            'name' => 'Desa Cikedokan',
+            'province_code' => '32',
+            'district_code' => '3205',
+            'subdistrict_code' => '320507',
+            'village_code' => '3205072005'
+        ]);
+        VisitType::create([
+            'qr_code' => 'https://sitamu/form/3205082006',
+            'name' => 'Desa Sukaasih',
+            'province_code' => '32',
+            'district_code' => '3205',
+            'subdistrict_code' => '320508',
+            'village_code' => '3205082006'
         ]);
     }
 }

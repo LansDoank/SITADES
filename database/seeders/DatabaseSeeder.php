@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([RoleSeeder::class,VisitTypeSeeder::class,UserSeeder::class]);
+        $this->call([RoleSeeder::class,VisitTypeSeeder::class,UserSeeder::class,VisitorSeeder::class,ProvinceSeeder::class,DistrictSeeder::class,SubDistrictSeeder::class,VillageSeeder::class]);
         User::factory(10)->recycle([
             Role::all(),
         ])->create();

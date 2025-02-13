@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Hashing\Argon2IdHasher;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -25,10 +26,14 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'photo' => '/img/facebook.png',
             'username' => fake()->name(),
-            'password' => bcrypt('user123'),
-            'province_code' => 1,
+            'password' => Argon2IdHasher('user123'),
             'role_id' => Role::factory(),
+            'province_code' => 1,
+            'district_code' => 1,
+            'sub_district_code' => 1,
+            'village_code' => 1,
         ];
     }
 

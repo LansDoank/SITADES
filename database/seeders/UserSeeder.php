@@ -15,9 +15,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
+            'photo' => '/img/facebook.png',
             'username' => 'admin',
             'password' => bcrypt('admin123'),
             'province_code' => 1,
+            'district_code' => 1,
+            'sub_district_code' => 1,
+            'village_code' => 1,
             'role_id' => 1,
         ]);
 

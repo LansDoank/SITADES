@@ -4,11 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "e08334651ce0b12e409af9e125ee397d",
-=======
-    "content-hash": "626b9e7ddd47fb7eff9aaa53cce0c9ad",
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
     "packages": [
         {
             "name": "brick/math",
@@ -974,7 +971,6 @@
         },
         {
             "name": "guzzlehttp/uri-template",
-<<<<<<< HEAD
             "version": "v1.0.4",
             "source": {
                 "type": "git",
@@ -985,18 +981,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/uri-template/zipball/30e286560c137526eccd4ce21b2de477ab0676d2",
                 "reference": "30e286560c137526eccd4ce21b2de477ab0676d2",
-=======
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/ecea8feef63bd4fef1f037ecb288386999ecc11c",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c",
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
                 "shasum": ""
             },
             "require": {
@@ -1052,14 +1036,8 @@
                 "uri-template"
             ],
             "support": {
-                "issues": "https://github.com/guzzle/uri-template/issues",
-<<<<<<< HEAD
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.4"
-=======
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.3"
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+                "issues": "https://github.com/guzzle/uri-template/issues"
             },
-            "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
                     "type": "github"
@@ -1073,11 +1051,8 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2025-02-03T10:55:03+00:00"
-=======
-            "time": "2023-12-03T19:50:20+00:00"
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
         },
         {
             "name": "laravel/framework",
@@ -5826,7 +5801,6 @@
     ],
     "packages-dev": [
         {
-<<<<<<< HEAD
             "name": "brianium/paratest",
             "version": "v7.7.0",
             "source": {
@@ -5965,8 +5939,7 @@
             "time": "2024-12-07T21:18:45+00:00"
         },
         {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             "name": "fakerphp/faker",
             "version": "v1.24.1",
             "source": {
@@ -6030,7 +6003,6 @@
             "time": "2024-11-21T13:46:39+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "fidry/cpu-core-counter",
             "version": "1.2.0",
             "source": {
@@ -6092,8 +6064,7 @@
             "time": "2024-08-06T10:04:20+00:00"
         },
         {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             "name": "filp/whoops",
             "version": "2.17.0",
             "source": {
@@ -6216,7 +6187,6 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "jean85/pretty-package-versions",
             "version": "2.1.0",
             "source": {
@@ -6276,8 +6246,7 @@
             "time": "2024-11-18T16:19:46+00:00"
         },
         {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             "name": "laravel/pail",
             "version": "v1.2.2",
             "source": {
@@ -6726,7 +6695,6 @@
             "time": "2025-01-23T13:41:43+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "pestphp/pest",
             "version": "v3.7.4",
             "source": {
@@ -7125,8 +7093,7 @@
             "time": "2024-09-22T07:54:40+00:00"
         },
         {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             "name": "phar-io/manifest",
             "version": "2.0.4",
             "source": {
@@ -7245,7 +7212,6 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -7468,8 +7434,7 @@
             "time": "2024-10-13T11:29:49+00:00"
         },
         {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             "name": "phpunit/php-code-coverage",
             "version": "11.0.8",
             "source": {
@@ -7794,7 +7759,6 @@
         },
         {
             "name": "phpunit/phpunit",
-<<<<<<< HEAD
             "version": "11.5.3",
             "source": {
                 "type": "git",
@@ -7805,18 +7769,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/30e319e578a7b5da3543073e30002bf82042f701",
                 "reference": "30e319e578a7b5da3543073e30002bf82042f701",
-=======
-            "version": "11.5.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3c3ae14c90f244cdda95028c3e469028e8d1c02c",
-                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c",
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
                 "shasum": ""
             },
             "require": {
@@ -7888,11 +7840,8 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.3"
-=======
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.6"
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
             },
             "funding": [
                 {
@@ -7908,11 +7857,8 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2025-01-13T09:36:00+00:00"
-=======
-            "time": "2025-01-31T07:03:30+00:00"
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
+
         },
         {
             "name": "sebastian/cli-parser",
@@ -8965,68 +8911,6 @@
             "time": "2025-01-07T12:55:42+00:00"
         },
         {
-<<<<<<< HEAD
-            "name": "ta-tikoma/phpunit-architecture-test",
-            "version": "0.8.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ta-tikoma/phpunit-architecture-test.git",
-                "reference": "89f0dea1cb0f0d5744d3ec1764a286af5e006636"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ta-tikoma/phpunit-architecture-test/zipball/89f0dea1cb0f0d5744d3ec1764a286af5e006636",
-                "reference": "89f0dea1cb0f0d5744d3ec1764a286af5e006636",
-                "shasum": ""
-            },
-            "require": {
-                "nikic/php-parser": "^4.18.0 || ^5.0.0",
-                "php": "^8.1.0",
-                "phpdocumentor/reflection-docblock": "^5.3.0",
-                "phpunit/phpunit": "^10.5.5  || ^11.0.0",
-                "symfony/finder": "^6.4.0 || ^7.0.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.13.7",
-                "phpstan/phpstan": "^1.10.52"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPUnit\\Architecture\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ni Shi",
-                    "email": "futik0ma011@gmail.com"
-                },
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "Methods for testing application architecture",
-            "keywords": [
-                "architecture",
-                "phpunit",
-                "stucture",
-                "test",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/ta-tikoma/phpunit-architecture-test/issues",
-                "source": "https://github.com/ta-tikoma/phpunit-architecture-test/tree/0.8.4"
-            },
-            "time": "2024-01-05T14:10:56+00:00"
-        },
-        {
-=======
->>>>>>> c46bcdc51dc4087b060f2b4066ecfac92e3972dd
             "name": "theseer/tokenizer",
             "version": "1.2.3",
             "source": {

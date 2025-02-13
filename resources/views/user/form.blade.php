@@ -11,11 +11,11 @@
             <p class="text-gray-500 font-medium">Silakan isi data buku tamu dengan benar.</p>
         </div>
         <div class="form-body">
-            <input type="hidden" name="province_vode" >
-            <input type="hidden" name="district_vode">
-            <input type="hidden" name="subdistrict_vode">
-            <input type="hidden" name="village_vode">
-            <input type="hidden" name="visit_type" value="">
+            <input type="hidden" name="province_code" value="{{ $visit->province_code }}">
+            <input type="hidden" name="district_code" value="{{ $visit->district_code }}">
+            <input type="hidden" name="sub_district_code" value="{{ $visit->subdistrict_code }}">
+            <input type="hidden" name="village_code" value="{{ $visit->village_code }}">
+            <input type="hidden" name="visit_type" value="{{ $visit->id }}">
             <ul class="md:my-5">
                 <li class="flex gap-10 md:my-3">
                     <div class="flex flex-col items-start md:w-1/2">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="flex flex-col items-start md:w-1/2">
                         <label for="institution" class="mb-2">Instansi</label>
-                        <select class="instance form-input text-gray-400 border border-gray-200 px-2 h-10 w-1/2"
+                        <select class="instance form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2"
                             name="institution" id="institution">
                             <option selected>Pilih Instansi</option>
                             <option value="Supra Desa">Supra desa</option>
@@ -52,7 +52,7 @@
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="province" class="mb-2">Provinsi</label>
-                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full" name="province"
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full" name="province"
                             id="province">
                             <option selected>Pilih Provinsi Anda</option>
                             <option value="Aceh">Aceh</option>
@@ -99,8 +99,8 @@
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="district" class="mb-2">Kabupaten</label>
-                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full" name="district"
-                            id="district">
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                            name="district" id="district">
                             <option selected>Pilih Kabupaten Anda</option>
                             <option value="Garut">Garut</option>
                         </select>
@@ -109,7 +109,7 @@
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="sub_district" class="mb-2">Kecamatan</label>
-                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                             name="sub_district" id="sub_district">
                             <option selected>Pilih Kecamatan Anda</option>
                             <option value="Samarang">Samarang</option>
@@ -119,10 +119,12 @@
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="village" class="mb-2">Desa</label>
-                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                             name="village" id="village">
                             <option selected>Pilih Desa Anda</option>
                             <option value="Sukarasa">Sukarasa</option>
+                            <option value="Sukaasih">Sukaasih</option>
+                            <option value="Cikedokan">Cikedokan</option>
                         </select>
                     </div>
                 </li>
@@ -131,39 +133,40 @@
                         <div class="flex flex-col items-start md:w-1/2">
                             <label for="check_in" class="mb-2">Tanggal Datang</label>
                             <input type="date" name="check_in" id="check_in"
-                                class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-1/2">
+                                class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
                         </div>
                         <div class="flex flex-col items-start md:w-1/2">
                             <label for="check_out" class="mb-2">Tanggal Pulang</label>
                             <input type="date" name="check_out" id="check_out"
-                                class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-1/2">
+                                class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
                         </div>
                     </div>
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="objective" class="mb-2">Tujuan</label>
-                        <select class="form-input text-gray-400 border border-gray-200 px-2 h-10 w-full"
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                             name="objective" id="objective">
                             {{-- @foreach ($visitTypes as $visitType)
                                 <option selected value="{{$visitType->id}}">{{$visitType->name}}</option>
                             @endforeach --}}
+                            <option>Pilih Tujuan Anda</option>
                             <option value="Koordinasi">Koordinasi</option>
-                            <option value="Koordinasi">Cari Informasi</option>
-                            <option value="Koordinasi">Pembinaan</option>
-                            <option value="Koordinasi">Studi Banding</option>
-                            <option value="Koordinasi">Lainnya</option>
+                            <option value="Cari Informasi">Cari Informasi</option>
+                            <option value="Pembinaan">Pembinaan</option>
+                            <option value="Studi Banding">Studi Banding</option>
+                            <option value="Lainnya">Lainnya</option>
                         </select>
                     </div>
                 </li>
                 <li class="md:my-3">
-                    <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="visit_type" id="visit_type_textarea"
+                    <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="objective" id="objective_textarea"
                         placeholder="Sebutkan Tujuan Anda"></textarea>
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="i_n_i" class="mb-2">Keterangan</label>
-                        <textarea class="form-input rounded text-gray-400 border border-gray-200 px-2 h-10 w-full py-2 min-h-[150px]"
+                        <textarea class="form-input rounded text-gray-500 border border-gray-200 px-2 h-10 w-full py-2 min-h-[150px]"
                             name="i_n_i" id="i_n_i" placeholder="Masukan Keterangan Disini"></textarea>
                     </div>
                 </li>
@@ -186,15 +189,15 @@
         </div>
     </form>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const inputPhoto = document.getElementById('photo');
             const photoInput = document.getElementById('visitor_photo');
-            
+
             photoInput.addEventListener('change', () => {
                 const file = photoInput.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         inputPhoto.innerHTML = `
                             Foto
                             <div class="w-full my-2 min-h-[150px] border border-gray-200 rounded-lg flex justify-center items-center">
@@ -204,11 +207,11 @@
                     reader.readAsDataURL(file);
                 }
             });
-            
+
             const institutionInput = document.getElementById("institution");
             const institutionTextArea = document.getElementById("institution-textarea");
-    
-            institutionInput.addEventListener("change", function () {
+
+            institutionInput.addEventListener("change", function() {
                 if (institutionInput.value === "Lainnya") {
                     institutionInput.removeAttribute("name");
                     institutionTextArea.setAttribute("name", "institution");
@@ -219,22 +222,22 @@
                     institutionInput.setAttribute("name", "institution");
                 }
             });
-    
-            const visitInput = document.getElementById("visit_type");
-            const visitTextArea = document.getElementById("visit_type_textarea");
-    
-            visitInput.addEventListener("change", function () {
-                if (visitInput.value === "5") {
-                    visitInput.removeAttribute("name");
-                    visitTextArea.setAttribute("name", "visit_type");
-                    visitTextArea.classList.remove("hidden");
+
+            const objective = document.getElementById("objective");
+            const objectiveArea = document.getElementById("objective_textarea");
+
+            objective.addEventListener("change", function() {
+                if (objective.value === "Lainnya") {
+                    objective.removeAttribute("name");
+                    objectiveArea.setAttribute("name", "objective");
+                    objectiveArea.classList.remove("hidden");
                 } else {
-                    visitTextArea.removeAttribute("name");
-                    visitTextArea.classList.add("hidden");
-                    visitInput.setAttribute("name", "visit_type");
+                    objectiveArea.removeAttribute("name");
+                    objectiveArea.classList.add("hidden");
+                    objective.setAttribute("name", "objective");
                 }
             });
         });
     </script>
-    
+
 </x-layout>

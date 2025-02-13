@@ -2,7 +2,16 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div id="hero">
-        <div class="container w-full flex h-[700px] md:p-20">
+        <div class="container w-full flex justify-center items-center h-[700px] md:p-20">
+            @if (Session::has('visitor_success'))
+            <div
+                class="max-w-sm  flex flex-col justify-center h-[400px] items-center bg-white shadow z-20 border rounded absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
+                <img class="w-32" src="/img/checked.png" alt="">
+                <h2 class="text-2xl font-semibold my-5 text-">Success!</h2>
+                <p>{{ session('visitor_success') }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                    ullam!</p>
+            </div>
+            @endif
             <div class="w-1/2 flex flex-col justify-center">
                 <h1 class="text-klipaa font-poppins text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
                     data-aos-duration="1500">SELAMAT DATANG
@@ -15,7 +24,7 @@
                 <div class="flex gap-5">
 
                     <a class="bg-klipaa w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
-                        href="/form" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
+                        href="/form/1" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
                         Formulir</a>
                     <a class="bg-white w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
                         href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">

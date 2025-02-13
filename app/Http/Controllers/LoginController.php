@@ -42,7 +42,7 @@ class LoginController extends Controller
             }     
         
         }
-        return redirect()->route('user.login')->with('login', 'Username atau Password Salah!');
+        return redirect()->route('login')->with('login', 'Username atau Password Salah!');
     }
 
     public function logout(Request $request)
