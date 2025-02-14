@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="icon" href="/img/sitamu.png">
 
 </head>
 
@@ -51,7 +52,7 @@
 
                     <div>
                         <a class="text-decoration-none" href="/admin/visitor">
-                            <h1 class="text-gray-600 text-2xl ">&laquo; Tambah Data Tamu</h1>
+                            <h1 class="text-gray-600 text-2xl ">&laquo; Edit Data Tamu</h1>
                         </a>
                     </div>
 
@@ -123,7 +124,7 @@
 
                 <!-- Begin Page Content -->
                 <!-- /.container-fluid -->
-                <form action="/form/create" method="POST" enctype="multipart/form-data"
+                <form action="/admin/visitor/update" method="POST" enctype="multipart/form-data"
                     class="shadow mx-auto my-10 max-w-4xl p-8 border border-gray-200 rounded-lg">
                     @csrf
                     <div class="form-header">
@@ -131,28 +132,29 @@
                             <img class="w-12 me-2" src="/img/sitamu.png" alt="">
                             <h5 class="text-klipaa font-semibold text-3xl">Sitamu</h5>
                         </div>
-                        <p class="text-gray-500 font-medium">Silakan isi data buku tamu dengan benar.</p>
+                        <p class="text-gray-600 font-medium">Silakan isi data buku tamu dengan benar.</p>
                     </div>
                     <div class="form-body">
-                        {{-- <input type="hidden" name="province_code" value="{{ $visit->province_code }}">
-                        <input type="hidden" name="district_code" value="{{ $visit->district_code }}">
-                        <input type="hidden" name="sub_district_code" value="{{ $visit->subdistrict_code }}">
-                        <input type="hidden" name="village_code" value="{{ $visit->village_code }}">
-                        <input type="hidden" name="visit_type" value="{{ $visit->id }}"> --}}
+                        <input type="hidden" name="province_code" value="{{ $oldVisit->province_code }}">
+                        <input type="hidden" name="district_code" value="{{ $oldVisit->district_code }}">
+                        <input type="hidden" name="sub_district_code" value="{{ $oldVisit->subdistrict_code }}">
+                        <input type="hidden" name="village_code" value="{{ $oldVisit->village_code }}">
+                        {{-- <input type="hidden" name="visit_type" value="{{ $visit->id }}"> --}}
+                        <input type="hidden" name="id" value="{{ $oldVisit->id }}">
+                        <input type="hidden" name="oldPhoto" value="{{ $oldVisit->visitor_photo }}">
                         <ul class="md:my-5">
                             <li class="flex gap-10 md:my-3">
                                 <div class="flex flex-col items-start md:w-1/2">
                                     <label for="fullname" class="mb-2">Nama Lengkap</label>
                                     <input type="text" name="fullname" id="fullname"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
-                                        placeholder="Masukkan nama anda">
+                                        placeholder="Masukkan nama anda" value="{{ $oldVisit->fullname }}">
                                 </div>
                                 <div class="flex flex-col items-start md:w-1/2">
                                     <label for="institution" class="mb-2">Instansi</label>
                                     <select
-                                        class="instance form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2"
+                                        class="instance form-input text-gray-600 border border-gray-200 px-2 h-10 w-1/2"
                                         name="institution" id="institution">
-                                        <option selected>Pilih Instansi</option>
                                         <option value="Supra Desa">Supra desa</option>
                                         <option value="APH">APH</option>
                                         <option value="Warga">Warga</option>
@@ -170,17 +172,17 @@
                                     <label for="telephone" class="mb-2">No. Telepon</label>
                                     <input type="text" name="telephone" id="telephone"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
-                                        placeholder="Masukkan telepon anda">
+                                        placeholder="Masukkan telepon anda" value="{{ $oldVisit->telephone }}">
                                 </div>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="province" class="mb-2">Provinsi</label>
-                                    <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                                    <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="province" id="province">
                                         <option selected>Pilih Provinsi Anda</option>
                                         @foreach ($provinces as $province)
-                                        <option value="{{$province->code}}">{{$province->name}}</option>
+                                            <option value="{{ $province->code }}">{{ $province->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -188,36 +190,37 @@
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="district" class="mb-2">Kabupaten</label>
-                                    <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                                    <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="district" id="district">
                                         <option selected>Pilih Kabupaten Anda</option>
                                         @foreach ($districts as $district)
-                                <option value="{{$district->code}}">{{$district->name}}</option>
-                            @endforeach
+                                            <option value="{{ $district->code }}">{{ $district->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="sub_district" class="mb-2">Kecamatan</label>
-                                    <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                                    <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="sub_district" id="sub_district">
                                         <option selected>Pilih Kecamatan Anda</option>
                                         @foreach ($sub_districts as $sub_district)
-                                <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
-                            @endforeach
+                                            <option value="{{ $sub_district->code }}">{{ $sub_district->name }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="village" class="mb-2">Desa</label>
-                                    <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                                    <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="village" id="village">
                                         <option selected>Pilih Desa Anda</option>
                                         @foreach ($villages as $village)
-                                <option value="{{$village->code}}">{{$village->name}}</option>
-                            @endforeach
+                                            <option value="{{ $village->code }}">{{ $village->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </li>
@@ -226,19 +229,21 @@
                                     <div class="flex flex-col items-start md:w-1/2">
                                         <label for="check_in" class="mb-2">Tanggal Datang</label>
                                         <input type="date" name="check_in" id="check_in"
-                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
+                                            class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-1/2"
+                                            value="{{ $oldVisit->check_in }}">
                                     </div>
                                     <div class="flex flex-col items-start md:w-1/2">
                                         <label for="check_out" class="mb-2">Tanggal Pulang</label>
                                         <input type="date" name="check_out" id="check_out"
-                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
+                                            class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-1/2"
+                                            value="{{ $oldVisit->check_out }}">
                                     </div>
                                 </div>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="objective" class="mb-2">Tujuan</label>
-                                    <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
+                                    <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="objective" id="objective">
                                         {{-- @foreach ($visitTypes as $visitType)
                                 <option selected value="{{$visitType->id}}">{{$visitType->name}}</option>
@@ -253,13 +258,19 @@
                                 </div>
                             </li>
                             <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label class="mb-2">Lokasi  Tujuan</label>
+                                    <input type="text" disabled value="{{ $oldVisit->visitType->name }}" class="form-input border border-gray-200 rounded w-full h-10 px-3">
+                                </div>
+                            </li>
+                            <li class="md:my-3">
                                 <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="objective" id="objective_textarea"
                                     placeholder="Sebutkan Tujuan Anda"></textarea>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label for="i_n_i" class="mb-2">Keterangan</label>
-                                    <textarea class="form-input rounded text-gray-500 border border-gray-200 px-2 h-10 w-full py-2 min-h-[150px]"
+                                    <textarea class="form-input rounded text-gray-600 border border-gray-200 px-2 h-10 w-full py-2 min-h-[150px]"
                                         name="i_n_i" id="i_n_i" placeholder="Masukan Keterangan Disini"></textarea>
                                 </div>
                             </li>
@@ -364,6 +375,36 @@
                     reader.readAsDataURL(file);
                 }
             });
+        });
+
+        const institutionInput = document.getElementById("institution");
+        const institutionTextArea = document.getElementById("institution-textarea");
+
+        institutionInput.addEventListener("change", function() {
+            if (institutionInput.value === "Lainnya") {
+                institutionInput.removeAttribute("name");
+                institutionTextArea.setAttribute("name", "institution");
+                institutionTextArea.classList.remove("hidden");
+            } else {
+                institutionTextArea.removeAttribute("name");
+                institutionTextArea.classList.add("hidden");
+                institutionInput.setAttribute("name", "institution");
+            }
+        });
+
+        const objective = document.getElementById("objective");
+        const objectiveArea = document.getElementById("objective_textarea");
+
+        objective.addEventListener("change", function() {
+            if (objective.value === "Lainnya") {
+                objective.removeAttribute("name");
+                objectiveArea.setAttribute("name", "objective");
+                objectiveArea.classList.remove("hidden");
+            } else {
+                objectiveArea.removeAttribute("name");
+                objectiveArea.classList.add("hidden");
+                objective.setAttribute("name", "objective");
+            }
         });
     </script>
 </body>

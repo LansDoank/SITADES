@@ -42,12 +42,18 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
+
+                    <div>
+                        <a class="text-decoration-none" href="/admin/receptionist">
+                            <h1 class="text-gray-600 text-2xl ">&laquo; Tambah Data Resepsionis</h1>
+                        </a>
+                    </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -103,8 +109,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -117,70 +122,93 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Visitors Tables</h1>
-
-                    <div class="flex mb-3 ">
-                        <a href="/admin/visitor/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Jadwal Bertamu</a>
-                    </div>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Visitors Data</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table border table-striped" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th class="col-1">No</th>
-                                            <th class="col-1">Foto</th>
-                                            <th class="col-2">Nama</th>
-                                            <th class="col-2">No. Telp</th>
-                                            <th class="col-2">Check-in</th>
-                                            <th class="col-2">Check-out</th>
-                                            <th class="col-1">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no = 1 ?>
-                                        @foreach ($users as $user)
-                                            <tr>
-                                                <td>{{$no}}</td>
-                                                <td class="">
-                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $user->visitor_photo)}}" alt=""></td>
-                                                <td>{{$user->fullname}}</td>
-                                                <td>{{$user->telephone}}</td>
-                                                <td>{{$user->check_in}}</td>
-                                                <td>{{$user->check_out}}</td>
-                                                <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
-                                                        <img class="w-5" src="/img/edit.png" alt="">
-                                                    </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$user->id}}">
-                                                        <img class="w-5" src="/img/trashcan.png" alt="">
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <?php $no++ ?>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- /.container-fluid -->
+                <div class="p-6 sm:p-8 bg-white max-w-5xl mx-auto my-10">
+                    <h1
+                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Buat Akun Receptionist
+                    </h1>
+                    <div class="text-red-500 text-md">{{ session('login') }}</div>
+                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/create" method="POST">
+                        @csrf
+                        <div>
+                            <label for="username"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                            <input type="text" name="username" id="username"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="name@company.com" required>
+                        </div>
+                        <div>
+                            <label for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <label for="province" class="mb-2">Provinsi</label>
+                            <select
+                                class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
+                                name="province" id="province">
+                                <option selected>Pilih Provinsi Anda</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{$province->code}}">{{$province->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <label for="district" class="mb-2">Kabupaten</label>
+                            <select
+                                class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
+                                name="district" id="district">
+                                <option selected>Pilih Kabupaten Anda</option>
+                                @foreach ($districts as $district)
+                                <option value="{{$district->code}}">{{$district->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <label for="sub_district" class="mb-2">Kecamatan</label>
+                            <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
+                                name="sub_district" id="sub_district">
+                                <option selected>Pilih Kecamatan Anda</option>
+                                @foreach ($sub_districts as $sub_district)
+                                <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <label for="village" class="mb-2">Desa</label>
+                            <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
+                                name="village" id="village">
+                                <option selected>Pilih Desa Anda</option>
+                                @foreach ($villages as $village)
+                                <option value="{{$village->code}}">{{$village->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                        <div class="flex flex-col items-start w-full">
+                            <label for="receptionist_photo" id="photo" class="mb-2 w-full">Foto
+                                <div
+                                    class="w-full my-2 min-h-[150px] border border-gray-200 rounded-lg flex justify-center items-center">
+                                    <img src="/img/input_photo.png" alt="">
+                                </div>
+                            </label>
+                            <input class="hidden" type="file" name="receptionist_photo" id="receptionist_photo">
+                        </div>
+                        <button type="submit"
+                            class="w-full text-white bg-[#65AE3A] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center hover:brightness-90">Buat
+                            Akun</button>
+
+                    </form>
+                </div>
             </div>
             <!-- End of Main Content -->
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Sitamu 2025</span>
                     </div>
                 </div>
             </footer>
@@ -218,7 +246,7 @@
     </div>
 
     {{-- Add Modal --}}
-    
+
     {{-- <div class="w-full h-screen bg-gray-100">
     </div> --}}
 
@@ -238,7 +266,27 @@
 
     <!-- Page level custom scripts -->
     <script src="/js/demo/datatables-demo.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const inputPhoto = document.getElementById('photo');
+            const photoInput = document.getElementById('receptionist_photo');
 
+            photoInput.addEventListener('change', () => {
+                const file = photoInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        inputPhoto.innerHTML = `
+                            Foto
+                            <div class="w-full my-2 min-h-[150px] border border-gray-200 rounded-lg flex justify-center items-center">
+                                <img class="max-w-[400px] max-h-[200px] object-cover" src="${e.target.result}" alt="">
+                            </div>`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

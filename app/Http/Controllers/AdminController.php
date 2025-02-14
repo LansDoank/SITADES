@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Visitor;
 use App\Models\User;
+use App\Models\VisitType;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -86,7 +87,7 @@ class AdminController extends Controller
     public function visitors()
     {
         return view(
-            'admin.tables',
+            'admin.visitor',
             ['users' => Visitor::all(), 'username' => Auth::user()->username]
         );
     }
@@ -97,8 +98,12 @@ class AdminController extends Controller
         return view('admin.receptionists', ['username' => Auth::user()->username, 'receptionists' => $receptionists]);
     }
 
+    public function masterData(){
+        return view('admin.masterdata',['username' => Auth::user()->username,'visitors' => Visitor::all()]);
+    }
+
     public function qrCode()
     {
-        return view('admin.qrCode', ['username' => Auth::user()->username]);
+        return view('admin.qrCode', ['username' => Auth::user()->username,'visitTypes' => VisitType::all()]);
     }
 }

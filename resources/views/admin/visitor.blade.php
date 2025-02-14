@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sitamu - Qr Code</title>
+    <title>Sitamu - Visitors</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Custom fonts for this template -->
@@ -23,7 +23,6 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
     <link rel="icon" href="/img/sitamu.png">
 
 </head>
@@ -140,7 +139,7 @@
                     </button>
 
                     <div>
-                        <h1 class="text-gray-600 text-2xl ">Qr Code</h1>
+                        <h1 class="text-gray-600 text-2xl ">Tamu</h1>
                     </div>
 
                     <!-- Topbar Navbar -->
@@ -214,16 +213,16 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Qr Code Tables</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Visitors Tables</h1>
 
                     <div class="flex mb-3 ">
-                        <a href="/admin/qr_code/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Qr Code</a>
+                        <a href="/admin/visitor/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Jadwal Bertamu</a>
                     </div>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Qr Code Data</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visitors Data</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -231,28 +230,32 @@
                                     <thead>
                                         <tr>
                                             <th class="col-1">No</th>
-                                            <th class="col-2">Foto</th>
-                                            <th class="col-2">Nama</th>
-                                            <th class="col-1">Password</th>
-                                            <th class="col-5">Alamat</th>
-                                            <th class="col-1">Opsi</th>
+                                            <th class="col-1">Foto</th>
+                                            <th class="col-1">Nama</th> 
+                                            <th class="col-1">Intansi</th> 
+                                            <th class="col-1">No. Telp</th>
+                                            <th class="col-1">Check-in</th>
+                                            <th class="col-1">Check-out</th>
+                                            <th class="col-1">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $no = 1 ?>
-                                        @foreach ($visitTypes as $visitType)
+                                        @foreach ($users as $user)
                                             <tr>
                                                 <td>{{$no}}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{$visitType->qr_code}}" alt=""></td>
-                                                <td>{{$visitType->name}}</td>
-                                                <td class="col-1">{{Str::limit($visitType->password,30   )}}</td>
-                                                <td>{{Str::limit($visitType->address,50)}}</td>
+                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{$user->visitor_photo}}" alt=""></td>
+                                                <td>{{Str::limit($user->fullname,10)}}</td>
+                                                <td>{{$user->institution}}</td>
+                                                <td>{{$user->telephone}}</td>
+                                                <td>{{$user->check_in}}</td>
+                                                <td>{{$user->check_out}}</td>
                                                 <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/visitor/edit/{{$user->id}}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/admin/receptionist/delete/{{$visitType->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$user->id}}">
                                                         <img class="w-5" src="/img/trashcan.png" alt="">
                                                     </a>
                                                 </td>

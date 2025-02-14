@@ -10,7 +10,7 @@
     <meta name="author" content="">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>Admin Dashboard</title>
+    <title>Admin - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,17 +27,17 @@
 <body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="flex justify-between">
 
         <!-- Sidebar -->
         <x-sidebar></x-sidebar>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column w-[500px]">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -47,19 +47,9 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append bg-klipaa rounded-r">
-                                <button class="btn bg-klipaa" type="button">
-                                    <img src="/img/search.png" alt="" class="w-5">
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <div>
+                        <h1 class="text-gray-600 text-2xl ">Dashboard</h1>
+                    </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -130,13 +120,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -470,7 +453,6 @@
     <script src="/js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const senin = @json($)
     </script>
     <script>
         const lineData = [{

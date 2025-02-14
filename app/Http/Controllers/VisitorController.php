@@ -77,6 +77,38 @@ class VisitorController extends Controller
         return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
     }
 
+    public function edit($id) {
+        return view('visitor.edit',['title' => 'Edit Data Tamu','username' => Auth::user()->username,'oldVisit' => Visitor::find($id),'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+    }
+
+    public function update(Request $request){
+        $visitor = Visitor::find($request->id);
+
+        $visitor->update([
+            'fullname' => $request->fullname,
+            'institution' => $request->institution,
+            'address' => $request->province . " " . $request->district . " " . $request->sub_district .  " " . $request->village,
+            'check_in' => $request->check_in,
+            'check_out' => $request->check_out,
+            'telephone' => $request->telephone,
+            'visit_type_id' => $request->visit_type,
+            'objective' => $request->objective,
+            'i_n_i' => $request->i_n_i,
+            'province_code' => $request->province_code,
+            'district_code' => $request->district_code,
+            'subdistrict_code' => $request->sub_district_code,
+            'village_code' => $request->village_code,
+        ]);
+
+        if ($request->hasFile('visitor_photo')) {
+            $visitor->update([
+                'visitor_photo' => $request->file('visitor_photo')->store('user_photo'),
+            ]);
+        }
+
+        return redirect()->route('admin.visitors')->with('visitor_success','Data Berhasil Diperbaharui');
+    }
+
     public function delete($id)
     {
         Visitor::find($id)->delete();

@@ -21,7 +21,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/visitor', [AdminController::class, 'visitors'])->name('admin.visitors');
 
-    Route::get('/admin/visitor/add',[VisitorController::class,'add'])->name('visitor.add');
+    Route::get('/admin/visitor/add', [VisitorController::class, 'add'])->name('visitor.add');
+
+    Route::get('/admin/visitor/edit/{id}', [VisitorController::class, 'edit'])->name('visitor.edit');
+
+    Route::post('/admin/visitor/update',[VisitorController::class,'update'])->name('visitor.update');
 
     Route::get('/admin/visitor/delete/{id}', [VisitorController::class, 'delete'])->name('visitor.delete');
 
@@ -32,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/receptionist/create', [ReceptionistController::class, 'add']);
 
     Route::get('/admin/receptionist/delete/{id}', [ReceptionistController::class, 'delete'])->name('receptionist.delete');
+
+    Route::get('/admin/master_data',[AdminController::class,'masterData'])->name('admin.master_data');
 
     Route::get('/admin/qr_code', [AdminController::class, 'qrCode'])->name('admin.qrCode');
 

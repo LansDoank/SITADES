@@ -19,7 +19,7 @@ class ReceptionistController extends Controller
     }
 
     public function addReceptionist() {
-        return view( 'receptionist.form',['title' => 'Add Receptionist','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+        return view( 'receptionist.add',['title' => 'Add Receptionist','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
     }
 
     public function add(Request $request) {

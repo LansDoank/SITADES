@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Visitor;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
             Role::all(),
         ])->create();
 
+        Visitor::factory(100)->create();
         
     }
 }

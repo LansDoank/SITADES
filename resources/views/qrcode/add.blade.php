@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sitamu - Tables</title>
+    <title>Sitamu - Qr Code</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Custom fonts for this template -->
@@ -23,6 +23,8 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/img/sitamu.png">
 
 </head>
 
@@ -49,19 +51,11 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100  me-10 navbar-search w-1/2">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append bg-klipaa rounded-r">
-                                <button class="btn bg-klipaa" type="button">
-                                    <img src="/img/search.png" alt="" class="w-5">
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <div>
+                        <a class="text-decoration-none" href="/admin/qr_code">
+                            <h1 class="text-gray-600 text-2xl ">&laquo; Tambah Data Qr Code</h1>
+                        </a>
+                    </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

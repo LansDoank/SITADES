@@ -17,7 +17,20 @@ class VisitorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'fullname' => fake()->name(),
+            'institution' => 'APH',
+            'address' => fake()->address(),
+            'check_in' => today(),
+            'check_out' => today(),
+            'telephone' => fake()->phoneNumber(),
+            'visitor_photo' => 'https://tse1.mm.bing.net/th?id=OIP.OVDaazOb8mqHDmI1woBfjwHaE8&pid=Api&P=0&h=180',
+            'visit_type_id' => 1,
+            'objective' => 'Studi Banding',
+            'i_n_i' => fake()->sentence(),
+            'province_code' => '32',
+            'district_code' => '3205',
+            'subdistrict_code' => '320508',
+            'village_code' => '3205082003',
         ];
     }
 }
