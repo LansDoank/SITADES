@@ -26,14 +26,14 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'photo' => '/img/facebook.png',
+            'photo' => 'user_photo/0dH6swoMJcnHYVaAbuSb2Rs0tPlgqiFwCARW90qS.png',
             'username' => fake()->name(),
             'password' => bcrypt('user123'),
             'role_id' => Role::factory(),
-            'province_code' => 1,
-            'district_code' => 1,
-            'sub_district_code' => 1,
-            'village_code' => 1,
+            'province_code' => '32',
+            'district_code' => '3205',
+            'sub_district_code' => '320507',
+            'village_code' => '3205072003',
         ];
     }
 

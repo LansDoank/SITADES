@@ -44,7 +44,8 @@ class SubDistrictSeeder extends Seeder
             ['code' => '1103030', 'name' => 'Kluet Selatan'],
             ['code' => '1103031', 'name' => 'Kluet Timur'],
             ['code' => '1103040', 'name' => 'Kluet Utara'],
-            ['code' => '1103041', 'name' => 'Pasie Raja']
+            ['code' => '1103041', 'name' => 'Pasie Raja'],
+            ['code' => '320507', 'name' => 'Samarang']
         ];
 
         foreach ($subdistricts as $subdistrict) {

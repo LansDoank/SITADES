@@ -18,10 +18,10 @@ class UserSeeder extends Seeder
             'photo' => '/img/facebook.png',
             'username' => 'admin',
             'password' => bcrypt('admin123'),
-            'province_code' => 1,
-            'district_code' => 1,
-            'sub_district_code' => 1,
-            'village_code' => 1,
+            'province_code' => '32',
+            'district_code' => '3205',
+            'sub_district_code' => '320507',
+            'village_code' => '3205072003',
             'role_id' => 1,
         ]);
 

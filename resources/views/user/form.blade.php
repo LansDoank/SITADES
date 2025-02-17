@@ -55,54 +55,21 @@
                         <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full" name="province"
                             id="province">
                             <option selected>Pilih Provinsi Anda</option>
-                            <option value="Aceh">Aceh</option>
-                            <option value="Bali">Bali</option>
-                            <option value="Banten">Banten</option>
-                            <option value="Bengkulu">Bengkulu</option>
-                            <option value="DI Yogyakarta">DI Yogyakarta</option>
-                            <option value="DKI Jakarta">DKI Jakarta</option>
-                            <option value="Gorontalo">Gorontalo</option>
-                            <option value="Jambi">Jambi</option>
-                            <option value="Jawa Barat">Jawa Barat</option>
-                            <option value="Jawa Tengah">Jawa Tengah</option>
-                            <option value="Jawa Timur">Jawa Timur</option>
-                            <option value="Kalimantan Barat">Kalimantan Barat</option>
-                            <option value="Kalimantan Selatan">Kalimantan Selatan</option>
-                            <option value="Kalimantan Tengah">Kalimantan Tengah</option>
-                            <option value="Kalimantan Timur">Kalimantan Timur</option>
-                            <option value="Kalimantan Utara">Kalimantan Utara</option>
-                            <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
-                            <option value="Kepulauan Riau">Kepulauan Riau</option>
-                            <option value="Lampung">Lampung</option>
-                            <option value="Maluku">Maluku</option>
-                            <option value="Maluku Utara">Maluku Utara</option>
-                            <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
-                            <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
-                            <option value="Papua">Papua</option>
-                            <option value="Papua Barat">Papua Barat</option>
-                            <option value="Riau">Riau</option>
-                            <option value="Sulawesi Barat">Sulawesi Barat</option>
-                            <option value="Sulawesi Selatan">Sulawesi Selatan</option>
-                            <option value="Sulawesi Tengah">Sulawesi Tengah</option>
-                            <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-                            <option value="Sulawesi Utara">Sulawesi Utara</option>
-                            <option value="Sumatera Barat">Sumatera Barat</option>
-                            <option value="Sumatera Selatan">Sumatera Selatan</option>
-                            <option value="Sumatera Utara">Sumatera Utara</option>
-                            <option value="Papua Selatan">Papua Selatan</option>
-                            <option value="Papua Tengah">Papua Tengah</option>
-                            <option value="Papua Pegunungan">Papua Pegunungan</option>
-                            <option value="Papua Barat Daya">Papua Barat Daya</option>
+                            @foreach ($provinces as $province)
+                                <option value="{{$province->code}}">{{$province->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="district" class="mb-2">Kabupaten</label>
-                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
-                            name="district" id="district">
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full" name="district"
+                            id="district">
                             <option selected>Pilih Kabupaten Anda</option>
-                            <option value="Garut">Garut</option>
+                            @foreach ($districts as $district)
+                                <option value="{{$district->code}}">{{$district->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </li>
@@ -112,19 +79,21 @@
                         <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                             name="sub_district" id="sub_district">
                             <option selected>Pilih Kecamatan Anda</option>
-                            <option value="Samarang">Samarang</option>
+                            @foreach ($sub_districts as $sub_district)
+                                <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </li>
                 <li class="md:my-3">
                     <div class="flex flex-col items-start">
                         <label for="village" class="mb-2">Desa</label>
-                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
-                            name="village" id="village">
+                        <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full" name="village"
+                            id="village">
                             <option selected>Pilih Desa Anda</option>
-                            <option value="Sukarasa">Sukarasa</option>
-                            <option value="Sukaasih">Sukaasih</option>
-                            <option value="Cikedokan">Cikedokan</option>
+                            @foreach ($villages as $village)
+                                <option value="{{$village->code}}">{{$village->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </li>

@@ -23,7 +23,7 @@
                 <div class="flex gap-5">
 
                     <a class="bg-klipaa lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
-                        href="/form/1" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
+                        href="/form/3205072003" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
                         Formulir</a>
                     <a class="bg-white lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
                         href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">

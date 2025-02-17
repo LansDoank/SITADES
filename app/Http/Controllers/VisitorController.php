@@ -33,6 +33,10 @@ class VisitorController extends Controller
             // 'id' => $id,
             'title' => 'Visitor Form',
             'visit' => VisitType::where('village_code', $villageCode)->first(),
+            'provinces' => Province::all(),
+            'districts' => District::all(),
+            'sub_districts' => SubDistrict::all(),
+            'villages' => Village::all(),
             ]);
     }
 

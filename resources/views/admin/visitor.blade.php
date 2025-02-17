@@ -140,21 +140,21 @@
                                     </thead>
                                     <tbody>
                                         <?php $no = 1 ?>
-                                        @foreach ($users as $user)
+                                        @foreach ($visitors as $visitor)
                                             <tr>
                                                 <td>{{$no}}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset("storage/$user->visitor_photo")}}" alt=""></td>
-                                                <td>{{Str::limit($user->fullname,10)}}</td>
-                                                <td>{{$user->institution}}</td>
-                                                <td>{{$user->telephone}}</td>
-                                                <td>{{$user->check_in}}</td>
-                                                <td>{{$user->check_out}}</td>
+                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset("storage/$visitor->visitor_photo")}}" alt=""></td>
+                                                <td>{{Str::limit($visitor->fullname,10)}}</td>
+                                                <td>{{$visitor->institution}}</td>
+                                                <td>{{$visitor->telephone}}</td>
+                                                <td>{{$visitor->check_in}}</td>
+                                                <td>{{$visitor->check_out}}</td>
                                                 <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/visitor/edit/{{$user->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/visitor/edit/{{$visitor->id}}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$user->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$visitor->id}}">
                                                         <img class="w-5" src="/img/trashcan.png" alt="">
                                                     </a>
                                                 </td>

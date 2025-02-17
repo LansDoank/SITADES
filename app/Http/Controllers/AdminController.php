@@ -88,7 +88,7 @@ class AdminController extends Controller
     {
         return view(
             'admin.visitor',
-            ['users' => Visitor::all(), 'username' => Auth::user()->username]
+            ['visitors' => Visitor::all(), 'username' => Auth::user()->username]
         );
     }
 

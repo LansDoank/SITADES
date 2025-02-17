@@ -45,7 +45,8 @@ class DistrictSeeder extends Seeder
             ['code' => '1206', 'name' => 'Kabupaten Toba Samosir'],
             ['code' => '1207', 'name' => 'Kabupaten Labuhan Batu'],
             ['code' => '1208', 'name' => 'Kabupaten Asahan'],
-            ['code' => '1209', 'name' => 'Kabupaten Simalungun']
+            ['code' => '1209', 'name' => 'Kabupaten Simalungun'],
+            ['code' => '3205', 'name' => 'Garut']
         ];
 
         foreach ($district as $data) {

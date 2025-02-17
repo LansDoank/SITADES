@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sitamu - Tables</title>
+    <title>Sitamu - Receptionist</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Custom fonts for this template -->
@@ -129,7 +129,7 @@
                         Buat Akun Receptionist
                     </h1>
                     <div class="text-red-500 text-md">{{ session('login') }}</div>
-                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/create" method="POST">
+                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/create" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div>
                             <label for="username"
@@ -161,7 +161,7 @@
                             <select
                                 class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
                                 name="district" id="district">
-                                <option selected>Pilih Kabupaten Anda</option>
+                                <option selected>Pilih Kabupaten</option>
                                 @foreach ($districts as $district)
                                 <option value="{{$district->code}}">{{$district->name}}</option>
                             @endforeach
@@ -171,7 +171,7 @@
                             <label for="sub_district" class="mb-2">Kecamatan</label>
                             <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
                                 name="sub_district" id="sub_district">
-                                <option selected>Pilih Kecamatan Anda</option>
+                                <option selected>Pilih Kecamatan</option>
                                 @foreach ($sub_districts as $sub_district)
                                 <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
                             @endforeach
@@ -181,7 +181,7 @@
                             <label for="village" class="mb-2">Desa</label>
                             <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
                                 name="village" id="village">
-                                <option selected>Pilih Desa Anda</option>
+                                <option selected>Pilih Desa</option>
                                 @foreach ($villages as $village)
                                 <option value="{{$village->code}}">{{$village->name}}</option>
                             @endforeach
