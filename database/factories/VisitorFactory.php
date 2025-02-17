@@ -23,7 +23,7 @@ class VisitorFactory extends Factory
             'check_in' => today(),
             'check_out' => today(),
             'telephone' => fake()->phoneNumber(),
-            'visitor_photo' => 'https://tse1.mm.bing.net/th?id=OIP.OVDaazOb8mqHDmI1woBfjwHaE8&pid=Api&P=0&h=180',
+            'visitor_photo' => 'user_photo/0dH6swoMJcnHYVaAbuSb2Rs0tPlgqiFwCARW90qS.png',
             'visit_type_id' => 1,
             'objective' => 'Studi Banding',
             'i_n_i' => fake()->sentence(),

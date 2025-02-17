@@ -2,31 +2,30 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div id="hero">
-        <div class="container w-full flex justify-center items-center h-[700px] md:p-20">
+        <div class="container w-full flex justify-center items-center lg:h-[700px] md:h-[600px] md:py-12 md:px-10 lg:p-20">
             @if (Session::has('visitor_success'))
             <div
                 class="max-w-sm  flex flex-col justify-center h-[400px] items-center bg-white shadow z-20 border rounded absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
                 <img class="w-32" src="/img/checked.png" alt="">
                 <h2 class="text-2xl font-semibold my-5 text-">Success!</h2>
-                <p>{{ session('visitor_success') }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-                    ullam!</p>
+                <p>{{ session('visitor_success') }}</p>
             </div>
             @endif
             <div class="w-1/2 flex flex-col justify-center">
-                <h1 class="text-klipaa font-poppins text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
+                <h1 class="text-klipaa font-poppins md:text-4xl lg:text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
                     data-aos-duration="1500">SELAMAT DATANG
                     DI SITAMU !</h1>
-                <p class="text-sm text-slate-500 font-medium" data-aos="fade-right" data-aos-duration="1500"
+                <p class="lg:text-sm md:text-xs lg:text-sm text-slate-500 font-medium" data-aos="fade-right" data-aos-duration="1500"
                     data-aos-delay="300">Mudah, Cepat, dan Efisien! Buku Tamu Digital membantu
                     mencatat kunjungan warga dengan
                     lebih praktis dan modern. Tinggalkan pesan Anda dengan mudah dan pastikan setiap kunjungan tercatat
                     dengan baik</p>
                 <div class="flex gap-5">
 
-                    <a class="bg-klipaa w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
+                    <a class="bg-klipaa lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
                         href="/form/1" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
                         Formulir</a>
-                    <a class="bg-white w-36 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
+                    <a class="bg-white lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
                         href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                         Masuk</a>
                 </div>
@@ -39,29 +38,28 @@
     </div>
     <div id="about" class="md:p-7">
         <div class="container bg-klipaa rounded-2xl flex justify-center flex-col items-center md:p-10">
-            <div class="md:my-7" data-aos="fade-up" data-aos-duration="1500">
+            <div class="md:mb-8" data-aos="fade-up" data-aos-duration="1500">
                 <h1 class="text-white text-3xl font-semibold">APA ITU SITAMU?</h1>
             </div>
             <div class="flex">
-                <figure class="w-1/2">
+                <figure class="w-1/2 md:flex items-center">
                     <img src="/img/pc.png" alt="" data-aos="fade-up" data-aos-delay="500"
                         data-aos-duration="1500">
                 </figure>
                 <div class="w-1/2 flex flex-col justify-center items-start md:p-5">
-                    <p class="text-white" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1500">SITAMU
+                    <p class="text-white md:text-xs lg:text-base md:mb-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1500">Sitamu
                         adalah platform digital yang dirancang khusus untuk mendukung
-                        pengelolaan administrasi dan dokumentasi di tingkat desa. SITADES digunakan oleh kantor desa
+                        pengelolaan administrasi dan dokumentasi di tingkat desa. Sitamu digunakan oleh kantor desa
                         untuk mempermudah proses pencatatan, penyimpanan, dan pencarian berbagai data penting yang
                         berkaitan dengan kegiatan administratif desa
                     </p>
-                    <br><br>
-                    <p class="text-white" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU
+                    <p class="text-white md:text-xs lg:text-base" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU
                         menjadi alat yang sangat efektif untuk meningkatkan efisiensi, transparansi, dan
                         akuntabilitas dalam pengelolaan administrasi desa, serta mendukung kemajuan digitalisasi di
                         tingkat pemerintahan desa.</p>
 
-                    <button class="w-36 bg-white h-14 text-klipaa md:my-5 rounded font-medium" data-aos="fade-up"
-                        data-aos-delay="700" data-aos-duration="1500">Selengkapnya</button>
+                    {{-- <button class="w-36 bg-white h-14 text-klipaa md:my-5 rounded font-medium" data-aos="fade-up"
+                        data-aos-delay="700" data-aos-duration="1500">Selengkapnya</button> --}}
                 </div>
             </div>
         </div>
@@ -71,14 +69,14 @@
             <h1 class="font-semibold text-klipaa text-3xl" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1500">Mengapa memilih Sitamu?</h1>
         </div>
-        <div class="container border p-10 border-klipaa rounded-2xl flex justify-center gap-10 rounded-lg">
+        <div class="container border p-10 border-klipaa rounded-2xl flex justify-center md:gap-5 lg:gap-10 rounded-lg">
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
-                    <img src="/img/eficient.png" alt="">
+                    <img class="lg:w-32 md:w-24" src="/img/eficient.png" alt="">
                 </div>
                 <div class="card-body">
-                    <h2 class="font-medium text-2xl mb-3">Efisiensi Waktu dan
+                    <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Efisiensi Waktu dan
                         Proses</h2>
                     <p class="text-sm font-normal">Dengan SITAMU, semua proses administrasi yang biasanya memakan waktu
                         dan tenaga, seperti
@@ -88,10 +86,10 @@
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
                 <div class="card-image md:mb-5 ">
-                    <img src="/img/security.png" alt="">
+                    <img class="lg:w-32 md:w-24" src="/img/security.png" alt="">
                 </div>
                 <div class="card-body">
-                    <h2 class="font-medium text-2xl mb-3">Keamanan Data yang
+                    <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Keamanan Data yang
                         Terjamin</h2>
                     <p class="text-sm font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
                         menggunakan enkripsi dan pengamanan yang canggih untuk memastikan bahwa semua data yang
@@ -101,10 +99,10 @@
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
-                    <img src="/img/transplatation.png" alt="">
+                    <img class="lg:w-32 md:w-24" src="/img/transplatation.png" alt="">
                 </div>
                 <div class="card-body">
-                    <h2 class="font-medium text-2xl mb-3">Transparansi dan Akuntabilitas</h2>
+                    <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Transparansi dan Akuntabilitas</h2>
                     <p class="text-sm font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
                         penting tercatat dengan rapi dan transparan.</p>
                 </div>

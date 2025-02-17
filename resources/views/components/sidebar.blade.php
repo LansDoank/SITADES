@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-klipaa sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-klipaa relative sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="text-white font-semibold flex items-center justify-center text-decoration-none" href="/admin/dashboard">
@@ -55,7 +55,7 @@
     </li>
     <li class="{{ request()->is('admin/master_data') ? 'active' : '' }} nav-item">
 
-<ul class="nav-link flex justify-end group cursor-pointer">
+<ul class="nav-link flex absolute Z-50 overflow-hidden justify-end group cursor-pointer">
     <div class="flex mb-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-fill" viewBox="0 0 16 16">
             <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223"/>
@@ -66,24 +66,24 @@
         <span class="ms-2">Master Data  &#129107;</span>
     </div>
 
-    <div class="absolute transition -translate-y-80  group-hover:tranlaste-y-0">
+    <div class="absolute -z-50 transition-all duration-500 -translate-y-80  group-hover:translate-y-0 group-hover:static">
         <ul class="hidden group-hover:block w-36  text-white text-sm p-2 ps-3 rounded flex flex-col items-end">
             <li class="font-semibold">Tamu</li>
             <ul class="flex flex-col items-end">
                 <li class="rounded-t w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Nama</a>
+                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/name">Nama</a>
                 </li>
                 <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">No. Telp</a>
+                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/telephone">No. Telp</a>
                 </li>
                 <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Alamat</a>
+                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/adress">Alamat</a>
                 </li>
                 <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Tanggal</a>
+                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/date">Tanggal</a>
                 </li>
                 <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Tujuan</a>
+                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/objective">Tujuan</a>
                 </li>
             </ul>
         </ul>

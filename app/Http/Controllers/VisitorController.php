@@ -25,15 +25,14 @@ class VisitorController extends Controller
         // $id = $code;
         $code = str_split($code);
         $provinceCode = $code[0] . $code[1];
-        $districtCode = $code[2] . $code[3];
-        $subDistrictCode = $code[4] . $code[5];
-        $villageCode = $code[6] . $code[7] . $code[8] . $code[9];
-        $village = "$code[0]$code[1]$code[2]$code[3]$code[4]$code[5]$code[6]$code[7]$code[8]$code[9]";
+        $districtCode = $code[0] . $code[1] . $code[2] . $code[3];
+        $subDistrictCode = $code[0] . $code[1] . $code[2] . $code[3] . $code[4] . $code[5];
+        $villageCode = "$code[0]$code[1]$code[2]$code[3]$code[4]$code[5]$code[6]$code[7]$code[8]$code[9]";
 
         return view('user.form', [
             // 'id' => $id,
             'title' => 'Visitor Form',
-            'visit' => VisitType::where('village_code', $village)->first(),
+            'visit' => VisitType::where('village_code', $villageCode)->first(),
             ]);
     }
 
