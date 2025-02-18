@@ -1,12 +1,12 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <div class="w-full bg-gray-200 flex justify-center">
+    <div class="w-full h-screen bg-gray-200 flex justify-center">
         <section id="receptionist-login"
-            class="w-[450px] group flex flex-shrink-0 overflow-hidden  justify-start dark:bg-gray-900 transition-transform duration-500">
+            class="md:w-[450px] w-[280px] group flex flex-shrink-0 overflow-hidden  justify-start dark:bg-gray-900 transition-transform duration-500">
             <div id="receptionist-form"
                 class="flex flex-col w-[450px]  transition   items-center justify-center  md:h-screen lg:py-0">
                 <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                    <img class="w-12 mr-2" src="/img/sitamu.png" alt="logo">
+                    <img class="w-12 mr-2" src="/img/logo.png" alt="logo">
                     <h5 class="text-klipaa font-semibold">Sitamu</h5>
                 </a>
                 <div

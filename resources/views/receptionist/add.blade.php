@@ -23,7 +23,13 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <style>
+        @media screen and (max-width:576px){
+            #brand {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top" class="w-full">
@@ -51,39 +57,12 @@
 
                     <div>
                         <a class="text-decoration-none" href="/admin/receptionist">
-                            <h1 class="text-gray-600 text-2xl ">&laquo; Tambah Data Resepsionis</h1>
+                            <h1 class="text-gray-600 text-sm md:text-2xl ">&laquo; Tambah Data Resepsionis</h1>
                         </a>
                     </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-
-
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -215,7 +194,7 @@
                             <input class="hidden" type="file" name="receptionist_photo" id="receptionist_photo">
                         </div>
                         <button type="submit"
-                            class="w-full text-white bg-[#65AE3A] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center hover:brightness-90">Buat
+                            class="w-full text-white bg-klipaa focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center hover:brightness-90">Buat
                             Akun</button>
 
                     </form>

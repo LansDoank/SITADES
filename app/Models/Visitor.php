@@ -11,7 +11,7 @@ class Visitor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fullname', 'institution', 'telephone', 'address', 'check_in', 'check_out', 'objective', 'i_n_i', 'province_code', 'district_code', 'subdistrict_code', 'village_code'];
+    protected $fillable = ['fullname', 'institution', 'telephone', 'address', 'check_in', 'check_out', 'visitor_photo','objective', 'i_n_i', 'province_code', 'district_code', 'subdistrict_code', 'village_code'];
 
     public function visitType(): BelongsTo
     {

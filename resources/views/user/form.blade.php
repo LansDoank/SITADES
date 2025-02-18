@@ -1,12 +1,12 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <div class="md:p-10 lg:p-0 lg:my-10">
+    <div class="md:p-10 lg:p-10 bg-daun">
         <form action="/form/create" method="POST" enctype="multipart/form-data"
-            class="shadow lg:mx-auto w-full m-0 md:max-w-4xl p-6 md:p-8 border border-gray-200 rounded-lg">
+            class="shadow bg-white lg:mx-auto w-full m-0 md:max-w-4xl p-6 md:p-8 border border-gray-200 md:rounded-lg">
             @csrf
             <div class="form-header">
                 <div class="flex items-center md:my-3">
-                    <img class="md:w-12 w-10 me-2" src="/img/sitamu.png" alt="">
+                    <img class="md:w-12 w-10 me-2" src="/img/logo.png" alt="">
                     <h5 class="text-klipaa font-semibold text-2xl  md:text-3xl">Sitamu</h5>
                 </div>
                 <p class="text-gray-500 font-medium my-3 text-xs md:text-sm md:m-0">Silakan isi data buku tamu dengan benar.</p>

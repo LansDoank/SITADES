@@ -24,7 +24,11 @@ export default {
                     900: "#1e3a8a",
                     950: "#172554",
                 },
-                klipaa: '#295127'
+                klipaa: "#295127",
+            },
+            backgroundImage: {
+                "daun": "url('/img/bgnowb.jpg')",
+                "footer-texture": "url('/img/footer-texture.png')",
             },
         },
         fontFamily: {
@@ -66,4 +70,4 @@ export default {
     },
     plugins: [],
     darkMode: "class",
-}
+};

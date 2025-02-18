@@ -10,7 +10,7 @@ use App\Models\District;
 use App\Models\Province;
 use App\Models\SubDistrict;
 use App\Models\Village;
-
+use Illuminate\Support\Facades\Storage;
 
 class VisitorController extends Controller
 {
@@ -107,6 +107,9 @@ class VisitorController extends Controller
         ]);
 
         if ($request->hasFile('visitor_photo')) {
+            if($request->oldPhoto) {
+                Storage::delete($request->oldPhoto);
+            }
             $visitor->update([
                 'visitor_photo' => $request->file('visitor_photo')->store('user_photo'),
             ]);

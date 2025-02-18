@@ -26,7 +26,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'photo' => 'user_photo/0dH6swoMJcnHYVaAbuSb2Rs0tPlgqiFwCARW90qS.png',
+            'photo' => 'user_photo/profile.png',
             'name' => fake()->name(),
             'username' => fake()->userName(),
             'password' => bcrypt('user123'),

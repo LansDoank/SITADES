@@ -39,15 +39,15 @@ class ReceptionistController extends Controller
         $receptionist->save();
 
         $village = new VisitType();
-        $village->qr_code = '1';
-        $villageName = VisitType::where('village_code',$request->village)->first();
-        dd($villageName);
+        $village->qr_code = 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png';
+        $villageName = Village::where('code',$request->village)->first();
         $village->name = $villageName->name;
         $village->slug  = Str::slug($villageName->name);
         $village->province_code = $request->province;
         $village->district_code = $request->district;
-        $village->sub_district_code = $request->sub_district;
+        $village->subdistrict_code = $request->sub_district;
         $village->village_code = $request->village;
+        $village->save();
 
         return redirect()->route('admin.receptionists')->with('success','Receptionist added successfully');
     }

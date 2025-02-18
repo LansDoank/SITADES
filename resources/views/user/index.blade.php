@@ -2,7 +2,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div id="hero">
-        <div class="container w-full flex justify-center items-center lg:h-[700px] md:h-[600px] md:py-12 md:px-10 lg:p-20">
+        <div class="container w-full flex flex-wrap flex-col-reverse md:flex-nowrap justify-center items-center lg:h-[700px] md:h-[600px] py-16 md:py-12 md:px-10 lg:p-20">
             @if (Session::has('visitor_success'))
             <div
                 class="max-w-sm  flex flex-col justify-center h-[400px] items-center bg-white shadow z-20 border rounded absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
@@ -11,49 +11,49 @@
                 <p>{{ session('visitor_success') }}</p>
             </div>
             @endif
-            <div class="w-1/2 flex flex-col justify-center">
-                <h1 class="text-klipaa font-poppins md:text-4xl lg:text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
+            <div class="md:w-1/2 w-full flex flex-col justify-center p-5 md:p-0">
+                <h1 class="text-klipaa font-poppins text-xl md:text-4xl lg:text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
                     data-aos-duration="1500">SELAMAT DATANG
                     DI SITAMU !</h1>
-                <p class="lg:text-sm md:text-xs lg:text-sm text-slate-500 font-medium" data-aos="fade-right" data-aos-duration="1500"
+                <p class="lg:text-sm md:text-xs text-xs my-3 md:my-0 lg:text-sm text-slate-500 font-medium" data-aos="fade-right" data-aos-duration="1500"
                     data-aos-delay="300">Mudah, Cepat, dan Efisien! Buku Tamu Digital membantu
                     mencatat kunjungan warga dengan
                     lebih praktis dan modern. Tinggalkan pesan Anda dengan mudah dan pastikan setiap kunjungan tercatat
                     dengan baik</p>
                 <div class="flex gap-5">
 
-                    <a class="bg-klipaa lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-14"
+                    <a class="bg-klipaa lg:w-36 md:w-28 w-28 text-sm md:text-base flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-12 md:h-14"
                         href="/form/3205072003/desa-sukarasa" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
                         Formulir</a>
-                    <a class="bg-white lg:w-36 md:w-28 flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-14"
+                    <a class="bg-white lg:w-36 md:w-28 w-24 flex text-sm md:text-base font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-12 md:h-14"
                         href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                         Masuk</a>
                 </div>
             </div>
-            <div class="w-1/2 flex justify-end items-center">
+            <div class="md:w-1/2 w-full flex md:justify-end justify-center items-center">
                 <img class="w-[80%]" src="/img/hero.png" alt="" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-delay="500">
             </div>
         </div>
     </div>
     <div id="about" class="md:p-7">
-        <div class="container bg-klipaa rounded-2xl flex justify-center flex-col items-center md:p-10">
+        <div class="container bg-klipaa  md:rounded-2xl p-5 md:p-0 flex justify-center flex-col items-center md:p-10">
             <div class="md:mb-8" data-aos="fade-up" data-aos-duration="1500">
-                <h1 class="text-white text-3xl font-semibold">APA ITU SITAMU?</h1>
+                <h1 class="text-white text-xl md:text-3xl my-5 md:my-0 font-semibold">APA ITU SITAMU?</h1>
             </div>
-            <div class="flex">
-                <figure class="w-1/2 md:flex items-center">
+            <div class="flex flex-wrap md:flex-nowrap">
+                <figure class="md:w-1/2 my-5 md:my-0 w-full md:flex items-center">
                     <img src="/img/pc.png" alt="" data-aos="fade-up" data-aos-delay="500"
                         data-aos-duration="1500">
                 </figure>
-                <div class="w-1/2 flex flex-col justify-center items-start md:p-5">
-                    <p class="text-white md:text-xs lg:text-base md:mb-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1500">Sitamu
+                <div class="md:w-1/2 w-full flex flex-col justify-center items-start md:p-5">
+                    <p class="text-white text-xs mb-3 md:text-xs lg:text-base md:mb-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1500">Sitamu
                         adalah platform digital yang dirancang khusus untuk mendukung
                         pengelolaan administrasi dan dokumentasi di tingkat desa. Sitamu digunakan oleh kantor desa
                         untuk mempermudah proses pencatatan, penyimpanan, dan pencarian berbagai data penting yang
                         berkaitan dengan kegiatan administratif desa
                     </p>
-                    <p class="text-white md:text-xs lg:text-base" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU
+                    <p class="text-white text-xs md:text-xs lg:text-base" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">SITAMU
                         menjadi alat yang sangat efektif untuk meningkatkan efisiensi, transparansi, dan
                         akuntabilitas dalam pengelolaan administrasi desa, serta mendukung kemajuan digitalisasi di
                         tingkat pemerintahan desa.</p>
@@ -65,56 +65,56 @@
         </div>
     </div>
     <div id="why" class="flex flex-col items-center md:p-5">
-        <div class="md:my-10">
-            <h1 class="font-semibold text-klipaa text-3xl" data-aos="fade-up" data-aos-delay="200"
+        <div class="my-10">
+            <h1 class="font-semibold text-klipaa text-xl md:text-3xl" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1500">Mengapa memilih Sitamu?</h1>
         </div>
-        <div class="container border p-10 border-klipaa rounded-2xl flex justify-center md:gap-5 lg:gap-10 rounded-lg">
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+        <div class="container border p-5 md:p-10 border-klipaa md:rounded-2xl flex flex-wrap gap-5 md:flex-nowrap justify-center md:gap-5 lg:gap-10 md:rounded-lg">
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 w-full md:w-48 lg:w-80 shrink-0 rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
-                    <img class="lg:w-32 md:w-24" src="/img/eficient.png" alt="">
+                    <img class="lg:w-32 md:w-24 w-24" src="/img/eficient.png" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Efisiensi Waktu dan
                         Proses</h2>
-                    <p class="text-sm font-normal">Dengan SITAMU, semua proses administrasi yang biasanya memakan waktu
+                    <p class="lg:text-sm md:text-[10px] text-xs font-normal">Dengan SITAMU, semua proses administrasi yang biasanya memakan waktu
                         dan tenaga, seperti
                         pengelolaan data tamu yang berkunjung,, bisa dilakukan dengan lebih cepat dan efektif.</p>
                 </div>
             </div>
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 w-full md:w-48 lg:w-80 shrink-0 rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
                 <div class="card-image md:mb-5 ">
-                    <img class="lg:w-32 md:w-24" src="/img/security.png" alt="">
+                    <img class="lg:w-32 md:w-24 w-24" src="/img/security.png" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Keamanan Data yang
                         Terjamin</h2>
-                    <p class="text-sm font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
+                    <p class="text-sm md:text-[10px] text-xs font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
                         menggunakan enkripsi dan pengamanan yang canggih untuk memastikan bahwa semua data yang
                         tersimpan terlindungi dari akses yang tidak sah.</p>
                 </div>
             </div>
-            <div class="card bg-klipaa md:py-8 text-white text-center p-5 max-w-xs rounded flex flex-col items-center"
+            <div class="card bg-klipaa md:py-8 text-white text-center p-5 w-full md:w-48 lg:w-80 shrink-0 rounded flex flex-col items-center"
                 data-aos="fade-up" data-aos-delay="700" data-aos-duration="1500">
                 <div class="card-image md:mb-3 ">
-                    <img class="lg:w-32 md:w-24" src="/img/transplatation.png" alt="">
+                    <img class="lg:w-32 md:w-24 w-24" src="/img/transplatation.png" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Transparansi dan Akuntabilitas</h2>
-                    <p class="text-sm font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
+                    <p class="text-sm md:text-[10px] text-xs font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
                         penting tercatat dengan rapi dan transparan.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div id="preview" class="flex flex-col items-center md:p-5">
-        <div class="text-center md:my-10">
-            <h1 class="text-klipaa font-semibold text-3xl" data-aos="fade-up" data-aos-delay="200"
+    <div id="preview" class="flex flex-col items-center md:m-0 md:p-5">
+        <div class="text-center my-10 md:my-10">
+            <h1 class="text-klipaa font-semibold text-2xl md:text-3xl" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1500">Pratinjau Aplikasi</h1>
         </div>
-        <div class="container relative bg-klipaa p-10 rounded-2xl flex flex-col justify-center items-center">
+        <div class="container relative bg-klipaa p-10 md:rounded-2xl flex flex-col justify-center items-center">
             <div>
                 <!-- Slider main container -->
                 <div class="swiper relative">
@@ -144,69 +144,69 @@
     </div>
     <div id="guide" class="flex flex-col items-center md:p-5 md:my-10">
         <div class="md:my-10">
-            <h1 class="text-klipaa text-3xl font-semibold" data-aos="fade-up" data-aos-delay="200"
+            <h1 class="text-klipaa text-xl my-10 md:text-3xl font-semibold" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1500">Panduan Penggunaan Sitamu</h1>
         </div>
-        <div class="container flex border rounded-2xl justify-center p-10 gap-10 border-klipaa">
-            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+        <div class="container flex flex-wrap md:flex-nowrap border md:rounded-2xl justify-center p-5 gap-5 md:p-10 lg:gap-10 md:gap-5 border-klipaa">
+            <div class="card max-w-xs h-72 md:h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 lg:h-80 md:h-64 flex flex-col items-center justify-center"
                 data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
-                    <img class="w-18" src="/img/one.png" alt="aa">
+                    <img class="lg:w-18 md:w-10 w-8" src="/img/one.png" alt="aa">
                 </figure>
-                <div class="card-body">
-                    <p class="font-medium text-lg">Scan barcode
+                <div class="card-body p-5 md:p-0">
+                    <p class="font-medium lg:text-lg md:text-sm">Scan barcode
                         untuk menuju ke halaman utama.</p>
                 </div>
             </div>
-            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+            <div class="card max-w-xs h-72 md:h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 lg:h-80 md:h-64 flex flex-col items-center justify-center"
                 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
-                    <img class="w-24" src="/img/two.png" alt="aa">
+                    <img class="lg:w-24 md:w-20 w-16" src="/img/two.png" alt="aa">
                 </figure>
-                <div class="card-body">
-                    <p class="font-medium text-lg">Masuk ke halaman tamu untuk ke halaman formulir.</p>
+                <div class="card-body p-5 md:p-0">
+                    <p class="font-medium lg:text-lg md:text-sm">Masuk ke halaman tamu untuk ke halaman formulir.</p>
                 </div>
             </div>
-            <div class="card max-w-xs h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 h-80 flex flex-col items-center justify-center"
+            <div class="card max-w-xs h-72 md:h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 lg:h-80 md:h-64 flex flex-col items-center justify-center"
                 data-aos="flip-up" data-aos-delay="700" data-aos-duration="1500">
                 <figure class="card-header flex justify-center items-center md:my-7">
-                    <img class="w-24" src="/img/three.png" alt="aa">
+                    <img class="lg:w-24 md:w-20 w-16" src="/img/three.png" alt="aa">
                 </figure>
-                <div class="card-body">
-                    <p class="font-medium text-lg">Isi formulir data
+                <div class="card-body p-5 md:p-0">
+                    <p class="font-medium lg:text-lg md:text-sm">Isi formulir data
                         buku tamu dengan benar lalu tekan submit.</p>
                 </div>
             </div>
         </div>
     </div>
     <footer id="footer" class="w-full text-white bg-klipaa md:px-10 md:pt-8">
-        <div class="footer-body p-5 flex justify-between">
-            <div class="logo w-2/3">
+        <div class="footer-body p-5 flex flex-wrap md:flex-nowrap justify-between">
+            <div class="logo lg:w-2/3 md:w-1/2 mb-5 md:m-0">
                 <div class="flex items-center font-semibold text-3xl">
-                    <img class="w-12" src="/img/sitamu.png" alt="Sitamu">
-                    <h5>Sitamu</h5>
+                    <img class="w-10" src="/img/logo.png" alt="Sitamu">
+                    <h5 class="text-xl md:text-base">Sitamu</h5>
                 </div>
-                <p class="font-medium">Buku Tamu Digital</p>
+                <p class="font-medium text-sm md:text-base ms-2 md:m-0">Buku Tamu Digital</p>
             </div>
-            <div class="w-1/3">
-                <ul class="text-white font-medium text-2xl">
+            <div class="lg:w-1/3 md:w-1/2">
+                <ul class="text-white font-medium text-lg md:text-2xl">
                     Kontak
                     <li class="my-5">
                         <div class="flex">
                             <img class="w-5 h-5 me-2" src="/img/telephone.png" alt="">
-                            <p class="text-sm font-medium">+62 823-1168-2447</p>
+                            <p class="md:text-sm text-xs font-medium">+62 823-1168-2447</p>
                         </div>
                     </li>
                     <li class="my-5">
                         <div class="flex">
                             <img class="w-5 h-5 me-2" src="/img/mail.png" alt="">
-                            <p class="text-sm font-medium">sitamu19@gmail.com</p>
+                            <p class="md:text-sm text-xs font-medium">sitamu19@gmail.com</p>
                         </div>
                     </li>
                     <li class="my-5">
                         <div class="flex">
                             <img class="w-5 h-5 me-2" src="/img/location.png" alt="">
-                            <p class="text-sm font-medium">Perum Rama Cipta Indah No.Blok A3, Jayawaras, Kec. Tarogong
+                            <p class="md:text-sm text-xs font-medium">Perum Rama Cipta Indah No.Blok A3, Jayawaras, Kec. Tarogong
                                 Kidul, Kabupaten Garut, Jawa Barat 44151</p>
                         </div>
                     </li>

@@ -23,7 +23,13 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <style>
+        @media screen and (max-width:576px){
+            #brand {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top" class="w-full">
@@ -51,36 +57,12 @@
 
                     <div>
                         <a class="text-decoration-none" href="/admin/visitor">
-                            <h1 class="text-gray-600 text-2xl ">&laquo; Tambah Data Tamu</h1>
+                            <h1 class="text-gray-600 text-sm md:text-2xl ">&laquo; Tambah Data Tamu</h1>
                         </a>
                     </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
 
 
 
@@ -96,19 +78,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -128,29 +97,24 @@
                     @csrf
                     <div class="form-header">
                         <div class="flex items-center md:my-3">
-                            <img class="w-12 me-2" src="/img/sitamu.png" alt="">
+                            <img class="w-12 me-2" src="/img/logo.png" alt="">
                             <h5 class="text-klipaa font-semibold text-3xl">Sitamu</h5>
                         </div>
                         <p class="text-gray-500 font-medium">Silakan isi data buku tamu dengan benar.</p>
                     </div>
                     <div class="form-body">
-                        {{-- <input type="hidden" name="province_code" value="{{ $visit->province_code }}">
-                        <input type="hidden" name="district_code" value="{{ $visit->district_code }}">
-                        <input type="hidden" name="sub_district_code" value="{{ $visit->subdistrict_code }}">
-                        <input type="hidden" name="village_code" value="{{ $visit->village_code }}">
-                        <input type="hidden" name="visit_type" value="{{ $visit->id }}"> --}}
                         <ul class="md:my-5">
-                            <li class="flex gap-10 md:my-3">
-                                <div class="flex flex-col items-start md:w-1/2">
+                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-10 md:my-3">
+                                <div class="flex flex-col items-start w-full md:w-1/2">
                                     <label for="fullname" class="mb-2">Nama Lengkap</label>
                                     <input type="text" name="fullname" id="fullname"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
                                         placeholder="Masukkan nama anda">
                                 </div>
-                                <div class="flex flex-col items-start md:w-1/2">
+                                <div class="flex flex-col items-start w-full md:w-1/2">
                                     <label for="institution" class="mb-2">Instansi</label>
                                     <select
-                                        class="instance form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2"
+                                        class="instance form-input text-gray-500 border border-gray-200 px-2 h-10 w-full md:w-1/2"
                                         name="institution" id="institution">
                                         <option selected>Pilih Instansi</option>
                                         <option value="Supra Desa">Supra desa</option>
@@ -222,16 +186,16 @@
                                 </div>
                             </li>
                             <li class="md:my-3">
-                                <div class="flex w-full gap-10">
-                                    <div class="flex flex-col items-start md:w-1/2">
+                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-10">
+                                    <div class="flex flex-col items-start w-full md:w-1/2">
                                         <label for="check_in" class="mb-2">Tanggal Datang</label>
                                         <input type="date" name="check_in" id="check_in"
-                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
+                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full  md:`w-1/2">
                                     </div>
-                                    <div class="flex flex-col items-start md:w-1/2">
+                                    <div class="flex flex-col items-start w-full md:w-1/2">
                                         <label for="check_out" class="mb-2">Tanggal Pulang</label>
                                         <input type="date" name="check_out" id="check_out"
-                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-1/2">
+                                            class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full  md:`w-1/2">
                                     </div>
                                 </div>
                             </li>

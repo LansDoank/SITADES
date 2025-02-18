@@ -20,8 +20,15 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" href="/img/sitamu.png">
+    <link rel="icon" href="/img/logo.png">
 
+    <style>
+        @media screen and (max-width:576px){
+            #brand {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -53,32 +60,6 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -251,50 +232,51 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body w-full flex">
-                                    <div class="w-1/2 flex flex-col justify-center p-2">
-                                        <h2 class="text-gray-800 mb-3">Tujuan</h2>
+                                <div class="card-body w-full flex flex-col-reverse flex-wrap md:flex-nowrap">
+                                    <div class="w-full md:w-1/2 flex flex-col justify-center p-2">
+                                        <h2 class="text-gray-800 mb-2 md:mb-3 text-lg">Tujuan</h2>
                                         <ul class="text-decoration-none list-none">
-                                            <li class="flex my-2 text-xl justify-between">
+                                            <li class="flex my-2 text-sm md:text-xl justify-between">
                                                 Studi Banding
-                                                <div class="mx-5 flex">
+                                                <div class="md:mx-5 flex">
                                                     50
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-xl justify-between">
+                                            <li class="flex my-2 text-sm md:text-xl justify-between">
                                                 Pendidikan
-                                                <div class="mx-5 flex">
+                                                <div class="md:mx-5 flex">
                                                     6
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-xl justify-between">
+                                            <li class="flex my-2 text-sm md:text-xl justify-between">
                                                 Wisata
-                                                <div class="mx-5 flex">
+                                                <div class="md:mx-5 flex">
                                                     14
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-xl justify-between">
+                                            <li class="flex my-2 text-sm md:text-xl justify-between">
                                                 Kunjungan
-                                                <div class="mx-5 flex">
+                                                <div class="md:mx-5 flex">
                                                     30
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-xl justify-between">
+                                            <li class="flex my-2 text-sm md:text-xl justify-between">
                                                 Lainnya
-                                                <div class="mx-5 flex">
+                                                <div class="md:mx-5 flex">
                                                     14
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="flex justify-center items-center md:px-24 md:py-10 w-1/2">
-                                        <canvas id="pie-chart" class="w-1/2"></canvas>
+                                    <div class="flex justify-center items-center md:px-24 md:py-10 w-full md:w-1/2">
+                                        <canvas id="pie-chart" class="w-full md:w-1/2"></canvas>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
 
+                        {{-- Geographical Chart --}}
                         <div class="w-full">
                             <div
                                 class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
@@ -308,14 +290,6 @@
                             </div>
                             <div class="flex">
                                 <div id="geochart" style="width: 100%;"></div>
-                                {{-- <div class="w-1/4">
-                                    <ul>
-                                        <li class="flex">
-                                            <div>75%</div>
-                                            Jawa Barat
-                                        </li>
-                                    </ul>
-                                </div> --}}
                             </div>
                         </div>
 
