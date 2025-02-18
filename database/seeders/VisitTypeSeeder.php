@@ -30,6 +30,7 @@ class VisitTypeSeeder extends Seeder
         VisitType::create([
             'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
             'name' => 'Desa Sukarasa',
+            'slug' => 'desa-sukarasa',
             'province_code' => '32',
             'district_code' => '3205',
             'subdistrict_code' => '320507',
@@ -38,6 +39,7 @@ class VisitTypeSeeder extends Seeder
         VisitType::create([
             'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
             'name' => 'Desa Cikedokan',
+            'slug' => 'desa-cikedokan',
             'province_code' => '32',
             'district_code' => '3205',
             'subdistrict_code' => '320507',
@@ -46,6 +48,7 @@ class VisitTypeSeeder extends Seeder
         VisitType::create([
             'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
             'name' => 'Desa Sukaasih',
+            'slug' => 'desa-sukaasih',
             'province_code' => '32',
             'district_code' => '3205',
             'subdistrict_code' => '320508',

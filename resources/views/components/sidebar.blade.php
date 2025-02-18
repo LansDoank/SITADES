@@ -15,7 +15,7 @@
     <li class="{{ request()->is('admin/dashboard') ? 'active' : '' }} nav-item">
         <a class="nav-link" href="/admin/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dasbor</span></a>
     </li>
 
     <!-- Divider -->
@@ -23,7 +23,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Features
+        Fitur
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -63,7 +63,7 @@
             <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
             <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
         </svg>
-        <span class="ms-2">Master Data  &#129107;</span>
+        <span class="ms-2">Filter Data  &#129107;</span>
     </div>
 
     <div class="absolute -z-50 transition-all duration-500 -translate-y-80  group-hover:translate-y-0 group-hover:static">
@@ -114,7 +114,7 @@
                         d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z" />
                     <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z" />
                 </svg>
-                <span class="ms-2">Qr Code</span>
+                <span class="ms-2">Kode Qr</span>
             </div>
         </a>
     </li>

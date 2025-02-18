@@ -35,6 +35,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/admin/receptionist/create', [ReceptionistController::class, 'add']);
 
+    Route::get('/admin/receptionist/edit/{id}', [ReceptionistController::class, 'show'])->name('receptionist.edit');
+
+    Route::post('/admin/receptionist/update', [ReceptionistController::class, 'update'])->name('receptionist.update');
+
     Route::get('/admin/receptionist/delete/{id}', [ReceptionistController::class, 'delete'])->name('receptionist.delete');
 
     Route::get('/admin/master_data',[AdminController::class,'masterData'])->name('admin.master_data');
@@ -49,7 +53,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/form', [VisitorController::class, 'form'])->name('visitor.form');
 
-Route::get('/form/{id}', [VisitorController::class, 'show'])->name('visitor.show');
+Route::get('/form/{id}/{slug}', [VisitorController::class, 'show'])->name('visitor.show');
 
 Route::post('/form/create', [VisitorController::class, 'addVisitor']);
 

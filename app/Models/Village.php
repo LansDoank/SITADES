@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Village extends Model
 {
-    // public function receptionist(): HasMany  {
-    //     return $this->hasMany(User::class);
-    // }
+    public function receptionist(): HasMany  {
+        return $this->hasMany(User::class);
+    }
 }

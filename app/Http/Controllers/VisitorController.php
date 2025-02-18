@@ -20,7 +20,7 @@ class VisitorController extends Controller
         return view('user.form', ['title' => 'Formulir Bertamu', 'visitTypes' => VisitType::all()]);
     }
 
-    public function show($code)
+    public function show($code,$slug)
     {
         // $id = $code;
         $code = str_split($code);
@@ -29,10 +29,13 @@ class VisitorController extends Controller
         $subDistrictCode = $code[0] . $code[1] . $code[2] . $code[3] . $code[4] . $code[5];
         $villageCode = "$code[0]$code[1]$code[2]$code[3]$code[4]$code[5]$code[6]$code[7]$code[8]$code[9]";
 
+        $village = VisitType::where('village_code', $villageCode);
+        $village = $village->where('slug',$slug)->first();
+
         return view('user.form', [
             // 'id' => $id,
-            'title' => 'Visitor Form',
-            'visit' => VisitType::where('village_code', $villageCode)->first(),
+            'title' => "Form Tamu - $village->name",
+            'visit' => $village,
             'provinces' => Province::all(),
             'districts' => District::all(),
             'sub_districts' => SubDistrict::all(),

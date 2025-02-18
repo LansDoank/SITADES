@@ -24,7 +24,7 @@ export default {
                     900: "#1e3a8a",
                     950: "#172554",
                 },
-                klipaa: '#65AE3A'
+                klipaa: '#295127'
             },
         },
         fontFamily: {

@@ -22,6 +22,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'photo',
         'name',
         'email',
         'password',
@@ -29,13 +30,19 @@ class User extends Authenticatable
 
     // protected $with = ['roles'];
 
-    public function role() : HasOne{
-        return $this->hasOne(Role::class);
-    }
+    // public function role() : HasOne{
+    //     return $this->hasOne(Role::class);
+    // }
 
     // public function address(): BelongsTo {
     //     return $this->belongsTo(Village::class);
     // }
+
+    public function address()
+    {
+        return $this->belongsTo(Village::class, 'village_code', 'code');
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.

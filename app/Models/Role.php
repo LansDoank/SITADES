@@ -13,7 +13,7 @@ class Role extends Model
     protected $fillable = ['name']; 
     // protected $with = ['user'];
 
-    public function user() : BelongsTo {
-        return $this->belongsTo(Role::class);
-    }
+    // public function user() : BelongsTo {
+    //     return $this->belongsTo(Role::class);
+    // }
 }

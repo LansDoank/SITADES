@@ -48,7 +48,7 @@
                     </button>
 
                     <div>
-                        <h1 class="text-gray-600 text-2xl ">Dashboard</h1>
+                        <h1 class="text-gray-600 text-2xl ">Dasbor</h1>
                     </div>
 
                     <!-- Topbar Navbar -->
@@ -92,8 +92,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -118,8 +117,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Guests (DAILY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestDaily}}</div>
+                                                Tamu (HARIAN)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $guestDaily }}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -136,8 +136,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Guests (WEEKLY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestWeekly}}</div>
+                                                Tamu (Mingguan)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $guestWeekly }}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -154,12 +155,13 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                                Guests
-                                                (MONTHLY)
+                                                Tamu
+                                                (Bulanan)
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$guestMonthly}}</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                        {{ $guestMonthly }}</div>
                                                 </div>
 
                                             </div>
@@ -180,8 +182,9 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Guests (YEARLY)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$guestYearly}}</div>
+                                                Tamu (TAHUNAN)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $guestYearly }}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <img src="/img/guests.png" class="w-12" alt="">
@@ -203,22 +206,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button"
-                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary">Pratinjau</h6>
                                 </div>
 
                                 <!-- Card Body -->
@@ -228,7 +216,15 @@
                                             style="width: 100% !important;"></canvas>
                                     </div>
                                 </div>
-
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Instansi</h6>
+                                </div>
                                 <!-- Card Body -->
                                 <div class="card-body w-full">
                                     <div class="w-full">
@@ -245,21 +241,13 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Pai</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button"
                                             id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
@@ -310,20 +298,12 @@
                         <div class="w-full">
                             <div
                                 class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Geoprahical Chart</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Grafik Geografis</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                        aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="flex">
@@ -344,21 +324,13 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Waktu</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button"
                                             id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -439,8 +411,7 @@
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-    </script>
+    <script></script>
     <script>
         const lineData = [{
 
@@ -448,41 +419,49 @@
         const lineChart = new Chart(document.getElementById('line-chart'), {
             type: 'line',
             data: {
-                labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli','Agustus','September','Oktober','November','Desember'],
                 datasets: [{
-                    label: 'Guests by daily',
-                    data: [10, 5, 8, 7, 14, 17, 3]
+                    label: 'Tamu berdasarkan harian',
+                    data: [10, 5, 8, 7, 14, 17, 3,5,9,11,12,18]
                 }]
             },
         });
 
         const overviewData = [{
-                day: "Senin",
-                guests: 10
+                day: "",
+                guests: 30
             },
             {
-                day: "Selasa",
-                guests: 5
+                day: "",
+                guests: 50
             },
             {
-                day: "Rabu",
-                guests: 8
+                day: "",
+                guests: 80
             },
             {
-                day: "Kamis",
-                guests: 7
+                day: "",
+                guests: 70
             },
             {
-                day: "Jumat",
-                guests: 14
+                day: "",
+                guests: 120
             },
             {
-                day: "Sabtu",
-                guests: 17
+                day: "",
+                guests: 85
             },
             {
-                day: "Minggu",
-                guests: 3,
+                day: "",
+                guests: 75,
+            },
+            {
+                day: "",
+                guests: 65,
+            },
+            {
+                day: "",
+                guests: 40,
             },
         ];
 
@@ -491,7 +470,7 @@
             data: {
                 labels: overviewData.map(data => data.day),
                 datasets: [{
-                    label: 'Guests by daily',
+                    label: 'Tamu berdasarkan instansi',
                     data: overviewData.map(row => row.guests),
                     backgroundColor: ['rgba(44, 125, 157, 1)'],
                 }]

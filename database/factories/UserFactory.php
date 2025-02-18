@@ -27,7 +27,8 @@ class UserFactory extends Factory
     {
         return [
             'photo' => 'user_photo/0dH6swoMJcnHYVaAbuSb2Rs0tPlgqiFwCARW90qS.png',
-            'username' => fake()->name(),
+            'name' => fake()->name(),
+            'username' => fake()->userName(),
             'password' => bcrypt('user123'),
             'role_id' => Role::factory(),
             'province_code' => '32',

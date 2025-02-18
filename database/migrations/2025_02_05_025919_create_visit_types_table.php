@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('qr_code');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('province_code');
             $table->string('district_code');
             $table->string('subdistrict_code');

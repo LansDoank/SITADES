@@ -129,6 +129,7 @@
                                         <tr>
                                             <th class="col-1">No</th>
                                             <th class="col-2">Foto</th>
+                                            <th class="col-2">Nama</th>
                                             <th class="col-2">Username</th>
                                             <th class="col-1">Password</th>
                                             <th class="col-5">Alamat</th>
@@ -142,11 +143,12 @@
                                                 <td>{{$no}}</td>
                                                 <td class="">
                                                     <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset('storage/' . $receptionist->photo)}}" alt=""></td>
+                                                <td>{{$receptionist->name}}</td>
                                                 <td>{{$receptionist->username}}</td>
                                                 <td class="col-1">{{Str::limit($receptionist->password,30   )}}</td>
-                                                <td>{{Str::limit($receptionist->address,20)}}</td>
+                                                <td>{{Str::limit($receptionist->address->name,20)}}</td>
                                                 <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/receptionist/edit/{{$receptionist->id}}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
                                                     <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/admin/receptionist/delete/{{$receptionist->id}}">
