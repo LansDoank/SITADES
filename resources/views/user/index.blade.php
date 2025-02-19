@@ -2,7 +2,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div id="hero">
-        <div class="container w-full flex flex-wrap flex-col-reverse md:flex-nowrap justify-center items-center lg:h-[700px] md:h-[600px] py-16 md:py-12 md:px-10 lg:p-20">
+        <div class="container w-full flex flex-wrap flex-col-reverse md:flex-row md:flex-nowrap justify-center items-center lg:h-[700px] md:h-[600px] py-16 md:py-12 md:px-10 lg:p-20">
             @if (Session::has('visitor_success'))
             <div
                 class="max-w-sm  flex flex-col justify-center h-[400px] items-center bg-white shadow z-20 border rounded absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
@@ -23,7 +23,7 @@
                 <div class="flex gap-5">
 
                     <a class="bg-klipaa lg:w-36 md:w-28 w-28 text-sm md:text-base flex font-medium justify-center items-center md:my-5 hover:brightness-90 text-white rounded h-12 md:h-14"
-                        href="/form/3205072003/desa-sukarasa" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
+                        href="/form/desa" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">Isi
                         Formulir</a>
                     <a class="bg-white lg:w-36 md:w-28 w-24 flex text-sm md:text-base font-medium justify-center items-center md:my-5 hover:brightness-90 text-klipaa shadow shadow-klipaa rounded h-12 md:h-14"
                         href="/login" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 w-full flex md:justify-end justify-center items-center">
-                <img class="w-[80%]" src="/img/hero.png" alt="" data-aos="fade-up" data-aos-duration="1500"
+                <img class="w-[90%]" src="/img/hero.png" alt="" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-delay="500">
             </div>
         </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="flex flex-wrap md:flex-nowrap">
                 <figure class="md:w-1/2 my-5 md:my-0 w-full md:flex items-center">
-                    <img src="/img/pc.png" alt="" data-aos="fade-up" data-aos-delay="500"
+                    <img src="/img/about.png" alt="" data-aos="fade-up" data-aos-delay="500"
                         data-aos-duration="1500">
                 </figure>
                 <div class="md:w-1/2 w-full flex flex-col justify-center items-start md:p-5">

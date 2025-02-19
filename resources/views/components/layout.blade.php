@@ -27,7 +27,12 @@
     }
 
     html {
+        width: 100%;
         overflow-x: hidden;
+    }
+
+    * {
+        /* border: 1px solid red; */
     }
 
     .nav-link:hover{
@@ -42,7 +47,7 @@
 
     .bg-daun {
         background-image: url(/img/bgnowb.jpg);
-        background-size: cover;
+        /* background-size: ; */
         background-repeat: no-repeat;
         background-position: center;
     }

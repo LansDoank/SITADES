@@ -53,6 +53,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/form', [VisitorController::class, 'form'])->name('visitor.form');
 
+Route::get('/form/desa',[VisitorController::class,'desa'])->name('visitor.desa');
+
+Route::post('/form/desa/data',[VisitorController::class,'dataDesa'])->name('visitor.desa.data');
+
 Route::get('/form/{id}/{slug}', [VisitorController::class, 'show'])->name('visitor.show');
 
 Route::post('/form/create', [VisitorController::class, 'addVisitor']);

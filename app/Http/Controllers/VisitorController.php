@@ -20,6 +20,17 @@ class VisitorController extends Controller
         return view('user.form', ['title' => 'Formulir Bertamu', 'visitTypes' => VisitType::all()]);
     }
 
+    public function desa() {
+        return view('visitor.village', ['title' => 'Form - Desa', 'villages' => VisitType::all()]);
+    }
+    
+
+    public function dataDesa(Request $request) {
+        $village = VisitType::where('village_code',$request->village)->first();
+
+        return redirect("/form/$village->village_code/$village->slug");
+    }
+
     public function show($code,$slug)
     {
         // $id = $code;
