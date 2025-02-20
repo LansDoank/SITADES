@@ -45,11 +45,16 @@ class SubDistrictSeeder extends Seeder
             ['code' => '1103031', 'name' => 'Kluet Timur'],
             ['code' => '1103040', 'name' => 'Kluet Utara'],
             ['code' => '1103041', 'name' => 'Pasie Raja'],
-            ['code' => '320507', 'name' => 'Samarang']
         ];
 
         foreach ($subdistricts as $subdistrict) {
             SubDistrict::create($subdistrict);
         }
+
+        SubDistrict::create([
+            'code' => '320507',
+            'name' => 'Samarang',
+            'district_code' => '3205',
+        ]);
     }
 }

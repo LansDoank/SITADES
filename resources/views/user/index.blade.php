@@ -1,12 +1,12 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
-    <div id="hero">
+    <div id="hero" class="flex flex-col items-center">
         <div class="container w-full flex flex-wrap flex-col-reverse md:flex-row md:flex-nowrap justify-center items-center lg:h-[700px] md:h-[600px] py-16 md:py-12 md:px-10 lg:p-20">
             @if (Session::has('visitor_success'))
             <div
-                class="max-w-sm  flex flex-col justify-center h-[400px] items-center bg-white shadow z-20 border rounded absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
-                <img class="w-32" src="/img/checked.png" alt="">
+                class="lg:w-[300px] md:w-[250px] w-[250px] flex flex-col justify-center lg-[400px] md:h-[320px] h-[300px] items-center bg-white shadow z-20 border rounded-lg absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
+                <img class="md:w-28 lg:w-32 w-24" src="/img/checked.png" alt="">
                 <h2 class="text-2xl font-semibold my-5 text-">Success!</h2>
                 <p>{{ session('visitor_success') }}</p>
             </div>
@@ -36,9 +36,9 @@
             </div>
         </div>
     </div>
-    <div id="about" class="md:p-7">
+    <div id="about" class="md:p-7 flex flex-col items-center">
         <div class="container bg-klipaa  md:rounded-2xl p-5 md:p-0 flex justify-center flex-col items-center md:p-10">
-            <div class="md:mb-8" data-aos="fade-up" data-aos-duration="1500">
+            <div class="md:mb-8" data-aos="fade-up" data-aos-duration="900">
                 <h1 class="text-white text-xl md:text-3xl my-5 md:my-0 font-semibold">APA ITU SITAMU?</h1>
             </div>
             <div class="flex flex-wrap md:flex-nowrap">
@@ -67,7 +67,7 @@
     <div id="why" class="flex flex-col items-center md:p-5">
         <div class="my-10">
             <h1 class="font-semibold text-klipaa text-xl md:text-3xl" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1500">Mengapa memilih Sitamu?</h1>
+                data-aos-duration="900">Mengapa memilih Sitamu?</h1>
         </div>
         <div class="container border p-5 md:p-10 border-klipaa md:rounded-2xl flex flex-wrap gap-5 md:flex-nowrap justify-center md:gap-5 lg:gap-10 md:rounded-lg">
             <div class="card bg-klipaa md:py-8 text-white text-center p-5 w-full md:w-48 lg:w-80 shrink-0 rounded flex flex-col items-center"
@@ -91,7 +91,7 @@
                 <div class="card-body">
                     <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Keamanan Data yang
                         Terjamin</h2>
-                    <p class="text-sm md:text-[10px] text-xs font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
+                    <p class="lg:text-sm md:text-[10px] text-xs font-normal">Keamanan data menjadi prioritas utama dalam SITAMU. Sistem ini
                         menggunakan enkripsi dan pengamanan yang canggih untuk memastikan bahwa semua data yang
                         tersimpan terlindungi dari akses yang tidak sah.</p>
                 </div>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="card-body">
                     <h2 class="font-medium lg:my-5 md:text-lg lg:text-2xl mb-3">Transparansi dan Akuntabilitas</h2>
-                    <p class="text-sm md:text-[10px] text-xs font-normal">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
+                    <p class="lg:text-sm md:text-[10px] text-xs font-normal text-center md:mt-3">SITAMU menyediakan fitur yang memungkinkan semua data dan informasi
                         penting tercatat dengan rapi dan transparan.</p>
                 </div>
             </div>
@@ -112,7 +112,7 @@
     <div id="preview" class="flex flex-col items-center md:m-0 md:p-5">
         <div class="text-center my-10 md:my-10">
             <h1 class="text-klipaa font-semibold text-2xl md:text-3xl" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1500">Pratinjau Aplikasi</h1>
+                data-aos-duration="900">Pratinjau Aplikasi</h1>
         </div>
         <div class="container relative bg-klipaa p-10 md:rounded-2xl flex flex-col justify-center items-center">
             <div>
@@ -122,12 +122,13 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img class="w-full rounded-xl h-full object-cover object-center" src="/img/preview.png"
+                            <img class="w-full rounded-xl h-full object-cover object-center" src="/img/mobile.png"
                                 alt="">
                         </div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-
+                        <div class="swiper-slide">
+                            <img class="w-full rounded-xl h-full object-cover object-center" src="/img/tablet.png"
+                                alt="">
+                        </div>
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
@@ -145,7 +146,7 @@
     <div id="guide" class="flex flex-col items-center md:p-5 md:my-10">
         <div class="md:my-10">
             <h1 class="text-klipaa text-xl my-10 md:text-3xl font-semibold" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1500">Panduan Penggunaan Sitamu</h1>
+                data-aos-duration="900">Panduan Penggunaan Sitamu</h1>
         </div>
         <div class="container flex flex-wrap md:flex-nowrap border md:rounded-2xl justify-center p-5 gap-5 md:p-10 lg:gap-10 md:gap-5 border-klipaa">
             <div class="card max-w-xs h-72 md:h-96 rounded-lg text-klipaa border border-klipaa text-center bg-white  md:p-5 lg:h-80 md:h-64 flex flex-col items-center justify-center"

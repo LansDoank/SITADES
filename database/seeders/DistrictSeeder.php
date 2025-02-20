@@ -46,11 +46,16 @@ class DistrictSeeder extends Seeder
             ['code' => '1207', 'name' => 'Kabupaten Labuhan Batu'],
             ['code' => '1208', 'name' => 'Kabupaten Asahan'],
             ['code' => '1209', 'name' => 'Kabupaten Simalungun'],
-            ['code' => '3205', 'name' => 'Garut']
         ];
 
         foreach ($district as $data) {
             District::create($data);
         }
+
+        District::create([
+            'code' => '3205',
+            'name' => 'Garut',
+            'province_code' => '32',
+        ]);
     }
 }

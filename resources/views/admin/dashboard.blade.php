@@ -23,7 +23,7 @@
     <link rel="icon" href="/img/logo.png">
 
     <style>
-        @media screen and (max-width:576px){
+        @media screen and (max-width:576px) {
             #brand {
                 display: none;
             }
@@ -222,7 +222,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Pai</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tujuan</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button"
                                             id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -232,38 +232,38 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body w-full flex flex-col-reverse flex-wrap md:flex-nowrap">
+                                <div
+                                    class="card-body w-full flex flex-col-reverse md:flex-row flex-wrap md:flex-nowrap">
                                     <div class="w-full md:w-1/2 flex flex-col justify-center p-2">
-                                        <h2 class="text-gray-800 mb-2 md:mb-3 text-lg">Tujuan</h2>
                                         <ul class="text-decoration-none list-none">
-                                            <li class="flex my-2 text-sm md:text-xl justify-between">
+                                            <li class="flex my-3 text-sm md:text-xl justify-between">
                                                 Studi Banding
                                                 <div class="md:mx-5 flex">
-                                                    50
+                                                    {{$studi_banding}}
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-sm md:text-xl justify-between">
-                                                Pendidikan
+                                            <li class="flex my-3 text-sm md:text-xl justify-between">
+                                                Cari Informasi
                                                 <div class="md:mx-5 flex">
-                                                    6
+                                                    {{$cari_informasi}}
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-sm md:text-xl justify-between">
-                                                Wisata
+                                            <li class="flex my-3 text-sm md:text-xl justify-between">
+                                                Pembinaan
                                                 <div class="md:mx-5 flex">
-                                                    14
+                                                    {{$pembinaan}}
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-sm md:text-xl justify-between">
-                                                Kunjungan
+                                            <li class="flex my-3 text-sm md:text-xl justify-between">
+                                                Koordinasi
                                                 <div class="md:mx-5 flex">
-                                                    30
+                                                    {{$koordinasi}}
                                                 </div>
                                             </li>
-                                            <li class="flex my-2 text-sm md:text-xl justify-between">
+                                            <li class="flex my-3 text-sm md:text-xl justify-between">
                                                 Lainnya
                                                 <div class="md:mx-5 flex">
-                                                    14
+                                                    {{$lainnya}}
                                                 </div>
                                             </li>
                                         </ul>
@@ -385,245 +385,177 @@
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script></script>
-    <script>
-        const lineData = [{
-
-        }]
-        const lineChart = new Chart(document.getElementById('line-chart'), {
-            type: 'line',
-            data: {
-                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli','Agustus','September','Oktober','November','Desember'],
-                datasets: [{
-                    label: 'Tamu berdasarkan harian',
-                    data: [10, 5, 8, 7, 14, 17, 3,5,9,11,12,18]
-                }]
-            },
-        });
-
-        const overviewData = [{
-                day: "",
-                guests: 30
-            },
-            {
-                day: "",
-                guests: 50
-            },
-            {
-                day: "",
-                guests: 80
-            },
-            {
-                day: "",
-                guests: 70
-            },
-            {
-                day: "",
-                guests: 120
-            },
-            {
-                day: "",
-                guests: 85
-            },
-            {
-                day: "",
-                guests: 75,
-            },
-            {
-                day: "",
-                guests: 65,
-            },
-            {
-                day: "",
-                guests: 40,
-            },
-        ];
-
-        const overview = new Chart(document.getElementById('overview'), {
-            type: 'bar',
-            data: {
-                labels: overviewData.map(data => data.day),
-                datasets: [{
-                    label: 'Tamu berdasarkan instansi',
-                    data: overviewData.map(row => row.guests),
-                    backgroundColor: ['rgba(44, 125, 157, 1)'],
-                }]
-            },
-        });
-
-        const pieData = [{
-                label: 'Studi Banding',
-                value: 5
-            },
-            {
-                label: 'Pendidikan',
-                value: 10
-            },
-            {
-                label: 'Wisata',
-                value: 15
-            },
-            {
-                label: 'Kunjungan',
-                value: 20
-            },
-            {
-                label: 'Lainnya',
-                value: 50
-            }
-        ];
-
-        const pieChart = new Chart('pie-chart', {
-            type: 'doughnut',
-            data: {
-                labels: pieData.map(data => data.label),
-                datasets: [{
-                    data: pieData.map(data => data.value),
-                    backgroundColor: [
-                        'rgba(181, 78, 225, 1)',
-                        'rgba(225, 80, 80, 1)',
-                        'rgba(255, 162, 70, 1)',
-                        'rgba(246, 194, 62, 1)',
-                        'rgba(95, 230, 68, 1)',
-                    ]
-                }]
-            }
-        });
-
-        const waktuData = [{
-                time: "00:00",
-                guests: 1
-            },
-            {
-                time: "01:00",
-                guests: 2
-            },
-            {
-                time: "02:00",
-                guests: 8
-            },
-            {
-                time: "03:00",
-                guests: 9
-            },
-            {
-                time: "04:00",
-                guests: 3
-            },
-            {
-                time: "05:00",
-                guests: 2
-            },
-            {
-                time: "06:00",
-                guests: 1
-            },
-            {
-                time: "07:00",
-                guests: 5
-            },
-            {
-                time: "08:00",
-                guests: 3
-            },
-            {
-                time: "09:00",
-                guests: 12
-            },
-            {
-                time: "10:00",
-                guests: 11
-            },
-            {
-                time: "11:00",
-                guests: 8
-            },
-            {
-                time: "12:00",
-                guests: 5
-            },
-            {
-                time: "13:00",
-                guests: 1
-            },
-            {
-                time: "14:00",
-                guests: 1
-            },
-            {
-                time: "15:00",
-                guests: 4
-            },
-            {
-                time: "16:00",
-                guests: 8
-            },
-            {
-                time: "17:00",
-                guests: 3
-            },
-            {
-                time: "18:00",
-                guests: 5
-            },
-            {
-                time: "19:00",
-                guests: 7
-            },
-            {
-                time: "20:00",
-                guests: 9
-            },
-            {
-                time: "21:00",
-                guests: 9
-            },
-            {
-                time: "22:00",
-                guests: 5
-            },
-            {
-                time: "23:00",
-                guests: 5
-            },
-            {
-                time: "24:00",
-                guests: 4
-            },
-        ];
-
-        const waktuChart = new Chart(document.getElementById('waktu-chart'), {
-            type: 'bar',
-            data: {
-                labels: waktuData.map(data => data.time),
-                datasets: [{
-                    label: 'Guests by time',
-                    data: waktuData.map(row => row.guests),
-                    backgroundColor: ['rgba(44, 125, 157, 1)'],
-                }]
-            },
-        });
-    </script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    {{-- Chart --}}
     <script>
-        google.charts.load('current', {
-            'packages': ['geochart'],
-            'mapsApiKey': 'YOUR_GOOGLE_MAPS_API_KEY' // Opsional, untuk fitur tambahan
-        });
-        google.charts.setOnLoadCallback(drawRegionsMap);
+        fetch('/chart/line')
+            .then((res) => res.json())
+            .then((data) => {
+                const labels = data.map(item => {
+                    const months = [
+                        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                    ];
+                    return months[item.month - 1]; // Ubah angka bulan menjadi nama bulan
+                });
 
-        function drawRegionsMap() {
-            var data = google.visualization.arrayToDataTable([
-                ['Province', 'Visitors'],
-                ['ID-AC', 500], // Aceh
-                ['ID-JK', 300], // Jakarta
-                ['ID-JT', 500], // Jawa Tengah
-                ['ID-JI', 400], // Jawa Timur
-                ['ID-BT', 450] // Banten
-            ]);
+                const values = data.map(item => item.total);
+
+                const ctx = document.getElementById('line-chart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah Visitor per Bulan',
+                            data: values,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderWidth: 2,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }).catch(error => console.error("Error fetching data:", error));
+    </script>
+    <script>
+        fetch('/chart/candle')
+            .then((res) => res.json())
+            .then((data) => {
+                const labels = ['Supra Desa', 'APH', 'Warga', 'Media', 'Lainnya']
+                new Chart('overview', {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah Visitor per Instansi',
+                            data: data,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderWidth: 2,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }).catch(error => console.error("Error fetching data:", error));
+    </script>
+    <script>
+        fetch('/chart/doughnut')
+            .then((res) => res.json())
+            .then((data) => {
+                const labels = ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi', 'Lainnya']
+                new Chart('pie-chart', {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah Visitor per Instansi',
+                            data: data,
+                            backgroundColor: [
+                                'rgba(181, 78, 225, 1)',
+                                'rgba(225, 80, 80, 1)',
+                                'rgba(255, 162, 70, 1)',
+                                'rgba(246, 194, 62, 1)',
+                                'rgba(95, 230, 68, 1)',
+                            ]
+                        }]
+                    }
+                });
+            }).catch(error => console.error("Error fetching data:", error));
+    </script>
+    <script>
+        fetch('/chart/geographical')
+            .then((res) => res.json())
+            .then((data) => {
+
+                google.charts.load('current', {
+                    'packages': ['geochart'],
+                    'mapsApiKey': 'YOUR_GOOGLE_MAPS_API_KEY' // Opsional
+                });
+                google.charts.setOnLoadCallback(() => drawRegionsMap(data));
+            });
+
+        function drawRegionsMap(apiData) {
+            // Mapping kode provinsi dari angka ke ISO 3166-2:ID
+            const provinceMapping = {
+                "11": "ID-AC", // Aceh
+                "12": "ID-SU", // Sumatera Utara
+                "13": "ID-SB", // Sumatera Barat
+                "14": "ID-RI", // Riau
+                "15": "ID-JA", // Jambi
+                "16": "ID-SS", // Sumatera Selatan
+                "17": "ID-BE", // Bengkulu
+                "18": "ID-LA", // Lampung
+                "19": "ID-BB", // Kepulauan Bangka Belitung
+                "21": "ID-KR", // Kepulauan Riau
+                "31": "ID-JK", // DKI Jakarta
+                "32": "ID-JB", // Jawa Barat
+                "33": "ID-JT", // Jawa Tengah
+                "34": "ID-YO", // DI Yogyakarta
+                "35": "ID-JI", // Jawa Timur
+                "36": "ID-BT", // Banten
+                "51": "ID-BA", // Bali
+                "52": "ID-NB", // Nusa Tenggara Barat
+                "53": "ID-NT", // Nusa Tenggara Timur
+                "61": "ID-KB", // Kalimantan Barat
+                "62": "ID-KT", // Kalimantan Tengah
+                "63": "ID-KS", // Kalimantan Selatan
+                "64": "ID-KI", // Kalimantan Timur
+                "65": "ID-KU", // Kalimantan Utara
+                "71": "ID-SA", // Sulawesi Utara
+                "72": "ID-ST", // Sulawesi Tengah
+                "73": "ID-SN", // Sulawesi Selatan
+                "74": "ID-SG", // Sulawesi Tenggara
+                "75": "ID-GO", // Gorontalo
+                "76": "ID-SR", // Sulawesi Barat
+                "81": "ID-MA", // Maluku
+                "82": "ID-MU", // Maluku Utara
+                "91": "ID-PA", // Papua
+                "92": "ID-PB" // Papua Barat
+            };
+
+            // Ubah data API ke format Google Charts
+            const chartData = [
+                ['Province', 'Visitors']
+            ];
+            apiData.forEach(item => {
+                const provinceCode = provinceMapping[item.province_code]; // Konversi kode
+                if (provinceCode) {
+                    chartData.push([provinceCode, item.visitors]);
+                }
+            });
+
+
+            var data = google.visualization.arrayToDataTable(chartData);
 
             var options = {
-                region: 'ID', // Kode negara Indonesia
+                region: 'ID', // Fokus ke Indonesia
                 resolution: 'provinces',
                 colorAxis: {
                     colors: ['#e0f3db', '#0868ac']
@@ -634,7 +566,37 @@
             chart.draw(data, options);
         }
     </script>
+    <script>
+        async function fetchChartData() {
+            try {
+                const response = await fetch('/chart/time'); // Panggil API
+                const data = await response.json();
 
+                // Format data agar sesuai dengan chart
+                const labels = data.map(item => item.hour + ":00"); // Konversi jam ke format "HH:00"
+                const guestCounts = data.map(item => item.guests);
+
+                // Render Chart
+                const ctx = document.getElementById('waktu-chart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Guests by time',
+                            data: guestCounts,
+                            backgroundColor: 'rgba(44, 125, 157, 1)',
+                        }]
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching chart data:", error);
+            }
+        }
+
+        fetchChartData();
+    </script>
+    {{-- End Chart --}}
 </body>
 
 </html>

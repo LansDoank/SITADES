@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('villages', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->string('sub_district_code')->nullable();
+            $table->string('sub_district_code');
             $table->string('name');
             $table->timestamps();
         });

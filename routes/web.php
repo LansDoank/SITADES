@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\ReceptionistController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\ChartController;
+use App\Models\Visitor;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'index'])->name('user.index');
@@ -48,8 +51,36 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/qr_code/add', [QrCodeController::class, 'add'])->name('qrcode.add');
 
     Route::post('/admin/qr_code/create', [QrCodeController::class, 'create']);
+
+    Route::get('/admin/qr_code/edit/{id}',[QrCodeController::class,'edit']);
+
+    Route::post('/admin/qr_code/update',[QrCodeController::class,'update']);
+
+    Route::get('/admin/qr_code/delete/{id}',[QrCodeController::class,'delete']);
 });
 
+// Route::get('/province',[AddressController::class,'province'])->name('province.index');
+// Route::group(['prefix' => 'address'],function(){
+//     Route::get('/district/{code}',[AddressController::class,'district']);
+//     Route::get('/subdistrict/{code}',[AddressController::class,'subDistrict']);
+
+// });
+
+Route::get('/chart/line',[ChartController::class,'line'])->name('chart.line');
+Route::get('/chart/candle',[ChartController::class,'candle'])->name('chart.candle');
+Route::get('/chart/doughnut',[ChartController::class,'doughnut'])->name('chart.doughnut');
+Route::get('/chart/geographical',[ChartController::class,'geographical'])->name('chart.geographical');
+Route::get('/chart/time',[ChartController::class,'time'])->name('chart.time');
+
+
+Route::get('/admin/receptionist/create', [ReceptionistController::class, 'create']);
+Route::get('/api/districts/{province_code}', [ReceptionistController::class, 'getDistrictsByProvince']);
+Route::get('/api/sub-districts/{district_code}', [ReceptionistController::class, 'getSubDistrictsByDistrict']);
+Route::get('/api/villages/{sub_district_code}', [ReceptionistController::class, 'getVillagesBySubDistrict']);
+
+Route::get('/visitor',function(){
+    return response()->json(Visitor::all());
+});
 
 Route::get('/form', [VisitorController::class, 'form'])->name('visitor.form');
 
@@ -60,6 +91,8 @@ Route::post('/form/desa/data',[VisitorController::class,'dataDesa'])->name('visi
 Route::get('/form/{id}/{slug}', [VisitorController::class, 'show'])->name('visitor.show');
 
 Route::post('/form/create', [VisitorController::class, 'addVisitor']);
+
+Route::get('/form/popup',[VisitorController::class,'popup'])->name('visitor.popup');
 
 
 // Route::get('/login/admin',[AdminController::class,'login'])->name('login.admin');

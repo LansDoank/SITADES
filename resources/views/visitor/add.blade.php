@@ -155,9 +155,9 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="district" id="district">
                                         <option selected>Pilih Kabupaten Anda</option>
-                                        @foreach ($districts as $district)
+                                        {{-- @foreach ($districts as $district)
                                 <option value="{{$district->code}}">{{$district->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -167,9 +167,9 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="sub_district" id="sub_district">
                                         <option selected>Pilih Kecamatan Anda</option>
-                                        @foreach ($sub_districts as $sub_district)
+                                        {{-- @foreach ($sub_districts as $sub_district)
                                 <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -179,9 +179,9 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="village" id="village">
                                         <option selected>Pilih Desa Anda</option>
-                                        @foreach ($villages as $village)
+                                        {{-- @foreach ($villages as $village)
                                 <option value="{{$village->code}}">{{$village->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -326,6 +326,68 @@
                             </div>`;
                     };
                     reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinceSelect = document.getElementById('province');
+            const districtSelect = document.getElementById('district');
+            const subDistrictSelect = document.getElementById('sub_district');
+            const villageSelect = document.getElementById('village');
+
+            // Event listener untuk memilih provinsi
+            provinceSelect.addEventListener('change', function() {
+                const provinceCode = this.value;
+
+                if (provinceCode) {
+                    // Ambil kabupaten berdasarkan provinsi
+                    fetch(`/api/districts/${provinceCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            districtSelect.innerHTML = '<option selected>Pilih Kabupaten</option>';
+                            data.forEach(district => {
+                                districtSelect.innerHTML +=
+                                    `<option value="${district.code}">${district.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            // Event listener untuk memilih kabupaten
+            districtSelect.addEventListener('change', function() {
+                const districtCode = this.value;
+
+                if (districtCode) {
+                    // Ambil kecamatan berdasarkan kabupaten
+                    fetch(`/api/sub-districts/${districtCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            subDistrictSelect.innerHTML = '<option selected>Pilih Kecamatan</option>';
+                            data.forEach(subDistrict => {
+                                subDistrictSelect.innerHTML +=
+                                    `<option value="${subDistrict.code}">${subDistrict.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            // Event listener untuk memilih kecamatan
+            subDistrictSelect.addEventListener('change', function() {
+                const subDistrictCode = this.value;
+
+                if (subDistrictCode) {
+                    // Ambil desa berdasarkan kecamatan
+                    fetch(`/api/villages/${subDistrictCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            villageSelect.innerHTML = '<option selected>Pilih Desa</option>';
+                            data.forEach(village => {
+                                villageSelect.innerHTML +=
+                                    `<option value="${village.code}">${village.name}</option>`;
+                            });
+                        });
                 }
             });
         });

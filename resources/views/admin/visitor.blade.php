@@ -133,7 +133,7 @@
                                                     <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/visitor/edit/{{$visitor->id}}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/visitor/delete/{{$visitor->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " onclick="return confirm('Yakin?')" href="/admin/visitor/delete/{{$visitor->id}}">
                                                         <img class="w-5" src="/img/trashcan.png" alt="">
                                                     </a>
                                                 </td>
@@ -153,7 +153,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Your Sitamu 2025</span>
                     </div>
                 </div>
             </footer>

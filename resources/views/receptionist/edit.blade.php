@@ -25,7 +25,7 @@
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="icon" href="/img/logo.png">
     <style>
-        @media screen and (max-width:576px){
+        @media screen and (max-width:576px) {
             #brand {
                 display: none;
             }
@@ -114,29 +114,30 @@
                         Edit Akun Resepsionis
                     </h1>
                     <div class="text-red-500 text-md">{{ session('login') }}</div>
-                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/update" method="POST" enctype="multipart/form-data">
+                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/update" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="id" value="{{$oldReceptionist->id}}">
-                        <input type="hidden" name="oldPhoto" value="{{$oldReceptionist->photo}}">
+                        <input type="hidden" name="id" value="{{ $oldReceptionist->id }}">
+                        <input type="hidden" name="oldPhoto" value="{{ $oldReceptionist->photo }}">
                         <div>
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
                             <input type="text" name="name" id="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="John Doe" value="{{$oldReceptionist->name}}" required>
+                                placeholder="John Doe" value="{{ $oldReceptionist->name }}" required>
                         </div>
                         <div>
                             <label for="username"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
                             <input type="text" name="username" id="username"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="name@company.com" value="{{$oldReceptionist->username}}" required>
+                                placeholder="name@company.com" value="{{ $oldReceptionist->username }}" required>
                         </div>
                         <div>
                             <label for="password"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                         </div>
                         <div class="flex flex-col items-start">
@@ -146,7 +147,7 @@
                                 name="province" id="province">
                                 <option selected>Pilih Provinsi Anda</option>
                                 @foreach ($provinces as $province)
-                                    <option value="{{$province->code}}">{{$province->name}}</option>
+                                    <option value="{{ $province->code }}" @selected($province->code == $oldReceptionist->province_code)>{{ $province->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -156,9 +157,9 @@
                                 class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
                                 name="district" id="district">
                                 <option selected>Pilih Kabupaten</option>
-                                @foreach ($districts as $district)
+                                {{-- @foreach ($districts as $district)
                                 <option value="{{$district->code}}">{{$district->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                             </select>
                         </div>
                         <div class="flex flex-col items-start">
@@ -166,9 +167,9 @@
                             <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
                                 name="sub_district" id="sub_district">
                                 <option selected>Pilih Kecamatan</option>
-                                @foreach ($sub_districts as $sub_district)
+                                {{-- @foreach ($sub_districts as $sub_district)
                                 <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                             </select>
                         </div>
                         <div class="flex flex-col items-start">
@@ -176,9 +177,9 @@
                             <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
                                 name="village" id="village">
                                 <option selected>Pilih Desa</option>
-                                @foreach ($villages as $village)
+                                {{-- @foreach ($villages as $village)
                                 <option value="{{$village->code}}">{{$village->name}}</option>
-                            @endforeach
+                            @endforeach --}}
                             </select>
                         </div>
                         <div class="flex flex-col items-start w-full">
@@ -308,6 +309,63 @@
                 objectiveArea.classList.add("hidden");
                 objective.setAttribute("name", "objective");
             }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinceSelect = document.getElementById('province');
+            const districtSelect = document.getElementById('district');
+            const subDistrictSelect = document.getElementById('sub_district');
+            const villageSelect = document.getElementById('village');
+
+            provinceSelect.addEventListener('change', function() {
+                const provinceCode = this.value;
+
+                if (provinceCode) {
+                    fetch(`/api/districts/${provinceCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            districtSelect.innerHTML = '<option selected>Pilih Kabupaten</option>';
+                            data.forEach(district => {
+                                districtSelect.innerHTML +=
+                                    `<option value="${district.code}">${district.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            districtSelect.addEventListener('change', function() {
+                const districtCode = this.value;
+
+                if (districtCode) {
+                    fetch(`/api/sub-districts/${districtCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            subDistrictSelect.innerHTML =
+                                '<option selected>Pilih Kecamatan</option>';
+                            data.forEach(subDistrict => {
+                                subDistrictSelect.innerHTML +=
+                                    `<option value="${subDistrict.code}">${subDistrict.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            subDistrictSelect.addEventListener('change', function() {
+                const subDistrictCode = this.value;
+
+                if (subDistrictCode) {
+                    fetch(`/api/villages/${subDistrictCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            villageSelect.innerHTML = '<option selected>Pilih Desa</option>';
+                            data.forEach(village => {
+                                villageSelect.innerHTML +=
+                                    `<option value="${village.code}">${village.name}</option>`;
+                            });
+                        });
+                }
+            });
         });
     </script>
 </body>

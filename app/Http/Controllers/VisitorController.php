@@ -48,9 +48,6 @@ class VisitorController extends Controller
             'title' => "Form Tamu - $village->name",
             'visit' => $village,
             'provinces' => Province::all(),
-            'districts' => District::all(),
-            'sub_districts' => SubDistrict::all(),
-            'villages' => Village::all(),
             ]);
     }
 
@@ -87,11 +84,15 @@ class VisitorController extends Controller
         $newVisitor->save();
 
 
-        return redirect()->route('user.index')->with('visitor_success', 'Data berhasil ditambahkan');
+        return redirect()->route('visitor.popup')->with('visitor_success', 'Data berhasil ditambahkan');
+    }
+
+    public function popup(){
+        return view('visitor.popup',['title' => 'Form Desa']);
     }
 
     public function add(){
-        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'provinces' => Province::all()]);
     }
 
     public function edit($id) {

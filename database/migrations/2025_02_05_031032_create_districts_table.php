@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('districts', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->string('province_code')->nullable();
+            $table->string('province_code');
             $table->string('name');
             $table->timestamps();
         });

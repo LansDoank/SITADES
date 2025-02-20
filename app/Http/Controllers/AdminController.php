@@ -19,7 +19,7 @@ class AdminController extends Controller
     public function dashboard()
     {
 
-        $guestDaily = count(Visitor::where('check_in', today())->get());
+        $guestDaily = Visitor::whereDate('check_in', today())->count();
         $guestWeekly = Visitor::whereBetween('check_in', [
             Carbon::now()->startOfWeek(),
             Carbon::now()->endOfWeek()
@@ -29,41 +29,11 @@ class AdminController extends Controller
             ->count();
         $guestYearly = Visitor::whereYear('check_in', today()->year)->count();
 
-
-        $monday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(0),
-            Carbon::now()->startOfWeek()->addDay(1)
-        ])->count();
-
-        $tuesday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(1),
-            Carbon::now()->startOfWeek()->addDay(2)
-        ])->count();
-
-        $wednesday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(2),
-            Carbon::now()->startOfWeek()->addDay(3)
-        ])->count();
-
-        $thursday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(3),
-            Carbon::now()->startOfWeek()->addDay(4)
-        ])->count();
-
-        $friday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(4),
-            Carbon::now()->startOfWeek()->addDay(5)
-        ])->count();
-
-        $saturday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(5),
-            Carbon::now()->startOfWeek()->addDay(6)
-        ])->count();
-
-        $sunday = Visitor::whereBetween('check_in', [
-            Carbon::now()->startOfWeek()->addDay(6),
-            Carbon::now()->startOfWeek()->addDay(7)
-        ])->count();
+        $studi_banding = Visitor::where('objective','Studi Banding')->get()->count();
+        $cari_informasi = Visitor::where('objective','Cari Informasi')->get()->count();
+        $lainnya = Visitor::where('objective','Lainnya')->get()->count();
+        $pembinaan = Visitor::where('objective','Pembinaan')->get()->count();
+        $koordinasi = Visitor::where('objective','Koordinasi')->get()->count();
 
         return view(
             'admin.dashboard',
@@ -73,13 +43,11 @@ class AdminController extends Controller
                 'guestWeekly' => $guestWeekly,
                 'guestMonthly' => $guestMonthly,
                 'guestYearly' => $guestYearly,
-                'monday' => $monday,
-                'tuesday' => $tuesday,
-                'wednesday' => $wednesday,
-                'thursday' => $thursday,
-                'friday' => $friday,
-                'saturday' => $saturday,
-                'sunday' => $sunday,
+                'studi_banding' => $studi_banding,
+                'cari_informasi' => $cari_informasi,
+                'pembinaan' => $pembinaan,
+                'koordinasi' => $koordinasi,
+                'lainnya' => $lainnya,
             ]
         );
     }

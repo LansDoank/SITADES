@@ -23,7 +23,7 @@
 
     .swiper {
         width: 600px;
-        height: 500px;
+        height: 800px;
     }
 
     html {

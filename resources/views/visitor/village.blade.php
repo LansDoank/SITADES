@@ -49,7 +49,7 @@
                     </select>
                 </div>
                 <div class="mt-5">
-                    <button class="w-full bg-klipaa py-3 rounded-lg text-white" type="submit">Kirim</button>
+                    <button class="w-full bg-klipaa py-3 rounded-lg text-white" type="submit">Pilih</button>
                 </div>
             </form>
         </div>

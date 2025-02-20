@@ -101,7 +101,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Qr Code Data</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Kode Qr</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -109,10 +109,9 @@
                                     <thead>
                                         <tr>
                                             <th class="col-1">No</th>
-                                            <th class="col-2">Foto</th>
-                                            <th class="col-2">Nama</th>
-                                            <th class="col-1">Password</th>
-                                            <th class="col-5">Alamat</th>
+                                            <th class="col-1">Foto</th>
+                                            <th class="col-1">Nama</th>
+                                            <th class="col-6">Alamat</th>
                                             <th class="col-1">Opsi</th>
                                         </tr>
                                     </thead>
@@ -122,15 +121,14 @@
                                             <tr>
                                                 <td>{{$no}}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{$visitType->qr_code}}" alt=""></td>
+                                                    {{QrCode::generate($visitType->qr_code)}}
                                                 <td>{{$visitType->name}}</td>
-                                                <td class="col-1">{{Str::limit($visitType->password,30   )}}</td>
-                                                <td>{{Str::limit($visitType->address,50)}}</td>
-                                                <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="#">
+                                                <td class="col-1">{{$visitType->province->name . "," . $visitType->district->name . "," . $visitType->subdistrict->name . "," . $visitType->village->name}}</td>
+                                                <td class="flex justify-center">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/qr_code/edit/{{$visitType->id}}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " href="/admin/receptionist/delete/{{$visitType->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " onclick="return confirm('Yakin?')" href="/admin/qr_code/delete/{{$visitType->id}}">
                                                         <img class="w-5" src="/img/trashcan.png" alt="">
                                                     </a>
                                                 </td>
@@ -150,7 +148,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Sitamu 2025</span>
                     </div>
                 </div>
             </footer>

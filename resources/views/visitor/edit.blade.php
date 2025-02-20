@@ -105,7 +105,7 @@
                 <!-- Begin Page Content -->
                 <!-- /.container-fluid -->
                 <form action="/admin/visitor/update" method="POST" enctype="multipart/form-data"
-                    class="shadow mx-auto my-10 max-w-4xl p-8 border border-gray-200 rounded-lg">
+                    class="shadow mx-auto my-10 max-w-4xl p-8 bg-white border border-gray-200 rounded-lg">
                     @csrf
                     <div class="form-header">
                         <div class="flex items-center md:my-3">
@@ -119,27 +119,26 @@
                         <input type="hidden" name="district_code" value="{{ $oldVisit->district_code }}">
                         <input type="hidden" name="sub_district_code" value="{{ $oldVisit->subdistrict_code }}">
                         <input type="hidden" name="village_code" value="{{ $oldVisit->village_code }}">
-                        {{-- <input type="hidden" name="visit_type" value="{{ $visit->id }}"> --}}
                         <input type="hidden" name="id" value="{{ $oldVisit->id }}">
                         <input type="hidden" name="oldPhoto" value="{{ $oldVisit->visitor_photo }}">
                         <ul class="md:my-5">
-                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-10 md:my-3">
+                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-0 md:my-3">
                                 <div class="flex flex-col items-start w-full md:w-1/2">
                                     <label for="fullname" class="mb-2">Nama Lengkap</label>
                                     <input type="text" name="fullname" id="fullname"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
                                         placeholder="Masukkan nama anda" value="{{ $oldVisit->fullname }}">
                                 </div>
-                                <div class="flex flex-col items-start w-full md:w-1/2">
+                                <div class="flex flex-col items-start md:ps-5 w-full md:w-1/2">
                                     <label for="institution" class="mb-2">Instansi</label>
                                     <select
                                         class="instance form-input text-gray-600 border border-gray-200 px-2 h-10 w-full md:w-1/2"
                                         name="institution" id="institution">
-                                        <option value="Supra Desa">Supra desa</option>
-                                        <option value="APH">APH</option>
-                                        <option value="Warga">Warga</option>
-                                        <option value="Media">Media</option>
-                                        <option value="Lainnya">Lainnya</option>
+                                        <option value="Supra Desa" @selected("Supra Desa" == $oldVisit->province_code)>Supra desa</option>
+                                        <option value="APH" @selected("APH" == $oldVisit->province_code)>APH</option>
+                                        <option value="Warga" @selected("Warga" == $oldVisit->province_code)>Warga</option>
+                                        <option value="Media" @selected("Media" == $oldVisit->province_code)>Media</option>
+                                        <option value="Lainnya" @selected("Lainnya" == $oldVisit->province_code)>Lainnya</option>
                                     </select>
                                 </div>
                             </li>
@@ -162,7 +161,7 @@
                                         name="province" id="province">
                                         <option selected>Pilih Provinsi Anda</option>
                                         @foreach ($provinces as $province)
-                                            <option value="{{ $province->code }}">{{ $province->name }}</option>
+                                            <option value="{{ $province->code }}" @selected($province->code == $oldVisit->province_code)>{{ $province->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -173,9 +172,6 @@
                                     <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="district" id="district">
                                         <option selected>Pilih Kabupaten Anda</option>
-                                        @foreach ($districts as $district)
-                                            <option value="{{ $district->code }}">{{ $district->name }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                             </li>
@@ -185,10 +181,10 @@
                                     <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="sub_district" id="sub_district">
                                         <option selected>Pilih Kecamatan Anda</option>
-                                        @foreach ($sub_districts as $sub_district)
+                                        {{-- @foreach ($sub_districts as $sub_district)
                                             <option value="{{ $sub_district->code }}">{{ $sub_district->name }}
                                             </option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -198,23 +194,23 @@
                                     <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="village" id="village">
                                         <option selected>Pilih Desa Anda</option>
-                                        @foreach ($villages as $village)
+                                        {{-- @foreach ($villages as $village)
                                             <option value="{{ $village->code }}">{{ $village->name }}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                             </li>
                             <li class="md:my-3">
-                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-10">
+                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-0">
                                     <div class="flex flex-col items-start w-full md:w-1/2">
                                         <label for="check_in" class="mb-2">Tanggal Datang</label>
-                                        <input type="date" name="check_in" id="check_in"
+                                        <input type="datetime-local" name="check_in" id="check_in"
                                             class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full md:w-1/2"
                                             value="{{ $oldVisit->check_in }}">
                                     </div>
                                     <div class="flex flex-col items-start w-full md:w-1/2">
                                         <label for="check_out" class="mb-2">Tanggal Pulang</label>
-                                        <input type="date" name="check_out" id="check_out"
+                                        <input type="datetime-local" name="check_out" id="check_out"
                                             class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full md:w-1/2"
                                             value="{{ $oldVisit->check_out }}">
                                     </div>
@@ -229,11 +225,11 @@
                                 <option selected value="{{$visitType->id}}">{{$visitType->name}}</option>
                             @endforeach --}}
                                         <option>Pilih Tujuan Anda</option>
-                                        <option value="Koordinasi">Koordinasi</option>
-                                        <option value="Cari Informasi">Cari Informasi</option>
-                                        <option value="Pembinaan">Pembinaan</option>
-                                        <option value="Studi Banding">Studi Banding</option>
-                                        <option value="Lainnya">Lainnya</option>
+                                        <option value="Koordinasi" @selected("Koordinasi" == $oldVisit->objective)>Koordinasi</option>
+                                        <option value="Cari Informasi" @selected("Cari Informasi" == $oldVisit->objective)>Cari Informasi</option>
+                                        <option value="Pembinaan" @selected("Pembinaan" == $oldVisit->objective)>Pembinaan</option>
+                                        <option value="Studi Banding" @selected("Studi Banding" == $oldVisit->objective)>Studi Banding</option>
+                                        <option value="Lainnya" @selected("Lainnya" == $oldVisit->objective)>Lainnya</option>
                                     </select>
                                 </div>
                             </li>
@@ -385,6 +381,68 @@
                 objectiveArea.classList.add("hidden");
                 objective.setAttribute("name", "objective");
             }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinceSelect = document.getElementById('province');
+            const districtSelect = document.getElementById('district');
+            const subDistrictSelect = document.getElementById('sub_district');
+            const villageSelect = document.getElementById('village');
+
+            // Event listener untuk memilih provinsi
+            provinceSelect.addEventListener('change', function() {
+                const provinceCode = this.value;
+
+                if (provinceCode) {
+                    // Ambil kabupaten berdasarkan provinsi
+                    fetch(`/api/districts/${provinceCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            districtSelect.innerHTML = '<option selected>Pilih Kabupaten</option>';
+                            data.forEach(district => {
+                                districtSelect.innerHTML +=
+                                    `<option value="${district.code}">${district.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            // Event listener untuk memilih kabupaten
+            districtSelect.addEventListener('change', function() {
+                const districtCode = this.value;
+
+                if (districtCode) {
+                    // Ambil kecamatan berdasarkan kabupaten
+                    fetch(`/api/sub-districts/${districtCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            subDistrictSelect.innerHTML = '<option selected>Pilih Kecamatan</option>';
+                            data.forEach(subDistrict => {
+                                subDistrictSelect.innerHTML +=
+                                    `<option value="${subDistrict.code}">${subDistrict.name}</option>`;
+                            });
+                        });
+                }
+            });
+
+            // Event listener untuk memilih kecamatan
+            subDistrictSelect.addEventListener('change', function() {
+                const subDistrictCode = this.value;
+
+                if (subDistrictCode) {
+                    // Ambil desa berdasarkan kecamatan
+                    fetch(`/api/villages/${subDistrictCode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            villageSelect.innerHTML = '<option selected>Pilih Desa</option>';
+                            data.forEach(village => {
+                                villageSelect.innerHTML +=
+                                    `<option value="${village.code}">${village.name}</option>`;
+                            });
+                        });
+                }
+            });
         });
     </script>
 </body>

@@ -46,11 +46,26 @@ class VillageSeeder extends Seeder
             ['code' => '3201010030', 'name' => 'Desa Cangkuang Hilir'],
             ['code' => '3201010031', 'name' => 'Desa Cangkuang Kidul'],
             ['code' => '3201010032', 'name' => 'Desa Cangkuang Barat'],
-            ['code' => '3205072003', 'name' => 'Desa Sukarasa']
         ];
 
         foreach ($villages as $village) {
             Village::create($village);
         }
+
+        Village::create([
+            'code' => '3205072003',
+            'name' => 'Sukarasa',
+            'sub_district_code' => '320507'
+        ]);
+        Village::create([
+            'code' => '3205072004',
+            'name' => 'Cikedokan',
+            'sub_district_code' => '320507'
+        ]);
+        Village::create([
+            'code' => '3205072005',
+            'name' => 'Sukaasih',
+            'sub_district_code' => '320507'
+        ]);
     }
 }

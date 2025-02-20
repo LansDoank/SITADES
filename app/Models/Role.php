@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Role extends Model
 {
     use HasFactory;
+
+    protected $table = 'roles';
+    protected $fillable = ['name'];
     
-    protected $fillable = ['name']; 
     // protected $with = ['user'];
 
     // public function user() : BelongsTo {

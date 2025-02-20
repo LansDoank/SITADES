@@ -11,53 +11,102 @@ use App\Models\VisitType;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 use Illuminate\Http\Request;
 
 class ReceptionistController extends Controller
 {
-    public function login() {
-        return view( 'receptionist.login',['title' => 'Login Form']);
+    public function login()
+    {
+        return view('receptionist.login', ['title' => 'Login Form']);
     }
 
-    public function addReceptionist() {
-        return view( 'receptionist.add',['title' => 'Add Receptionist','username' => Auth::user()->username,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+    public function addReceptionist()
+    {
+        return view('receptionist.add', ['title' => 'Add Receptionist', 'username' => Auth::user()->username, 'provinces' => Province::all()]);
     }
 
-    public function add(Request $request) {
+    public function create()
+    {
+        $provinces = Province::all();
+        $districts = District::all();
+        $sub_districts = SubDistrict::all();
+        $villages = Village::all();
+
+        return view('receptionist.create', compact('provinces', 'districts', 'sub_districts', 'villages'));
+    }
+
+    // Fungsi untuk mengambil kabupaten berdasarkan provinsi yang dipilih
+    public function getDistrictsByProvince($province_code)
+    {
+        $districts = District::where('province_code', $province_code)->get();
+        return response()->json($districts);
+    }
+
+    // Fungsi untuk mengambil kecamatan berdasarkan kabupaten yang dipilih
+    public function getSubDistrictsByDistrict($district_code)
+    {
+        $sub_districts = SubDistrict::where('district_code', $district_code)->get();
+        return response()->json($sub_districts);
+    }
+
+    // Fungsi untuk mengambil desa berdasarkan kecamatan yang dipilih
+    public function getVillagesBySubDistrict($sub_district_code)
+    {
+        $villages = Village::where('sub_district_code', $sub_district_code)->get();
+        return response()->json($villages);
+    }
+
+    // Fungsi untuk menyimpan data receptionist
+    public function store(Request $request)
+    {
+        // Proses penyimpanan data receptionist
+    }
+
+
+    public function add(Request $request)
+    {
         $receptionist = new User();
         $receptionist->name = $request->name;
         $receptionist->username = $request->username;
-        $receptionist->password = $request->password;
+        $receptionist->password = bcrypt($request->password); // Pastikan password di-hash
         $receptionist->role_id = '2';
         $receptionist->province_code = $request->province;
         $receptionist->district_code = $request->district;
         $receptionist->sub_district_code = $request->sub_district;
         $receptionist->village_code = $request->village;
-        $receptionist->photo = $request->file('receptionist_photo')->store('receptionist_photo');
+
+        if ($request->hasFile('receptionist_photo')) {
+            $receptionist->photo = $request->file('receptionist_photo')->store('receptionist_photo');
+        }
+
         $receptionist->save();
 
+        $slug = Str::slug(Village::where('code',$request->village)->first()->name);
         $village = new VisitType();
-        $village->qr_code = 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png';
-        $villageName = Village::where('code',$request->village)->first();
+        $village->qr_code = "127.0.0.1:8000/form/$request->village/$slug";
+        $villageName = Village::where('code', $request->village)->first();
         $village->name = $villageName->name;
         $village->slug  = Str::slug($villageName->name);
         $village->province_code = $request->province;
         $village->district_code = $request->district;
-        $village->subdistrict_code = $request->sub_district;
+        $village->sub_district_code = $request->sub_district;
         $village->village_code = $request->village;
         $village->save();
 
-        return redirect()->route('admin.receptionists')->with('success','Receptionist added successfully');
+        return redirect()->route('admin.receptionists')->with('success', 'Receptionist added successfully with QR Code');
     }
 
-    public function show($id) {
+
+    public function show($id)
+    {
         $receptionist = User::find($id);
-        return view('receptionist.edit',['title' => 'Edit Receptionist','username' => Auth::user()->username,'oldReceptionist' => $receptionist,'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'username' => Auth::user()->username, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $receptionist = User::find($request->id);
         $receptionist->update([
             'name' => $request->name,
@@ -69,7 +118,7 @@ class ReceptionistController extends Controller
         ]);
 
         if ($request->file('image')) {
-            if($request->oldPhoto){
+            if ($request->oldPhoto) {
                 Storage::delete($request->oldPhoto);
             }
             $receptionist->update([
@@ -81,11 +130,12 @@ class ReceptionistController extends Controller
         //     'photo' => 'p'
         // ]);
 
-        return redirect()->route('admin.receptionists')->with('success','Data Berhasil Diubah!');
+        return redirect()->route('admin.receptionists')->with('success', 'Data Berhasil Diubah!');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         User::find($id)->delete();
-        return redirect()->route('admin.receptionists')->with('success','Receptionist deleted successfully');
+        return redirect()->route('admin.receptionists')->with('success', 'Receptionist deleted successfully');
     }
 }
