@@ -95,11 +95,11 @@ class VisitorController extends Controller
     }
 
     public function add(){
-        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'provinces' => Province::all()]);
+        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
     }
 
     public function edit($id) {
-        return view('visitor.edit',['title' => 'Edit Data Tamu','username' => Auth::user()->username,'oldVisit' => Visitor::find($id),'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+        return view('visitor.edit',['title' => 'Edit Data Tamu','username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => Visitor::find($id),'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
     }
 
     public function update(Request $request){

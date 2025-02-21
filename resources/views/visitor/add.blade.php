@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="icon" href="/img/logo.png">
     <style>
         @media screen and (max-width:576px){
             #brand {
@@ -73,7 +74,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}</span>
-                                <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="{{asset("storage/" . $photo)}}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -104,14 +105,14 @@
                     </div>
                     <div class="form-body">
                         <ul class="md:my-5">
-                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-10 md:my-3">
+                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-0 md:my-3">
                                 <div class="flex flex-col items-start w-full md:w-1/2">
                                     <label for="fullname" class="mb-2">Nama Lengkap</label>
                                     <input type="text" name="fullname" id="fullname"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
                                         placeholder="Masukkan nama anda">
                                 </div>
-                                <div class="flex flex-col items-start w-full md:w-1/2">
+                                <div class="flex md:ps-3 flex-col items-start w-full md:w-1/2">
                                     <label for="institution" class="mb-2">Instansi</label>
                                     <select
                                         class="instance form-input text-gray-500 border border-gray-200 px-2 h-10 w-full md:w-1/2"
@@ -155,9 +156,6 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="district" id="district">
                                         <option selected>Pilih Kabupaten Anda</option>
-                                        {{-- @foreach ($districts as $district)
-                                <option value="{{$district->code}}">{{$district->name}}</option>
-                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -167,9 +165,6 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="sub_district" id="sub_district">
                                         <option selected>Pilih Kecamatan Anda</option>
-                                        {{-- @foreach ($sub_districts as $sub_district)
-                                <option value="{{$sub_district->code}}">{{$sub_district->name}}</option>
-                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
@@ -179,20 +174,17 @@
                                     <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                         name="village" id="village">
                                         <option selected>Pilih Desa Anda</option>
-                                        {{-- @foreach ($villages as $village)
-                                <option value="{{$village->code}}">{{$village->name}}</option>
-                            @endforeach --}}
                                     </select>
                                 </div>
                             </li>
                             <li class="md:my-3">
-                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-10">
+                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-0">
                                     <div class="flex flex-col items-start w-full md:w-1/2">
                                         <label for="check_in" class="mb-2">Tanggal Datang</label>
                                         <input type="date" name="check_in" id="check_in"
                                             class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full  md:`w-1/2">
                                     </div>
-                                    <div class="flex flex-col items-start w-full md:w-1/2">
+                                    <div class="flex flex-col items-start w-full md:w-1/2 md:ps-3">
                                         <label for="check_out" class="mb-2">Tanggal Pulang</label>
                                         <input type="date" name="check_out" id="check_out"
                                             class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full  md:`w-1/2">

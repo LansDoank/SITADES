@@ -39,6 +39,7 @@ class AdminController extends Controller
             'admin.dashboard',
             [
                 'username' => Auth::user()->username,
+                'photo' => Auth::user()->photo,
                 'guestDaily' => $guestDaily,
                 'guestWeekly' => $guestWeekly,
                 'guestMonthly' => $guestMonthly,
@@ -56,22 +57,22 @@ class AdminController extends Controller
     {
         return view(
             'admin.visitor',
-            ['visitors' => Visitor::all(), 'username' => Auth::user()->username]
+            ['visitors' => Visitor::all(), 'username' => Auth::user()->username,'photo' => Auth::user()->photo,]
         );
     }
 
     public function receptionist()
     {
         $receptionists = User::where('role_id', '2')->get();
-        return view('admin.receptionists', ['username' => Auth::user()->username, 'receptionists' => $receptionists]);
+        return view('admin.receptionists', ['username' => Auth::user()->username,'photo' => Auth::user()->photo, 'receptionists' => $receptionists]);
     }
 
     public function masterData(){
-        return view('admin.masterdata',['username' => Auth::user()->username,'visitors' => Visitor::all()]);
+        return view('admin.masterdata',['username' => Auth::user()->username,'photo' => Auth::user()->photo,'visitors' => Visitor::all()]);
     }
 
     public function qrCode()
     {
-        return view('admin.qrCode', ['username' => Auth::user()->username,'visitTypes' => VisitType::all()]);
+        return view('admin.qrCode', ['username' => Auth::user()->username,'photo' => Auth::user()->photo,'visitTypes' => VisitType::all()]);
     }
 }

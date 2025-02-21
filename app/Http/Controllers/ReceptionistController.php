@@ -24,7 +24,7 @@ class ReceptionistController extends Controller
 
     public function addReceptionist()
     {
-        return view('receptionist.add', ['title' => 'Add Receptionist', 'username' => Auth::user()->username, 'provinces' => Province::all()]);
+        return view('receptionist.add', ['title' => 'Add Receptionist', 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'provinces' => Province::all()]);
     }
 
     public function create()
@@ -102,7 +102,7 @@ class ReceptionistController extends Controller
     public function show($id)
     {
         $receptionist = User::find($id);
-        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'username' => Auth::user()->username, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
+        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
     }
 
     public function update(Request $request)
