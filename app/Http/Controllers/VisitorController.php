@@ -21,14 +21,17 @@ class VisitorController extends Controller
     }
 
     public function desa() {
-        return view('visitor.village', ['title' => 'Form - Desa', 'villages' => VisitType::all()]);
+        return view('visitor.village', ['title' => 'Form - Desa', 'provinces' => Province::all()]);
     }
     
 
     public function dataDesa(Request $request) {
         $village = VisitType::where('village_code',$request->village)->first();
-
-        return redirect("/form/$village->village_code/$village->slug");
+        if($village) {
+            return redirect("/form/$village->village_code/$village->slug");
+        } else {
+            return redirect()->route("visitor.popup")->with('village-error','Mohon maaf desa yang anda tuju blm terdaftar di Sitamu');
+        }
     }
 
     public function show($code,$slug)

@@ -3,7 +3,7 @@
     <x-navbar></x-navbar>
     <div id="hero" class="flex flex-col items-center">
         <div class="container w-full flex flex-wrap flex-col-reverse md:flex-row md:flex-nowrap justify-center items-center lg:h-[700px] md:h-[600px] py-16 md:py-12 md:px-10 lg:p-20">
-            @if (Session::has('visitor_success'))
+            {{-- @if (Session::has('visitor_success'))
             <div
                 class="lg:w-[300px] md:w-[250px] w-[250px] flex flex-col justify-center lg-[400px] md:h-[320px] h-[300px] items-center bg-white shadow z-20 border rounded-lg absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
                 <img class="md:w-28 lg:w-32 w-24" src="/img/checked.png" alt="">
@@ -11,6 +11,14 @@
                 <p>{{ session('visitor_success') }}</p>
             </div>
             @endif
+            @if (Session::has('village-error'))
+            <div
+                class="lg:w-[300px] md:w-[250px] w-[250px] flex flex-col justify-center lg-[400px] md:h-[320px] h-[300px] items-center bg-white shadow z-20 border rounded-lg absolute mx-auto p-5 text-center" data-aos="fade-up" data-aos-duration="1500"> 
+                <img class="md:w-28 lg:w-32 w-24" src="/img/wrong.png" alt="">
+                <h2 class="text-2xl font-semibold my-5 text-">Error!!</h2>
+                <p>{{ session('village-error') }}</p>
+            </div>
+            @endif --}}
             <div class="md:w-1/2 w-full flex flex-col justify-center p-5 md:p-0">
                 <h1 class="text-klipaa font-poppins text-xl md:text-4xl lg:text-5xl font-semibold md:my-5 leading-snug" data-aos="fade-right"
                     data-aos-duration="1500">SELAMAT DATANG

@@ -70,9 +70,6 @@
                             <select class="form-input text-gray-500 border border-gray-200 px-2 h-10 w-full"
                                 name="district" id="district">
                                 <option selected>Pilih Kabupaten Anda</option>
-                                {{-- @foreach ($districts as $district)
-                                    <option value="{{ $district->code }}">{{ $district->name }}</option>
-                                @endforeach --}}
                             </select>
                         </div>
                     </li>
