@@ -27,7 +27,7 @@ class ChartController extends Controller
         $aph = Visitor::where('institution','APH')->get()->count();
         $warga = Visitor::where('institution','Warga')->get()->count();
         $media = Visitor::where('institution','Media')->get()->count();
-        $lainnya = Visitor::where('institution','lainnya')->get()->count();
+        $lainnya = Visitor::whereNotIn('institution', ['Supra desa', 'APH', 'Warga', 'Media'])->count();
         $data = [$supra_desa,$aph,$warga,$media,$lainnya];
         return response()->json($data);
     }
@@ -35,9 +35,9 @@ class ChartController extends Controller
     public function doughnut() {
         $studi_banding = Visitor::where('objective','Studi Banding')->get()->count();
         $cari_informasi = Visitor::where('objective','Cari Informasi')->get()->count();
-        $lainnya = Visitor::where('objective','Lainnya')->get()->count();
         $pembinaan = Visitor::where('objective','Pembinaan')->get()->count();
         $koordinasi = Visitor::where('objective','Koordinasi')->get()->count();
+        $lainnya = Visitor::whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
         $objective = [$studi_banding,$cari_informasi,$pembinaan,$koordinasi,$lainnya];
         return response()->json($objective);
     }
@@ -49,6 +49,7 @@ class ChartController extends Controller
 
     return response()->json($geoData);
     }
+
 
     public function time() {
         $guest_data = Visitor::select(

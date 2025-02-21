@@ -31,7 +31,7 @@ class AdminController extends Controller
 
         $studi_banding = Visitor::where('objective','Studi Banding')->get()->count();
         $cari_informasi = Visitor::where('objective','Cari Informasi')->get()->count();
-        $lainnya = Visitor::where('objective','Lainnya')->get()->count();
+        $lainnya = Visitor::whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
         $pembinaan = Visitor::where('objective','Pembinaan')->get()->count();
         $koordinasi = Visitor::where('objective','Koordinasi')->get()->count();
 

@@ -54,6 +54,11 @@ class VisitorController extends Controller
             ]);
     }
 
+    public function preview($id) {
+        $visitor = Visitor::find($id);
+        return view('visitor.preview',['username' => Auth::user()->name,'photo' => Auth::user()->photo,'visitor' => $visitor]);
+    }
+
     public function addVisitor(Request $request)
     {
         // $request->validate([

@@ -25,7 +25,7 @@
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="icon" href="/img/logo.png">
     <style>
-        @media screen and (max-width:576px) {
+        @media screen and (max-width:576px){
             #brand {
                 display: none;
             }
@@ -58,16 +58,12 @@
 
                     <div>
                         <a class="text-decoration-none" href="/admin/visitor">
-                            <h1 class="text-gray-600 text-sm md:text-2xl ">&laquo; Edit Data Resepsonis</h1>
+                            <h1 class="text-gray-600 text-sm md:text-2xl ">&laquo; Pratinjau Data Tamu</h1>
                         </a>
                     </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-
-
-
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -95,85 +91,131 @@
 
                 <!-- Begin Page Content -->
                 <!-- /.container-fluid -->
-                <div class="p-6 sm:p-8 bg-white max-w-5xl mx-auto my-10 ">
-                    <h1
-                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                        Edit Akun Resepsionis
-                    </h1>
-                    <div class="text-red-500 text-md">{{ session('login') }}</div>
-                    <form class="space-y-4 md:space-y-6" action="/admin/receptionist/update" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $oldReceptionist->id }}">
-                        <input type="hidden" name="oldPhoto" value="{{ $oldReceptionist->photo }}">
-                        <div>
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                            <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="John Doe" value="{{ $oldReceptionist->name }}" required>
+                <form action="/admin/visitor/update" method="POST" enctype="multipart/form-data"
+                    class="shadow mx-auto my-10 max-w-4xl p-8 bg-white border border-gray-200 rounded-lg">
+                    @csrf
+                    <div class="form-header">
+                        <div class="flex items-center md:my-3">
+                            <img class="w-12 me-2" src="/img/logo.png" alt="">
+                            <h5 class="text-klipaa font-semibold text-3xl">Sitamu</h5>
                         </div>
-                        <div>
-                            <label for="username"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                            <input type="text" name="username" id="username"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="name@company.com" value="{{ $oldReceptionist->username }}" required>
-                        </div>
-                        <div>
-                            <label for="password"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                            <input type="password" name="password" id="password" placeholder="••••••••"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required>
-                        </div>
-                        <div class="flex flex-col items-start">
-                            <label for="province" class="mb-2">Provinsi</label>
-                            <select
-                                class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
-                                name="province" id="province">
-                                <option selected>Pilih Provinsi Anda</option>
-                                @foreach ($provinces as $province)
-                                    <option value="{{ $province->code }}" @selected($province->code == $oldReceptionist->province_code)>{{ $province->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="flex flex-col items-start">
-                            <label for="district" class="mb-2">Kabupaten</label>
-                            <select
-                                class="form-input bg-gray-50 border border-gray-300 text-gray-700 rounded-lg px-2 h-10 w-full"
-                                name="district" id="district">
-                                <option selected>Pilih Kabupaten</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col items-start">
-                            <label for="sub_district" class="mb-2">Kecamatan</label>
-                            <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
-                                name="sub_district" id="sub_district">
-                                <option selected>Pilih Kecamatan</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col items-start">
-                            <label for="village" class="mb-2">Desa</label>
-                            <select class="form-input bg-gray-50 border border-gray-300 text-gray-700 px-2 h-10 w-full"
-                                name="village" id="village">
-                                <option selected>Pilih Desa</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col items-start w-full">
-                            <label for="image" id="photo" class="mb-2 w-full">Foto
-                                <div
-                                    class="w-full my-2 min-h-[150px] border border-gray-200 rounded-lg flex justify-center items-center">
-                                    <img src="/img/input_photo.png" alt="">
+                        <p class="text-gray-600 font-medium">Silakan isi data buku tamu dengan benar.</p>
+                    </div>
+                    <div class="form-body">
+                        
+                        <ul class="md:my-5">
+                            <li class="flex flex-wrap md:flex-nowrap gap-3 md:gap-0 md:my-3">
+                                <div class="flex flex-col items-start w-full md:w-1/2">
+                                    <label for="fullname" class="mb-2">Nama Lengkap</label>
+                                    <input type="text" name="fullname" id="fullname"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan nama anda" value="{{ $visitor->fullname }}" disabled>
                                 </div>
-                            </label>
-                            <input class="hidden" type="file" name="image" id="image">
-                        </div>
-                        <button type="submit"
-                            class="w-full text-white bg-klipaa focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-base px-5 py-2.5 text-center hover:brightness-90">Simpan</button>
-
-                    </form>
-                </div>
+                                <div class="flex flex-col items-start md:ps-5 w-full md:w-1/2">
+                                    <label for="institution" class="mb-2">Instansi</label>
+                                    <input type="text" name="institution" id="institution"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan nama anda" value="{{ $visitor->institution }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <textarea class="hidden w-full border border-gray-200 px-3 py-2" id="institution-textarea"
+                                    placeholder="Sebutkan Instansi Anda"></textarea>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="telephone" class="mb-2">No. Telepon</label>
+                                    <input type="text" name="telephone" id="telephone"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan telepon anda" value="{{ $visitor->telephone }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="province" class="mb-2">Provinsi</label>
+                                    <input type="text" name="province" id="province"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan telepon anda" value="{{ $visitor->province->name }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="district" class="mb-2">Kabupaten</label>
+                                    <input type="text" name="district" id="district"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan kabupaten anda" value="{{ $visitor->district->name }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="sub_district" class="mb-2">Kecamatan</label>
+                                    <input type="text" name="sub_district" id="sub_district"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan kecamatan anda" value="{{ $visitor->subdistrict->name }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="village" class="mb-2">Desa</label>
+                                    <input type="text" name="village" id="village"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan desa anda" value="{{ $visitor->village->name }}">
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-wrap md:flex-nowrap w-full gap-3 md:gap-0">
+                                    <div class="flex flex-col items-start w-full md:w-1/2">
+                                        <label for="check_in" class="mb-2">Tanggal Datang</label>
+                                        <input type="datetime-local" name="check_in" id="check_in"
+                                            class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full md:w-1/2"
+                                            value="{{ $visitor->check_in }}" disabled>
+                                    </div>
+                                    <div class="flex flex-col items-start w-full md:w-1/2">
+                                        <label for="check_out" class="mb-2">Tanggal Pulang</label>
+                                        <input type="datetime-local" name="check_out" id="check_out"
+                                            class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full md:w-1/2"
+                                            value="{{ $visitor->check_out }}" disabled>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="objective" class="mb-2">Tujuan</label>
+                                    <input type="text" name="objective" id="objective"
+                                    class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                    placeholder="Masukkan telepon anda" value="{{ $visitor->objective }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label class="mb-2">Lokasi  Tujuan</label>
+                                    <input type="text" disabled value="{{ $visitor->visitType->name }}" class="form-input border border-gray-200 rounded w-full h-10 px-3">
+                                </div>
+                            </li>
+                            <li class="md:my-3">
+                                <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="objective" id="objective_textarea"
+                                    placeholder="Sebutkan Tujuan Anda"></textarea>
+                            </li>
+                            <li class="md:my-3">
+                                <div class="flex flex-col items-start">
+                                    <label for="i_n_i" class="mb-2">Keterangan</label>
+                                    <input type="text" name="i_n_i" id="i_n_i"
+                                        class="form-input border border-gray-200 rounded w-full h-10 px-3" required
+                                        placeholder="Masukkan telepon anda" value="{{ $visitor->i_n_i }}" disabled>
+                                </div>
+                            </li>
+                            <li class="md:my-3 ">
+                                <div class="flex flex-col items-start w-full">
+                                    <label for="visitor_photo" id="photo" class="mb-2 w-full">Foto
+                                    </label>
+                                    <div class="w-full flex justify-center">
+                                        <img class="max-w-[250px]" src="{{asset('storage/' . $visitor->visitor_photo)}}" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
             </div>
             <!-- End of Main Content -->
             <!-- Footer -->
@@ -240,7 +282,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const inputPhoto = document.getElementById('photo');
-            const photoInput = document.getElementById('image');
+            const photoInput = document.getElementById('visitor_photo');
 
             photoInput.addEventListener('change', () => {
                 const file = photoInput.files[0];
@@ -295,10 +337,12 @@
             const subDistrictSelect = document.getElementById('sub_district');
             const villageSelect = document.getElementById('village');
 
+            // Event listener untuk memilih provinsi
             provinceSelect.addEventListener('change', function() {
                 const provinceCode = this.value;
 
                 if (provinceCode) {
+                    // Ambil kabupaten berdasarkan provinsi
                     fetch(`/api/districts/${provinceCode}`)
                         .then(response => response.json())
                         .then(data => {
@@ -311,15 +355,16 @@
                 }
             });
 
+            // Event listener untuk memilih kabupaten
             districtSelect.addEventListener('change', function() {
                 const districtCode = this.value;
 
                 if (districtCode) {
+                    // Ambil kecamatan berdasarkan kabupaten
                     fetch(`/api/sub-districts/${districtCode}`)
                         .then(response => response.json())
                         .then(data => {
-                            subDistrictSelect.innerHTML =
-                                '<option selected>Pilih Kecamatan</option>';
+                            subDistrictSelect.innerHTML = '<option selected>Pilih Kecamatan</option>';
                             data.forEach(subDistrict => {
                                 subDistrictSelect.innerHTML +=
                                     `<option value="${subDistrict.code}">${subDistrict.name}</option>`;
@@ -328,10 +373,12 @@
                 }
             });
 
+            // Event listener untuk memilih kecamatan
             subDistrictSelect.addEventListener('change', function() {
                 const subDistrictCode = this.value;
 
                 if (subDistrictCode) {
+                    // Ambil desa berdasarkan kecamatan
                     fetch(`/api/villages/${subDistrictCode}`)
                         .then(response => response.json())
                         .then(data => {

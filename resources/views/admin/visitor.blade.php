@@ -25,7 +25,7 @@
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="icon" href="/img/logo.png">
     <style>
-        @media screen and (max-width:576px){
+        @media screen and (max-width:576px) {
             #brand {
                 display: none;
             }
@@ -69,13 +69,12 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}</span>
-                                <img class="img-profile rounded-circle" src="{{asset("storage/" . $photo)}}">
+                                <img class="img-profile rounded-circle" src="{{ asset('storage/' . $photo) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -94,13 +93,15 @@
                     <h1 class="h3 mb-2 text-xl text-gray-800">Tabel Tamu</h1>
 
                     <div class="flex mb-3 ">
-                        <a href="/admin/visitor/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Data Tamu</a>
+                        <a href="/form/desa"
+                            class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+
+                            Buat Data Tamu</a>
                     </div>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Visitors Data</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Tamu</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -109,8 +110,8 @@
                                         <tr>
                                             <th class="col-1">No</th>
                                             <th class="col-1">Foto</th>
-                                            <th class="col-1">Nama</th> 
-                                            <th class="col-1">Intansi</th> 
+                                            <th class="col-1">Nama</th>
+                                            <th class="col-1">Intansi</th>
                                             <th class="col-1">No. Telp</th>
                                             <th class="col-1">Check-in</th>
                                             <th class="col-1">Check-out</th>
@@ -118,27 +119,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $no = 1 ?>
+                                        <?php $no = 1; ?>
                                         @foreach ($visitors as $visitor)
                                             <tr>
-                                                <td>{{$no}}</td>
+                                                <td>{{ $no }}</td>
                                                 <td class="">
-                                                    <img class="mx-auto" style="width: 50px; height: 50px; object-position: center; object-fit: cover;"  src="{{asset("storage/$visitor->visitor_photo")}}" alt=""></td>
-                                                <td>{{Str::limit($visitor->fullname,10)}}</td>
-                                                <td>{{$visitor->institution}}</td>
-                                                <td>{{$visitor->telephone}}</td>
-                                                <td>{{$visitor->check_in}}</td>
-                                                <td>{{$visitor->check_out}}</td>
+                                                        <a href="/admin/visitor/{{ $visitor->id }}">
+                                                        <img class="mx-auto"
+                                                            style="width: 50px; height: 50px; object-position: center; object-fit: cover;"
+                                                            src="{{ asset("storage/$visitor->visitor_photo") }}"
+                                                            alt="">
+                                                        </a>
+                                                </td>
+                                                <td>{{ Str::limit($visitor->fullname, 10) }}</td>
+                                                <td>{{ $visitor->institution }}</td>
+                                                <td>{{ $visitor->telephone }}</td>
+                                                <td>{{ $visitor->check_in }}</td>
+                                                <td>{{ $visitor->check_out }}</td>
                                                 <td class="flex">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/visitor/edit/{{$visitor->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none "
+                                                        href="/admin/visitor/edit/{{ $visitor->id }}">
                                                         <img class="w-5" src="/img/edit.png" alt="">
                                                     </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " onclick="return confirm('Yakin?')" href="/admin/visitor/delete/{{$visitor->id}}">
+                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none "
+                                                        onclick="return confirm('Yakin?')"
+                                                        href="/admin/visitor/delete/{{ $visitor->id }}">
                                                         <img class="w-5" src="/img/trashcan.png" alt="">
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <?php $no++ ?>
+                                            <?php $no++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -176,22 +186,21 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Siap untuk keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     {{-- Add Modal --}}
-    
+
     {{-- <div class="w-full h-screen bg-gray-100">
     </div> --}}
 

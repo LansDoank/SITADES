@@ -17,4 +17,20 @@ class Visitor extends Model
     {
         return $this->belongsTo(VisitType::class);
     }
+
+    public function province(): BelongsTo {
+        return $this->belongsTo(Province::class, 'province_code', 'code');
+    }
+
+    public function district(): BelongsTo {
+        return $this->belongsTo(District::class, 'district_code', 'code');
+    }
+
+    public function subdistrict(): BelongsTo {
+        return $this->belongsTo(SubDistrict::class,'subdistrict_code','code');
+    }
+
+    public function village(): BelongsTo {
+        return $this->belongsTo(Village::class,'village_code','code');
+    }
 }

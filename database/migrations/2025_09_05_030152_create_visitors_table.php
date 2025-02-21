@@ -30,6 +30,11 @@ return new class extends Migration
             $table->string('district_code');
             $table->string('subdistrict_code');
             $table->string('village_code');
+            // Foreign Keys
+            $table->foreign('province_code')->references('code')->on('provinces')->onDelete('cascade');
+            $table->foreign('district_code')->references('code')->on('districts')->onDelete('cascade');
+            $table->foreign('subdistrict_code')->references('code')->on('sub_districts')->onDelete('cascade');
+            $table->foreign('village_code')->references('code')->on('villages')->onDelete('cascade');
             $table->timestamps();
         });
     }

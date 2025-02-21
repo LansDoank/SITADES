@@ -49,7 +49,7 @@
                     </select>
                 </div>
                 <div class="flex flex-col my-2">
-                    <label class="mb-2" for="district">District</label>
+                    <label class="mb-2" for="district">Kabupaten</label>
                     <select class="border border-gray-500 p-3 rounded text-gray-700" name="district" id="district">
                         <option value="">Pilih Kabupaten Tujuan</option>
                     </select>

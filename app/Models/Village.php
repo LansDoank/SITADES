@@ -18,4 +18,7 @@ class Village extends Model
     public function visit(): HasMany {
         return $this->hasMany(VisitType::class,'village_code','code');
     }
+    public function visitor() :HasMany {
+        return $this->hasMany(Visitor::class,'code', 'village_code');
+    }
 }
