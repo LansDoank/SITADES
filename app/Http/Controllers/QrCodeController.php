@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 class QrCodeController extends Controller
 {
     public function add() {
-        return view('qrcode.add',['username'=>Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
+        return view('qrcode.add',['user' => Auth::user(),'username'=>Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
     }
 
     public function create(Request $request) {
@@ -35,7 +35,7 @@ class QrCodeController extends Controller
 
     public function edit($id) {
         $visit = VisitType::find($id);
-        return view('qrCode.edit',['title' => 'Edit Kode Qr','username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => $visit,'provinces' => Province::all()]);
+        return view('qrCode.edit',['title' => 'Edit Kode Qr','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => $visit,'provinces' => Province::all()]);
     }
 
     public function update(Request $request) {

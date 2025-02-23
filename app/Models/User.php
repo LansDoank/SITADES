@@ -32,9 +32,9 @@ class User extends Authenticatable
 
     // protected $with = ['roles'];
 
-    // public function role() : HasOne{
-    //     return $this->hasOne(Role::class);
-    // }
+    public function role() : BelongsTo{
+        return $this->belongsTo(Role::class,'role_id','id');
+    }
 
     // public function address(): BelongsTo {
     //     return $this->belongsTo(Village::class);

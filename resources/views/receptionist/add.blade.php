@@ -35,7 +35,9 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <x-sidebar></x-sidebar>
+        <x-sidebar>
+            <x-slot:user>{{$user->role_id}}</x-slot:user>
+        </x-sidebar>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

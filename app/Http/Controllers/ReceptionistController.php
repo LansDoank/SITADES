@@ -24,7 +24,10 @@ class ReceptionistController extends Controller
 
     public function addReceptionist()
     {
-        return view('receptionist.add', ['title' => 'Add Receptionist', 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'provinces' => Province::all()]);
+        if(Auth::user()->role_id == '2') {
+            return redirect()->route('admin.dashboard');
+        }
+        return view('receptionist.add', ['title' => 'Add Receptionist','user' => Auth::user(), 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'provinces' => Province::all()]);
     }
 
     public function create()
@@ -101,8 +104,11 @@ class ReceptionistController extends Controller
 
     public function show($id)
     {
+        if(Auth::user()->role_id == '2') {
+            return redirect()->route('admin.dashboard');
+        }
         $receptionist = User::find($id);
-        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
+        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
     }
 
     public function update(Request $request)

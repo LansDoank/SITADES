@@ -56,7 +56,7 @@ class VisitorController extends Controller
 
     public function preview($id) {
         $visitor = Visitor::find($id);
-        return view('visitor.preview',['username' => Auth::user()->name,'photo' => Auth::user()->photo,'visitor' => $visitor]);
+        return view('visitor.preview',['user' => Auth::user(),'username' => Auth::user()->name,'photo' => Auth::user()->photo,'visitor' => $visitor]);
     }
 
     public function addVisitor(Request $request)
@@ -100,11 +100,11 @@ class VisitorController extends Controller
     }
 
     public function add(){
-        return view('visitor.add',['title' => 'Visitor Form','username' => Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
+        return view('visitor.add',['title' => 'Visitor Form','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
     }
 
     public function edit($id) {
-        return view('visitor.edit',['title' => 'Edit Data Tamu','username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => Visitor::find($id),'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
+        return view('visitor.edit',['title' => 'Edit Data Tamu','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => Visitor::find($id),'provinces' => Province::all(),'districts' => District::all(),'sub_districts' => SubDistrict::all(),'villages' => Village::all()]);
     }
 
     public function update(Request $request){

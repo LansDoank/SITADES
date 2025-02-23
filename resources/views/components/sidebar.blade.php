@@ -1,5 +1,4 @@
 <ul class="navbar-nav bg-klipaa relative sidebar sidebar-dark accordion" id="accordionSidebar">
-
     <!-- Sidebar - Brand -->
     <a class="text-white font-semibold flex items-center justify-center text-decoration-none" href="/admin/dashboard">
         <img class="w-12" src="/img/logo.png" alt="">
@@ -42,6 +41,7 @@
             </div>
         </a>
     </li>
+    @if ($user == '1')        
     <li class="{{ request()->is('admin/receptionist') ? 'active' : '' }} nav-item">
         <a class="nav-link" href="/admin/receptionist">
             <div class="flex flex-wrap items-center justify-center md:flex-nowrap md:justify-start">
@@ -53,6 +53,7 @@
             </div>
         </a>
     </li>
+    @endif
     <li class="{{ request()->is('admin/master_data') ? 'active' : '' }} nav-item">
 
 <ul class="nav-link flex absolute Z-50 overflow-hidden justify-end group cursor-pointer">
