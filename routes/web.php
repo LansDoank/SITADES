@@ -59,13 +59,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/qr_code/delete/{id}',[QrCodeController::class,'delete']);
 });
 
-// Route::get('/province',[AddressController::class,'province'])->name('province.index');
-// Route::group(['prefix' => 'address'],function(){
-//     Route::get('/district/{code}',[AddressController::class,'district']);
-//     Route::get('/subdistrict/{code}',[AddressController::class,'subDistrict']);
-
-// });
-
 Route::get('/chart/line',[ChartController::class,'line'])->name('chart.line');
 Route::get('/chart/candle',[ChartController::class,'candle'])->name('chart.candle');
 Route::get('/chart/doughnut',[ChartController::class,'doughnut'])->name('chart.doughnut');
@@ -93,8 +86,3 @@ Route::get('/form/{id}/{slug}', [VisitorController::class, 'show'])->name('visit
 Route::post('/form/create', [VisitorController::class, 'addVisitor']);
 
 Route::get('/form/popup',[VisitorController::class,'popup'])->name('visitor.popup');
-
-
-// Route::get('/login/admin',[AdminController::class,'login'])->name('login.admin');
-
-// Route::get('/login/receptionist',[ReceptionistController::class,'login'])->name('receptionist.admin');

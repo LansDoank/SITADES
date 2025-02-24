@@ -5,8 +5,8 @@
     </div>
     <div>
         <ul class="flex">
-            <li class="md:mx-6 nav-link text-gray-500 text-xs mx-3 md:text-lg transition rounded-pill  font-medium"><a href="#">Home</a></li>
-            <li class="md:mx-6 nav-link text-gray-500 text-xs mx-3 md:text-lg transition rounded-pill  font-medium"><a href="#footer">Contact</a></li>
+            <li class="md:mx-6 nav-link text-gray-500 text-xs mx-3 md:text-lg transition rounded-pill  font-medium"><a href="#">Beranda</a></li>
+            <li class="md:mx-6 nav-link text-gray-500 text-xs mx-3 md:text-lg transition rounded-pill  font-medium"><a href="#footer">Kontak</a></li>
         </ul>
     </div>
 </header>
