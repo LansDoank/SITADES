@@ -24,10 +24,10 @@ class ReceptionistController extends Controller
 
     public function addReceptionist()
     {
-        if(Auth::user()->role_id == '2') {
+        if (Auth::user()->role_id == '2') {
             return redirect()->route('admin.dashboard');
         }
-        return view('receptionist.add', ['title' => 'Add Receptionist','user' => Auth::user(), 'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'provinces' => Province::all()]);
+        return view('receptionist.add', ['title' => 'Add Receptionist', 'user' => Auth::user(), 'username' => Auth::user()->username, 'photo' => Auth::user()->photo, 'provinces' => Province::all()]);
     }
 
     public function create()
@@ -86,7 +86,12 @@ class ReceptionistController extends Controller
 
         $receptionist->save();
 
-        $slug = Str::slug(Village::where('code',$request->village)->first()->name);
+        $visit = VisitType::where('village_code', $request->village)->first();
+        if ($visit) {
+            return redirect()->route('admin.receptionists')->with('success', 'Receptionist added successfully with QR Code');
+        }
+
+        $slug = Str::slug(Village::where('code', $request->village)->first()->name);
         $village = new VisitType();
         $village->qr_code = "127.0.0.1:8000/form/$request->village/$slug";
         $villageName = Village::where('code', $request->village)->first();
@@ -104,11 +109,11 @@ class ReceptionistController extends Controller
 
     public function show($id)
     {
-        if(Auth::user()->role_id == '2') {
+        if (Auth::user()->role_id == '2') {
             return redirect()->route('admin.dashboard');
         }
         $receptionist = User::find($id);
-        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
+        return view('receptionist.edit', ['title' => 'Edit Receptionist', 'user' => Auth::user(), 'username' => Auth::user()->username, 'photo' => Auth::user()->photo, 'oldReceptionist' => $receptionist, 'provinces' => Province::all(), 'districts' => District::all(), 'sub_districts' => SubDistrict::all(), 'villages' => Village::all()]);
     }
 
     public function update(Request $request)
