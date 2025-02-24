@@ -55,9 +55,15 @@ class AdminController extends Controller
 
     public function visitors()
     {
+        $user = Auth::user()->village_code;
+        if(Auth::user()->role_id == '1') {
+            $visitor = Visitor::all();
+        } else {
+            $visitor = Visitor::where('village_code',$user)->get();
+        }
         return view(
             'admin.visitor',
-                ['visitors' => Visitor::all(), 'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,]
+                ['visitors' => $visitor, 'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,]
         );
     }
 

@@ -10,6 +10,7 @@ class Province extends Model
 
     protected $table = 'provinces';
     protected $fillable = ['code', 'name'];
+    protected $with = ['visit','visitor'];
 
     public function visit() :HasMany {
         return $this->hasMany(VisitType::class,'province_code', 'code');

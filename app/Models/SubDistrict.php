@@ -10,6 +10,7 @@ class SubDistrict extends Model
 
     protected $table = 'sub_districts';
     protected $fillable = ['name']; 
+    protected $with = ['visit','visitor'];
 
     public function visit(): HasMany {
         return $this->hasMany(VisitType::class,'sub_district_code','code');

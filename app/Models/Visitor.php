@@ -12,6 +12,7 @@ class Visitor extends Model
     use HasFactory;
     protected $table = 'visitors';
     protected $fillable = ['fullname', 'institution', 'telephone', 'address', 'check_in', 'check_out', 'visitor_photo','objective', 'i_n_i', 'province_code', 'district_code', 'subdistrict_code', 'village_code'];
+    protected $with = ['province','district','subdistrict','village'];
 
     public function visitType(): BelongsTo
     {

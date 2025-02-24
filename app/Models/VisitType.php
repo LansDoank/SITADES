@@ -4,14 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class VisitType extends Model
 {
 
     protected $table ='visit_types';
     protected $fillable = ['name','province_code','district_code','subdistrict_code','village_code'];
-
-    public function visits()
+    protected $with = ['province','district','subdistrict','village'];
+    public function visits(): HasMany
 {
     return $this->hasMany(Visitor::class);
 }

@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -32,15 +31,13 @@ class User extends Authenticatable
 
     // protected $with = ['roles'];
 
+    protected $with = ['role'];
+
     public function role() : BelongsTo{
         return $this->belongsTo(Role::class,'role_id','id');
     }
 
-    // public function address(): BelongsTo {
-    //     return $this->belongsTo(Village::class);
-    // }
-
-    public function address()
+    public function address(): BelongsTo
     {
         return $this->belongsTo(Village::class, 'village_code', 'code');
     }
