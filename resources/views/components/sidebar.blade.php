@@ -41,68 +41,76 @@
             </div>
         </a>
     </li>
-    @if ($user == '1')        
-    <li class="{{ request()->is('admin/receptionist') ? 'active' : '' }} nav-item">
-        <a class="nav-link" href="/admin/receptionist">
-            <div class="flex flex-wrap items-center justify-center md:flex-nowrap md:justify-start">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-person-fill w-full md:w-max" viewBox="0 0 16 16">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                </svg>
-                <span class="md:ms-2">Resepsionis</span>
-            </div>
-        </a>
-    </li>
+    @if ($user == '1')
+        <li class="{{ request()->is('admin/receptionist') ? 'active' : '' }} nav-item">
+            <a class="nav-link" href="/admin/receptionist">
+                <div class="flex flex-wrap items-center justify-center md:flex-nowrap md:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-person-fill w-full md:w-max" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
+                    <span class="md:ms-2">Resepsionis</span>
+                </div>
+            </a>
+        </li>
     @endif
-    <li class="{{ request()->is('admin/master_data') ? 'active' : '' }} nav-item">
+    {{-- <li class="{{ request()->is('admin/master_data') ? 'active' : '' }} nav-item">
 
-<ul class="nav-link flex absolute Z-50 overflow-hidden justify-end group cursor-pointer">
-    <div class="flex flex-wrap md:flex-nowrap mb-2 justify-center md:justify-start">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-database-fill w-full md:w-max" viewBox="0 0 16 16">
-            <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223"/>
-            <path d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
-            <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
-            <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
-        </svg>
-        <span class="md:ms-2">Filter Data  &#129107;</span>
-    </div>
+        <ul class="nav-link flex absolute Z-50 overflow-hidden justify-end group cursor-pointer">
+            <div class="flex flex-wrap md:flex-nowrap mb-2 justify-center md:justify-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-database-fill w-full md:w-max" viewBox="0 0 16 16">
+                    <path
+                        d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223" />
+                    <path
+                        d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                    <path
+                        d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                    <path
+                        d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+                </svg>
+                <span class="md:ms-2">Filter Data &#129107;</span>
+            </div>
 
-    {{-- <div class="absolute -z-50 transition-all duration-500 -translate-y-80  group-hover:translate-y-0 group-hover:static">
-        <ul class="hidden group-hover:block w-36  text-white text-sm p-2 ps-3 rounded flex flex-col items-end">
-            <li class="font-semibold">Tamu</li>
-            <ul class="flex flex-col items-end">
-                <li class="rounded-t w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/name">Nama</a>
-                </li>
-                <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/telephone">No. Telp</a>
-                </li>
-                <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/adress">Alamat</a>
-                </li>
-                <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/date">Tanggal</a>
-                </li>
-                <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="/admin/master_data/tamu/objective">Tujuan</a>
-                </li>
-            </ul>
+            <div
+                class="absolute -z-50 transition-all duration-500 -translate-y-80  group-hover:translate-y-0 group-hover:static">
+                <ul class="hidden group-hover:block w-36  text-white text-sm p-2 ps-3 rounded flex flex-col items-end">
+                    <li class="font-semibold">Tamu</li>
+                    <ul class="flex flex-col items-end">
+                        <li class="rounded-t w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="/admin/master_data/tamu/name">Nama</a>
+                        </li>
+                        <li class="rounded-b w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="/admin/master_data/tamu/telephone">No.
+                                Telp</a>
+                        </li>
+                        <li class="rounded-b w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="/admin/master_data/tamu/adress">Alamat</a>
+                        </li>
+                        <li class="rounded-b w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="/admin/master_data/tamu/date">Tanggal</a>
+                        </li>
+                        <li class="rounded-b w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white"
+                                href="/admin/master_data/tamu/objective">Tujuan</a>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="hidden group-hover:block w-36  text-white text-sm p-2 ps-3 rounded flex flex-col items-end">
+                    <li class="font-semibold">Resepsionis</li>
+                    <ul class="flex flex-col items-end">
+                        <li class="rounded-t w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="#">Nama</a>
+                        </li>
+                        <li class="rounded-b w-full text-end px-1 my-1 py-1">
+                            <a class="text-decoration-none text-white" href="#">Alamat</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
         </ul>
-        <ul class="hidden group-hover:block w-36  text-white text-sm p-2 ps-3 rounded flex flex-col items-end">
-            <li class="font-semibold">Resepsionis</li>
-            <ul class="flex flex-col items-end">
-                <li class="rounded-t w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Nama</a>
-                </li>
-                <li class="rounded-b w-full text-end px-1 my-1 py-1">
-                    <a class="text-decoration-none text-white" href="#">Alamat</a>
-                </li>
-            </ul>
-        </ul>
-    </div> --}}
-</ul>
 
-    </li>
+    </li> --}}
     <li class="{{ request()->is('admin/qr_code') ? 'active' : '' }} nav-item">
         <a class="nav-link" href="/admin/qr_code">
             <div class="flex flex-wrap md:flex-nowrap justify-center md:justify-start">

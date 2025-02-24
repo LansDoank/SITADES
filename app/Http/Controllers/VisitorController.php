@@ -100,7 +100,7 @@ class VisitorController extends Controller
     }
 
     public function add(){
-        return view('visitor.add',['title' => 'Visitor Form','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
+        // return view('visitor.add',['title' => 'Visitor Form','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'provinces' => Province::all()]);
     }
 
     public function edit($id) {

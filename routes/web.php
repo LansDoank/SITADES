@@ -26,8 +26,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/visitor/{id}',[VisitorController::class,'preview'])->name('visitor.preview');
 
-    Route::get('/admin/visitor/add', [VisitorController::class, 'add'])->name('visitor.add');
-
     Route::get('/admin/visitor/edit/{id}', [VisitorController::class, 'edit'])->name('visitor.edit');
 
     Route::post('/admin/visitor/update',[VisitorController::class,'update'])->name('visitor.update');

@@ -161,7 +161,7 @@
                                     <label for="village" class="mb-2">Desa</label>
                                     <input type="text" name="village" id="village"
                                         class="form-input border border-gray-200 rounded w-full h-10 px-3" required
-                                        placeholder="Masukkan desa anda" value="{{ $visitor->village->name }}">
+                                        placeholder="Masukkan desa anda" value="{{ $visitor->village->name }}" disabled>
                                 </div>
                             </li>
                             <li class="md:my-3">
