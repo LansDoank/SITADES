@@ -18,6 +18,11 @@ class QrCodeController extends Controller
     }
 
     public function create(Request $request) {
+        $visit = VisitType::where('village_code', $request->village)->first();
+        if ($visit) {
+            return redirect()->route('admin.qrCode')->with('success', 'Receptionist added successfully with QR Code');
+        }
+
         $qr_code = new VisitType();
         $village_name = Village::where('code',$request->village)->first()->name;
         $slug = Str::slug(Village::where('code',$request->village)->first()->name);

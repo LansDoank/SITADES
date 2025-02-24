@@ -19,21 +19,28 @@ class AdminController extends Controller
     public function dashboard()
     {
 
-        $guestDaily = Visitor::whereDate('check_in', today())->count();
-        $guestWeekly = Visitor::whereBetween('check_in', [
+        $user = Auth::user();
+        if(Auth::user()->role_id == '1') {
+            $visitor = Visitor::query();
+        } else {
+            $visitor = Visitor::where('village_code',$user->village_code);
+        }
+
+        $guestDaily = $visitor->whereDate('check_in', today())->get()->count();
+        $guestWeekly = $visitor->whereBetween('check_in', [
             Carbon::now()->startOfWeek(),
             Carbon::now()->endOfWeek()
-        ])->count();
-        $guestMonthly = Visitor::whereMonth('check_in', today()->month)
+        ])->get()->count();
+        $guestMonthly = $visitor->whereMonth('check_in', today()->month)
             ->whereYear('check_in', today()->year)
-            ->count();
-        $guestYearly = Visitor::whereYear('check_in', today()->year)->count();
+            ->get()->count();
+        $guestYearly = $visitor->whereYear('check_in', today()->year)->get()->count();
 
-        $studi_banding = Visitor::where('objective','Studi Banding')->get()->count();
-        $cari_informasi = Visitor::where('objective','Cari Informasi')->get()->count();
-        $lainnya = Visitor::whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
-        $pembinaan = Visitor::where('objective','Pembinaan')->get()->count();
-        $koordinasi = Visitor::where('objective','Koordinasi')->get()->count();
+        $studi_banding = $visitor->where('objective','Studi Banding')->get()->count();
+        $cari_informasi = $visitor->where('objective','Cari Informasi')->get()->count();
+        $lainnya = $visitor->whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
+        $pembinaan = $visitor->where('objective','Pembinaan')->get()->count();
+        $koordinasi = $visitor->where('objective','Koordinasi')->get()->count();
         return view(
             'admin.dashboard',
             [
@@ -55,12 +62,14 @@ class AdminController extends Controller
 
     public function visitors()
     {
-        $user = Auth::user()->village_code;
+        $user = Auth::user();
         if(Auth::user()->role_id == '1') {
             $visitor = Visitor::all();
         } else {
-            $visitor = Visitor::where('village_code',$user)->get();
+            $visitor = Visitor::where('village_code',$user->village_code)->get();
         }
+
+
         return view(
             'admin.visitor',
                 ['visitors' => $visitor, 'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,]
