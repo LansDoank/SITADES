@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([RoleSeeder::class,UserSeeder::class,]);
-        User::factory(10)->recycle([
-            Role::all(),
-        ])->create();
+        $this->call([RoleSeeder::class,ProvinceSeeder::class,DistrictSeeder::class,SubDistrictSeeder::class,VillageSeeder::class,UserSeeder::class,]);
+        // User::factory(1)->recycle([
+        //     Role::all(),
+        // ])->create();
 
         
     }

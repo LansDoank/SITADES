@@ -11,27 +11,28 @@ class Visitor extends Model
 {
     use HasFactory;
     protected $table = 'visitors';
-    protected $fillable = ['fullname', 'institution', 'telephone', 'address', 'check_in', 'check_out', 'visitor_photo','objective', 'i_n_i', 'province_code', 'district_code', 'subdistrict_code', 'village_code'];
-    protected $with = ['province','district','subdistrict','village'];
+    protected $fillable = ['fullname','institution', 'telephone', 'address', 'check_in', 'check_out', 'visitor_photo','objective', 'i_n_i', 'province_code', 'district_code', 'subdistrict_code', 'village_code'];
+    protected $with = ['district','province','visitType','subdistrict','village'];
 
     public function visitType(): BelongsTo
     {
-        return $this->belongsTo(VisitType::class);
+        return $this->belongsTo(VisitType::class,'id','visit_type_id');
     }
 
     public function province(): BelongsTo {
-        return $this->belongsTo(Province::class, 'province_code', 'code');
+        return $this->belongsTo(Province::class, 'code', 'province_code');
     }
 
+
     public function district(): BelongsTo {
-        return $this->belongsTo(District::class, 'district_code', 'code');
+        return $this->belongsTo(District::class, 'code', 'district_code');
     }
 
     public function subdistrict(): BelongsTo {
-        return $this->belongsTo(SubDistrict::class,'subdistrict_code','code');
+        return $this->belongsTo(SubDistrict::class,'code','subdistrict_code');
     }
 
     public function village(): BelongsTo {
-        return $this->belongsTo(Village::class,'village_code','code');
+        return $this->belongsTo(Village::class,'code','village_code');
     }
 }

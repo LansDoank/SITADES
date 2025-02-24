@@ -31,7 +31,8 @@ class User extends Authenticatable
 
     // protected $with = ['roles'];
 
-    protected $with = ['role'];
+    protected $with = ['role','address'];
+
 
     public function role() : BelongsTo{
         return $this->belongsTo(Role::class,'role_id','id');
@@ -39,7 +40,7 @@ class User extends Authenticatable
 
     public function address(): BelongsTo
     {
-        return $this->belongsTo(Village::class, 'village_code', 'code');
+        return $this->belongsTo(Village::class, 'code', 'village_code');
     }
 
 

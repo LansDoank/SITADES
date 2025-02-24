@@ -9,7 +9,7 @@ class SubDistrict extends Model
 {
 
     protected $table = 'sub_districts';
-    protected $fillable = ['name']; 
+    protected $fillable = ['name','code']; 
     protected $with = ['visit','visitor'];
 
     public function visit(): HasMany {
@@ -17,6 +17,6 @@ class SubDistrict extends Model
     }
 
     public function visitor() :HasMany {
-        return $this->hasMany(Visitor::class,'code', 'subdistrict_code');
+        return $this->hasMany(Visitor::class,'subdistrict_code', 'code');
     }
 }

@@ -10,7 +10,7 @@ class Village extends Model
 {
     protected $table = 'villages';
     protected $fillable = ['code','sub_districts_code','name'];
-    protected $with = ['visit','visitor'];
+    protected $with = ['receptionist','visit','visitor'];
 
     public function receptionist(): HasMany  {
         return $this->hasMany(User::class);
@@ -20,6 +20,6 @@ class Village extends Model
         return $this->hasMany(VisitType::class,'village_code','code');
     }
     public function visitor() :HasMany {
-        return $this->hasMany(Visitor::class,'code', 'village_code');
+        return $this->hasMany(Visitor::class,'village_code', 'code');
     }
 }

@@ -9,12 +9,12 @@ class District extends Model
 {
     protected $table = 'districts';
     protected $fillable = ['code', 'province_code', 'name'];
-    protected $with = ['visit','visitor'];
+    protected $with = ['visit'];
 
     public function visit(): HasMany {
         return $this->hasMany(VisitType::class,'district_code','code');
     }
     public function visitor() :HasMany {
-        return $this->hasMany(Visitor::class,'code', 'district_code');
+        return $this->hasMany(Visitor::class,'village_code', 'code');
     }
 }

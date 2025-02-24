@@ -25,7 +25,7 @@ class ProvinceSeeder extends Seeder
             ['code' => '19', 'name' => 'Kepulauan Bangka Belitung'],
             ['code' => '21', 'name' => 'Kepulauan Riau'],
             ['code' => '31', 'name' => 'DKI Jakarta'],
-            ['code' => '32', 'name' => 'Jawa Barat'],
+            ['code' => 32, 'name' => 'Jawa Barat'],
             ['code' => '33', 'name' => 'Jawa Tengah'],
             ['code' => '34', 'name' => 'DI Yogyakarta'],
             ['code' => '35', 'name' => 'Jawa Timur'],

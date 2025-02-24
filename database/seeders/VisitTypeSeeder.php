@@ -12,47 +12,23 @@ class VisitTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        // VisitType::create([
-        //     'name' => 'Koordinasi'
-        // ]);
-        // VisitType::create([
-        //     'name' => 'Cari Informasi'
-        // ]);
-        // VisitType::create([
-        //     'name' => 'Pembinaan'
-        // ]);
-        // VisitType::create([
-        //     'name' => 'Studi Banding'
-        // ]);
-        // VisitType::create([
-        //     'name' => 'Lainnya'
-        // ]);
-        // VisitType::create([
-        //     'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
-        //     'name' => 'Desa Sukarasa',
-        //     'slug' => 'desa-sukarasa',
-        //     'province_code' => '32',
-        //     'district_code' => '3205',
-        //     'subdistrict_code' => '320507',
-        //     'village_code' => '3205072003'
-        // ]);
-        // VisitType::create([
-        //     'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
-        //     'name' => 'Desa Cikedokan',
-        //     'slug' => 'desa-cikedokan',
-        //     'province_code' => '32',
-        //     'district_code' => '3205',
-        //     'subdistrict_code' => '320507',
-        //     'village_code' => '3205072005'
-        // ]);
-        // VisitType::create([
-        //     'qr_code' => 'https://1.bp.blogspot.com/-dHN4KiD3dsU/XRxU5JRV7DI/AAAAAAAAAz4/u1ynpCMIuKwZMA642dHEoXFVKuHQbJvwgCEwYBhgL/s1600/qr-code.png',
-        //     'name' => 'Desa Sukaasih',
-        //     'slug' => 'desa-sukaasih',
-        //     'province_code' => '32',
-        //     'district_code' => '3205',
-        //     'subdistrict_code' => '320508',
-        //     'village_code' => '3205082006'
-        // ]);
+        VisitType::create([
+            'qr_code' => '127.0.0.1:8000/form/1374011006/koto-panjang',
+            'name' => 'koto panjang',
+            'slug' => 'koto-panjang',
+            'province_code' => 13,
+            'district_code' => 1374,
+            'sub_district_code' => 137401,
+            'village_code' => 1374011006,
+        ]);
+        VisitType::create([
+            'qr_code' => '127.0.0.1:8000/form/6171031004/sungaibeliung',
+            'name' => 'sungaibeliung',
+            'slug' => 'sungaibeliungkoto-panjang',
+            'province_code' => 61,
+            'district_code' => 6171,
+            'sub_district_code' => 617103,
+            'village_code' => 6171031004,
+        ]);
     }
 }
