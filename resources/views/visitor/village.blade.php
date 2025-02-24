@@ -28,8 +28,8 @@
 </head>
 <body>
     <div class="w-full flex items-center bg-daun">
-        <div class="container w-full flex items-center md:py-10">
-            <form class="bg-white rounded md:rounded-lg p-5 md:h-max m-5 md:my-0 md:p-10 m-5 md:mx-auto w-[500px] shadow" action="/form/desa/data" method="POST">
+        <div class="w-full flex items-center md:py-10">
+            <form class="bg-white rounded md:rounded-lg p-5 md:h-max m-5 md:my-0 md:p-10 m-5 md:mx-auto w-[88%] md:w-[500px] shadow" action="/form/desa/data" method="POST">
                 @csrf
                 <div class="header">
                     <div class="logo flex items-center">
