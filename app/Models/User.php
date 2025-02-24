@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function address(): BelongsTo
     {
-        return $this->belongsTo(Village::class, 'code', 'village_code');
+        return $this->belongsTo(Village::class, 'village_code', 'code');
     }
 
 

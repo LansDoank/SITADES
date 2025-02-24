@@ -272,7 +272,7 @@
 
             subDistrictSelect.addEventListener('change', function() {
                 const subDistrictCode = this.value;
-
+                console.log(subDistrictCode)
                 if (subDistrictCode) {
                     fetch(`/api/villages/${subDistrictCode}`)
                         .then(response => response.json())
