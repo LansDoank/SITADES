@@ -16,23 +16,23 @@ class Visitor extends Model
 
     public function visitType(): BelongsTo
     {
-        return $this->belongsTo(VisitType::class,'id','visit_type_id');
+        return $this->belongsTo(VisitType::class,'visit_type_id','id');
     }
 
     public function province(): BelongsTo {
-        return $this->belongsTo(Province::class, 'code', 'province_code');
+        return $this->belongsTo(Province::class, 'province_code', 'code');
     }
 
 
     public function district(): BelongsTo {
-        return $this->belongsTo(District::class, 'code', 'district_code');
+        return $this->belongsTo(District::class, 'district_code', 'code');
     }
 
     public function subdistrict(): BelongsTo {
-        return $this->belongsTo(SubDistrict::class,'code','subdistrict_code');
+        return $this->belongsTo(SubDistrict::class,'subdistrict_code','code');
     }
 
     public function village(): BelongsTo {
-        return $this->belongsTo(Village::class,'code','village_code');
+        return $this->belongsTo(Village::class,'village_code','code');
     }
 }

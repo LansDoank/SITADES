@@ -109,7 +109,6 @@ class VisitorController extends Controller
 
     public function update(Request $request){
         $visitor = Visitor::find($request->id);
-
         $visitor->update([
             'fullname' => $request->fullname,
             'institution' => $request->institution,
@@ -120,10 +119,10 @@ class VisitorController extends Controller
             'visit_type_id' => $request->visit_type,
             'objective' => $request->objective,
             'i_n_i' => $request->i_n_i,
-            'province_code' => $request->province_code,
-            'district_code' => $request->district_code,
-            'subdistrict_code' => $request->sub_district_code,
-            'village_code' => $request->village_code,
+            'province_code' => $request->province,
+            'district_code' => $request->district,
+            'subdistrict_code' => $request->sub_district,
+            'village_code' => $request->village,
         ]);
 
         if ($request->hasFile('visitor_photo')) {

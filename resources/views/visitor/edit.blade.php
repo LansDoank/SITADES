@@ -203,9 +203,6 @@
                                     <label for="objective" class="mb-2">Tujuan</label>
                                     <select class="form-input text-gray-600 border border-gray-200 px-2 h-10 w-full"
                                         name="objective" id="objective">
-                                        {{-- @foreach ($visitTypes as $visitType)
-                                <option selected value="{{$visitType->id}}">{{$visitType->name}}</option>
-                            @endforeach --}}
                                         <option>Pilih Tujuan Anda</option>
                                         <option value="Koordinasi" @selected("Koordinasi" == $oldVisit->objective)>Koordinasi</option>
                                         <option value="Cari Informasi" @selected("Cari Informasi" == $oldVisit->objective)>Cari Informasi</option>
@@ -216,14 +213,14 @@
                                 </div>
                             </li>
                             <li class="md:my-3">
+                                <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="objective" id="objective_textarea"
+                                    placeholder="Sebutkan Tujuan Anda"></textarea>
+                            </li>
+                            <li class="md:my-3">
                                 <div class="flex flex-col items-start">
                                     <label class="mb-2">Lokasi  Tujuan</label>
                                     <input type="text" disabled value="{{ $oldVisit->visitType->name }}" class="form-input border border-gray-200 rounded w-full h-10 px-3">
                                 </div>
-                            </li>
-                            <li class="md:my-3">
-                                <textarea class="hidden w-full border border-gray-200 px-3 py-2" name="objective" id="objective_textarea"
-                                    placeholder="Sebutkan Tujuan Anda"></textarea>
                             </li>
                             <li class="md:my-3">
                                 <div class="flex flex-col items-start">

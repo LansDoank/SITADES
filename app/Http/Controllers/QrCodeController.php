@@ -6,6 +6,7 @@ use App\Models\District;
 use App\Models\Province;
 use App\Models\SubDistrict;
 use App\Models\Village;
+use App\Models\Visitor;
 use App\Models\VisitType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,12 @@ class QrCodeController extends Controller
     }
 
     public function edit($id) {
+        $user = Auth::user();
+        if(Auth::user()->role_id == '1') {
+            $visitor = Visitor::query();
+        } else {
+            $visitor = Visitor::where('village_code',$user->village_code);
+        }
         $visit = VisitType::find($id);
         return view('qrCode.edit',['title' => 'Edit Kode Qr','user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'oldVisit' => $visit,'provinces' => Province::all()]);
     }
@@ -46,10 +53,12 @@ class QrCodeController extends Controller
     public function update(Request $request) {
         $visit = VisitType::find($request->id);
         $slug = Str::slug(Village::where('code',$request->village)->first()->name);
+        $village_name = Village::where('code',$request->village)->first()->name;
+        // dd($slug,$village_name);
         $visit->update([
-            'qr_code' => "sitamu.com/form/$request->village/$slug",
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'qr_code' => "127.0.0.1/form/$request->village/$slug",
+            'name' => $village_name,
+            'slug' => Str::slug($village_name),
             'province_code' => $request->province,
             'district_code' => $request->district,
             'sub_district_code' => $request->sub_district,

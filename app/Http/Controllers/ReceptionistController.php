@@ -124,6 +124,7 @@ class ReceptionistController extends Controller
     public function update(Request $request)
     {
         $receptionist = User::find($request->id);
+        // dd($request->province,$request->district,$request->sub_district,$request->village);
         $receptionist->update([
             'name' => $request->name,
             'username' => $request->username,

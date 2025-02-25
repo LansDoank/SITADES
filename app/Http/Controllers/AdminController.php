@@ -38,9 +38,9 @@ class AdminController extends Controller
 
         $studi_banding = $visitor->where('objective','Studi Banding')->get()->count();
         $cari_informasi = $visitor->where('objective','Cari Informasi')->get()->count();
-        $lainnya = $visitor->whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
         $pembinaan = $visitor->where('objective','Pembinaan')->get()->count();
         $koordinasi = $visitor->where('objective','Koordinasi')->get()->count();
+        $lainnya = Visitor::whereNotIn('objective', ['Studi Banding', 'Cari Informasi', 'Pembinaan', 'Koordinasi'])->count();
         return view(
             'admin.dashboard',
             [
@@ -91,6 +91,12 @@ class AdminController extends Controller
 
     public function qrCode()
     {
-        return view('admin.qrCode', ['user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'visitTypes' => VisitType::all()]);
+        $user = Auth::user();
+        if(Auth::user()->role_id == '1') {
+            $admin = true;
+        } else {
+            $admin = false;
+        }
+        return view('admin.qrCode', ['admin' => $admin,'user' => Auth::user(),'username' => Auth::user()->username,'photo' => Auth::user()->photo,'visitTypes' => VisitType::all()]);
     }
 }

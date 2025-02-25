@@ -27,6 +27,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'province_code',
+        'district_code',
+        'sub_district_code',
+        'village_code'
     ];
 
     // protected $with = ['roles'];

@@ -26,7 +26,7 @@
 
     <link rel="icon" href="/img/logo.png">
     <style>
-        @media screen and (max-width:576px){
+        @media screen and (max-width:576px) {
             #brand {
                 display: none;
             }
@@ -41,7 +41,7 @@
 
         <!-- Sidebar -->
         <x-sidebar>
-            <x-slot:user>{{$user->role_id}}</x-slot:user>
+            <x-slot:user>{{ $user->role_id }}</x-slot:user>
         </x-sidebar>
         <!-- End of Sidebar -->
 
@@ -72,13 +72,12 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $username }}</span>
-                                <img class="img-profile rounded-circle" src="{{asset("storage/" . $photo)}}">
+                                <img class="img-profile rounded-circle" src="{{ asset('storage/' . $photo) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/logout" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -97,7 +96,9 @@
                     <h1 class="h3 mb-2 text-gray-800">Tabel Kode Qr</h1>
 
                     <div class="flex mb-3 ">
-                        <a href="/admin/qr_code/add" class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+ Buat Qr Code</a>
+                        <a href="/admin/qr_code/add"
+                            class="bg-klipaa font-medium text-md flex justify-center items-center text-white rounded px-3 h-12 text-decoration-none hover:brightness-90">+
+                            Buat Qr Code</a>
                     </div>
 
                     <!-- DataTales Example -->
@@ -114,28 +115,37 @@
                                             <th class="col-1">Foto</th>
                                             <th class="col-1">Nama</th>
                                             <th class="col-6">Alamat</th>
-                                            <th class="col-1">Opsi</th>
+                                            @if ($admin)
+                                                <th class="col-1">Opsi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $no = 1 ?>
+                                        <?php $no = 1; ?>
                                         @foreach ($visitTypes as $visitType)
                                             <tr>
-                                                <td>{{$no}}</td>
+                                                <td>{{ $no }}</td>
                                                 <td class="">
-                                                    {{QrCode::generate($visitType->qr_code)}}
-                                                <td>{{$visitType->name}}</td>
-                                                <td class="col-1">{{$visitType->province->name . "," . $visitType->district->name . "," . $visitType->subdistrict->name . "," . $visitType->village->name}}</td>
-                                                <td class="flex justify-center">
-                                                    <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none " href="/admin/qr_code/edit/{{$visitType->id}}">
-                                                        <img class="w-5" src="/img/edit.png" alt="">
-                                                    </a>
-                                                    <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none " onclick="return confirm('Yakin?')" href="/admin/qr_code/delete/{{$visitType->id}}">
-                                                        <img class="w-5" src="/img/trashcan.png" alt="">
-                                                    </a>
+                                                    {{ QrCode::generate($visitType->qr_code) }}
+                                                <td>{{ $visitType->name }}</td>
+                                                <td class="col-1">
+                                                    {{ $visitType->province->name . ',' . $visitType->district->name . ',' . $visitType->subdistrict->name . ',' . $visitType->village->name }}
                                                 </td>
+                                                @if ($admin)
+                                                    <td class="flex justify-center">
+                                                        <a class="rounded text-white w-1/2 h-10 text-center flex items-center justify-center text-decoration-none "
+                                                            href="/admin/qr_code/edit/{{ $visitType->id }}">
+                                                            <img class="w-5" src="/img/edit.png" alt="">
+                                                        </a>
+                                                        <a class="rounded text-white w-1/2 h-10 text-center justify-center flex items-center text-decoration-none "
+                                                            onclick="return confirm('Yakin?')"
+                                                            href="/admin/qr_code/delete/{{ $visitType->id }}">
+                                                            <img class="w-5" src="/img/trashcan.png" alt="">
+                                                        </a>
+                                                    </td>
+                                                @endif
                                             </tr>
-                                            <?php $no++ ?>
+                                            <?php $no++; ?>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -187,7 +197,7 @@
     </div>
 
     {{-- Add Modal --}}
-    
+
     {{-- <div class="w-full h-screen bg-gray-100">
     </div> --}}
 
